@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-14T23:38:45.438Z</updated>
+  <updated>2020-02-14T23:41:33.691Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/02/14/hello-world/"/>
     <id>http://yoursite.com/2020/02/14/hello-world/</id>
     <published>2020-02-14T14:04:33.004Z</published>
-    <updated>2020-02-14T23:38:45.438Z</updated>
+    <updated>2020-02-14T23:41:33.691Z</updated>
     
     <summary type="html">
     
@@ -35,8 +35,6 @@
     
     </summary>
     
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
   </entry>
