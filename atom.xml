@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-15T10:56:20.482Z</updated>
+  <updated>2020-02-15T11:00:27.359Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="http://yoursite.com/2020/02/15/%E5%87%BD%E6%95%B0%E6%A8%A1%E5%9D%97/"/>
     <id>http://yoursite.com/2020/02/15/%E5%87%BD%E6%95%B0%E6%A8%A1%E5%9D%97/</id>
     <published>2020-02-15T10:56:20.000Z</published>
-    <updated>2020-02-15T10:56:20.482Z</updated>
+    <updated>2020-02-15T11:00:27.359Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;基本语句&quot;&gt;&lt;a href=&quot;#基本语句&quot; class=&quot;headerlink&quot; title=&quot;基本语句&quot;&gt;&lt;/a&gt;基本语句&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;该篇介绍了python的基本语句&lt;/p&gt;
+      &lt;h1 id=&quot;自定义函数&quot;&gt;&lt;a href=&quot;#自定义函数&quot; class=&quot;headerlink&quot; title=&quot;自定义函数&quot;&gt;&lt;/a&gt;自定义函数&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;该篇介绍了python的自定义函数&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
