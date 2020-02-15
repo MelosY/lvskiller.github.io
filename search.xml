@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>try</title>
-    <url>/2020/02/15/try/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>third</title>
-    <url>/2020/02/15/%E2%80%9Cthird%E2%80%9D/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>second</title>
-    <url>/2020/02/15/second/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>first</title>
-    <url>/2020/02/15/first/</url>
-    <content><![CDATA[<h2 id="第一次尝试"><a href="#第一次尝试" class="headerlink" title="第一次尝试"></a>第一次尝试</h2>]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/02/14/hello-world/</url>
     <content><![CDATA[<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
