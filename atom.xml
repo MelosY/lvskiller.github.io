@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-14T23:43:38.144Z</updated>
+  <updated>2020-02-15T01:14:19.368Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/02/14/hello-world/"/>
-    <id>http://yoursite.com/2020/02/14/hello-world/</id>
-    <published>2020-02-14T14:04:33.004Z</published>
-    <updated>2020-02-14T23:43:38.144Z</updated>
+    <title>pythonon_start</title>
+    <link href="http://yoursite.com/2020/02/15/pythonon-start/"/>
+    <id>http://yoursite.com/2020/02/15/pythonon-start/</id>
+    <published>2020-02-15T01:13:14.000Z</published>
+    <updated>2020-02-15T01:14:19.368Z</updated>
     
     <summary type="html">
     
@@ -29,12 +29,14 @@
       
         
         
-          &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a
+          &lt;h2 id=&quot;还没写&quot;&gt;&lt;a href=&quot;#还没写&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
   </entry>
