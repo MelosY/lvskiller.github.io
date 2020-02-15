@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-15T04:25:33.910Z</updated>
+  <updated>2020-02-15T04:49:53.640Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,17 +21,13 @@
     <link href="http://yoursite.com/2020/02/15/markdown%E8%AF%AD%E6%B3%95/"/>
     <id>http://yoursite.com/2020/02/15/markdown%E8%AF%AD%E6%B3%95/</id>
     <published>2020-02-15T03:58:56.000Z</published>
-    <updated>2020-02-15T04:25:33.910Z</updated>
+    <updated>2020-02-15T04:49:53.640Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;markdown基本语法&quot;&gt;&lt;a href=&quot;#markdown基本语法&quot; class=&quot;headerlink&quot; title=&quot;markdown基本语法&quot;&gt;&lt;/a&gt;markdown基本语法&lt;/h1&gt;&lt;h3 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot;
-        
-      
+      &lt;h1 id=&quot;markdown基本语法&quot;&gt;&lt;a href=&quot;#markdown基本语法&quot; class=&quot;headerlink&quot; title=&quot;markdown基本语法&quot;&gt;&lt;/a&gt;markdown基本语法&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;该篇介绍了markdown 的基本语法及typora的快捷键&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     

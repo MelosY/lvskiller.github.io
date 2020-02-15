@@ -3,7 +3,12 @@
   <entry>
     <title>markdown语法</title>
     <url>/2020/02/15/markdown%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="markdown基本语法"><a href="#markdown基本语法" class="headerlink" title="markdown基本语法"></a>markdown基本语法</h1><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ol>
+    <content><![CDATA[<h1 id="markdown基本语法"><a href="#markdown基本语法" class="headerlink" title="markdown基本语法"></a>markdown基本语法</h1><blockquote>
+<p>该篇介绍了markdown 的基本语法及typora的快捷键</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ol>
 <li>n个#代表了n级标题</li>
 <li>typora 快捷键 ctrl+ n</li>
 </ol>
