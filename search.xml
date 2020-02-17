@@ -36,10 +36,11 @@ Epoch: 0019 cost= 8001.048122727
 Epoch: 0020 cost= 8242.288252273
 Total cost: 661986.6</code></pre>]]></content>
       <categories>
-        <category>深度学习</category>
+        <category>机器学习</category>
       </categories>
       <tags>
-        <tag>-机器学习 -深度学习</tag>
+        <tag>机器学习</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
@@ -68,7 +69,8 @@ Total cost: 661986.6</code></pre>]]></content>
         <category>机器学习</category>
       </categories>
       <tags>
-        <tag>-机器学习 -深度学习</tag>
+        <tag>机器学习</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
@@ -113,7 +115,8 @@ Total cost: 661986.6</code></pre>]]></content>
         <category>机器学习</category>
       </categories>
       <tags>
-        <tag>-机器学习 -深度学习</tag>
+        <tag>机器学习</tag>
+        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
@@ -153,7 +156,49 @@ Mo Tu We Th Fr Sa Su
 </blockquote>
 <a id="more"></a>
 
-<h3 id="自定义函数-1"><a href="#自定义函数-1" class="headerlink" title="自定义函数"></a>自定义函数</h3>]]></content>
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><ol>
+<li>可变类型和不可变对象<ul>
+<li>strings, tuples, 和 numbers 是不可更改的对象，而 list,dict 等则是可以修改的对象。</li>
+<li>不可变类型 形参结合时，形参是深拷贝，  可变类型则是浅拷贝，因此会影响原来元素</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#不可变类型</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">changeInt</span><span class="params">(a)</span>:</span></span><br><span class="line">    a = <span class="number">10</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">changeInt(b)</span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">changeList</span><span class="params">(a)</span>:</span></span><br><span class="line">    a.extend([<span class="number">1</span>,<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> b</span><br><span class="line">b =[<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">changeList(b)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<pre><code>2
+[2, 3, 1, 2]</code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>必备参数</li>
+<li>关键字参数 ,可以不必要符合顺序</li>
+<li>默认参数 ，事先设置参数</li>
+<li>不定长参数,示例</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printinfo</span><span class="params">( arg1, *vartuple )</span>:</span></span><br><span class="line">   <span class="string">"打印任何传入的参数"</span></span><br><span class="line">   print( <span class="string">"输出: "</span>)</span><br><span class="line">   <span class="keyword">print</span> (arg1)</span><br><span class="line">   <span class="keyword">for</span> var <span class="keyword">in</span> vartuple:</span><br><span class="line">      <span class="keyword">print</span> (var)</span><br><span class="line">   <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用printinfo 函数</span></span><br><span class="line">printinfo( <span class="number">10</span> )</span><br><span class="line">printinfo( <span class="number">70</span>, <span class="number">60</span>, <span class="number">50</span> )</span><br></pre></td></tr></table></figure>
+
+<pre><code>输出: 
+10
+输出: 
+70
+60
+50</code></pre><h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><blockquote>
+<p>同C语言的define方法，看示例</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sum = <span class="keyword">lambda</span> arg1, arg2: arg1 + arg2</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用sum函数</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"相加后的值为 : "</span>, sum( <span class="number">10</span>, <span class="number">20</span> ))</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"相加后的值为 : "</span>, sum( <span class="number">20</span>, <span class="number">20</span> ))</span><br></pre></td></tr></table></figure>
+
+<pre><code>相加后的值为 :  30
+相加后的值为 :  40</code></pre><h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><blockquote>
+<p>同C语言</p>
+</blockquote>
+<h3 id="import-相关"><a href="#import-相关" class="headerlink" title="import 相关"></a>import 相关</h3><blockquote>
+<p>略</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>基础类</tag>
+        <tag>语言</tag>
+      </tags>
   </entry>
   <entry>
     <title>结构详细</title>
