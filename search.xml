@@ -1,6 +1,269 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>矩阵求导</title>
+    <url>/2020/02/24/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC/</url>
+    <content><![CDATA[<h1 id="矩阵求导"><a href="#矩阵求导" class="headerlink" title="矩阵求导"></a>矩阵求导</h1><blockquote>
+<p>该篇介绍了矩阵求导的基本方法</p>
+</blockquote>
+<a id="more"></a>
+
+<blockquote>
+<p>前言：对于机器学习来说，矩阵求导是很重要的一部分，同时对向量求导是其中的主要组成部分，这里 对于矩阵求导这里不展开。</p>
+</blockquote>
+<p>求导和梯度概念很相似，注意比较<br>$$<br>前置公式\quad x^T=[x_1\quad x_2 \quad \cdots \quad x_n]<br>$$</p>
+<p>基础公式：</p>
+<p>$$<br>f(x)是关于x的单值函数:<br>\所以 \quad<br>\frac {\partial f(x)} {\partial x^T} =<br>\left [<br>\frac {\partial f(x)} {\partial x_1} \quad \frac {\partial f(x)} {\partial x_2} \quad \cdots \quad \frac {\partial f(x)} {\partial x_n}</p>
+<p>\right]<br>\<br>\quad f(x)^T=\left [f_1(x)\quad f_2(x) \quad \cdots \quad f_n(x)\right ]<br>\<br>所以 \quad   \frac{\partial f(x)}{\partial x^T}=<br>\left( \begin{matrix}<br>   \frac{\partial f_1(x)}{\partial x_1} &amp;\frac{\partial f_1(x)}{\partial x_2} &amp;\cdots &amp;\frac{\partial f_1(x)}{\partial x_n}</p>
+<p>\ \frac{\partial f_2(x)}{\partial x_1} &amp;\frac{\partial f_2(x)}{\partial x_2} &amp;\cdots &amp;\frac{\partial f_2(x)}{\partial x_n}</p>
+<p>\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots</p>
+<p>\ \frac{\partial f_n(x)}{\partial x_1} &amp;\frac{\partial f_n(x)}{\partial x_2} &amp;\cdots &amp;\frac{\partial f_n(x)}{\partial x_n}<br>\end{matrix} \right)<br>\</p>
+<p>\frac{\partial f(x)^T}{\partial x}是行向量向列向量求导，和上面列向量对行向量求导类似<br>$$</p>
+<p>常用公式：<br>$$<br>\frac {\partial x^T}{\partial x} = I<br>$$<br>规则：<br>$$<br>当f(x)是单值函数时，线性法则，乘积法则和商法则同微积分\<br>链式法则，若y(x)时关于x的向量值函数(列向量)时。则\<br> \frac {\partial f(y(x))}{\partial x} = \frac {\partial y^T(x)} {\partial x}<br> \frac{\partial f(y)}{\partial y}<br>$$<br>常用公式：<br>$$<br>前提公式：x^Ty=&lt;x,y&gt;=y^Tx<br>$$</p>
+<p>$$<br>\frac{\partial a^Tx}{\partial x} =<br>\frac{\partial x^Ta}{\partial x} =a<br>\下面不展示转置后的项以及利用转置的步骤\<br>\frac{\partial a^Ty(x)}{\partial x} =\frac{\partial y^T(x)}{\partial x} a<br>\<br>\frac{\partial x^TAy}{\partial x} =Ay<br>\<br>\frac{\partial x^TAx}{\partial x} =(A+A^T)x  \quad如果A对称，则为2Ax<br>\<br>\frac{\partial y(x)^TAy(x)}{\partial x} =\frac {\partial y^T(x)}{\partial x}(A+A^T)y(x)<br>\<br>\frac{\partial y(x)^TAz(x)}{\partial x} =\frac {\partial y^T(x)}{\partial x}Az(x)+ \frac {\partial z^T(x)}{\partial x}A^Ty(x)<br>$$<br>单值函数的梯度矩阵(其余公式不证)<br>$$<br> \quad   \frac{\partial f(x)}{\partial A}=<br>\left( \begin{matrix}<br>   \frac{\partial f(x)}{\partial A_{11}} &amp;\frac{\partial f(x)}{\partial A_{12}} &amp;\cdots &amp;\frac{\partial f(x)}{\partial A_{1n}}</p>
+<p>\ \frac{\partial f(x)}{\partial A_{21}} &amp;\frac{\partial f(x)}{\partial A_{22}} &amp;\cdots &amp;\frac{\partial f(x)}{\partial A_{2n}}</p>
+<p>\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots</p>
+<p>\ \frac{\partial f(x)}{\partial A_{n1}} &amp;\frac{\partial f(x)}{\partial A_{n2}} &amp;\cdots &amp;\frac{\partial f(x)}{\partial A_{nn}}<br>\end{matrix} \right)<br>\<br>$$</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>基础类</tag>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性代数</title>
+    <url>/2020/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h1><blockquote>
+<p>该篇介绍了python的基本语句</p>
+</blockquote>
+<a id="more"></a>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>markdown数学公式</title>
+    <url>/2020/02/21/markdown%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h1><blockquote>
+<p>该篇介绍了python的基本语句</p>
+</blockquote>
+<a id="more"></a>
+
+<blockquote>
+<p>如果是typora，记得在文件的偏好设置中的markdown语法的内联公式开启</p>
+</blockquote>
+<h4 id="行内与独行"><a href="#行内与独行" class="headerlink" title="行内与独行"></a>行内与独行</h4><ul>
+<li><p>行内公式 ： 2个美元符包围  $ ss $</p>
+</li>
+<li><p>独行公式：4个美元符包围 </p>
+<p>$$ ss$$</p>
+</li>
+</ul>
+<h4 id="上标下标组合"><a href="#上标下标组合" class="headerlink" title="上标下标组合"></a>上标下标组合</h4><ul>
+<li>上标  ^符 $ x^4$</li>
+<li>下标 _ 符$x_1$</li>
+<li>组合符号 {}符   ${16}<em>{8x}O{2+}</em>{2}$</li>
+</ul>
+<h4 id="汉字、字体格式"><a href="#汉字、字体格式" class="headerlink" title="汉字、字体格式"></a>汉字、字体格式</h4><ul>
+<li>汉字形式，符号：<code>\mbox{}</code>，如：$V_{\mbox {初始}}$</li>
+<li>字体控制，符号：<code>\displaystyle</code>，如：$\displaystyle\frac{x+y}{y+z}$</li>
+<li>下划线符号，符号：<code>\underline</code>，如：$\underline{x+y}$</li>
+<li>标签，符号<code>\tag{数字}</code>，如：$\tag{11}$</li>
+<li>上大括号，符号：<code>\overbrace{算式}</code>，如：$\overbrace{a+b+c+d}^{2.0}$</li>
+<li>下大括号，符号：<code>\underbrace{算式}</code>，如：$a+\underbrace{b+c}_{1.0}+d$</li>
+<li>上位符号，符号：<code>\stackrel{上位符号}{基位符号}</code>，如：$\vec{x}\stackrel{def}{=}x_1,\dots,x_n$</li>
+</ul>
+<h4 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h4><ul>
+<li>两个quad空格，符号：<code>\qquad</code>，如：$x \qquad y$</li>
+<li>quad空格，符号：<code>\quad</code>，如：$x \quad y$</li>
+<li>大空格，符号<code>\</code>，如：$x : y$ </li>
+<li>紧贴，符号<code>\!</code>，如：$x!y$</li>
+</ul>
+<h4 id="定界符与组合"><a href="#定界符与组合" class="headerlink" title="定界符与组合"></a>定界符与组合</h4><ul>
+<li>括号，符号：<code>（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)</code>，如：$（）\big(\big)\quad \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)$</li>
+<li>大括号，符号：<code>\{ \}</code>，如：${x+y}$  因为</li>
+<li>自适应括号，符号：<code>\left \right</code>，如：$\left(x\right)$，$\left(x{yz}\right)$</li>
+<li>组合公式，符号：<code>{上位公式 \choose 下位公式}</code>，如：${n+1 \choose k}={n \choose k}+{n \choose k-1}$</li>
+<li>组合公式，符号：<code>{上位公式 \atop 下位公式}</code>，如：$\sum_{k_0,k_1,\ldots&gt;0 \atop k_0+k_1+\cdots=n}A_{k_0}A_{k_1}\cdots$</li>
+</ul>
+<h4 id="四则运算"><a href="#四则运算" class="headerlink" title="四则运算"></a>四则运算</h4><ul>
+<li>加法运算，符号：<code>+</code>，如：$x+y=z$</li>
+<li>减法运算，符号：<code>-</code>，如：$x-y=z$</li>
+<li>加减运算，符号：<code>\pm</code>，如：$x \pm y=z$</li>
+<li>减甲运算，符号：<code>\mp</code>，如：$x \mp y=z$</li>
+<li>乘法运算，符号：<code>\times</code>，如：$x \times y=z$</li>
+<li>点乘运算，符号：<code>\cdot</code>，如：$x \cdot y=z$</li>
+<li>星乘运算，符号：<code>\ast</code>，如：$x \ast y=z$</li>
+<li>除法运算，符号：<code>\div</code>，如：$x \div y=z$</li>
+<li>斜法运算，符号：<code>/</code>，如：$x/y=z$</li>
+<li>分式表示，符号：<code>\frac{分子}{分母}</code>，如：$\displaystyle \frac{x+y}{y+z}$</li>
+<li>分式表示，符号：<code>{分子} \voer {分母}</code>，如：${x+y} \over {y+z}$</li>
+<li>绝对值表示，符号：<code>||</code>，如：$|x+y|$</li>
+</ul>
+<h4 id="高级运算"><a href="#高级运算" class="headerlink" title="高级运算"></a>高级运算</h4><ul>
+<li><p>平均数运算，符号：<code>\overline{算式}</code>，如：$\overline{xyz}$</p>
+</li>
+<li><p>开二次方运算，符号：<code>\sqrt</code>，如：$\sqrt x$</p>
+</li>
+<li><p>开方运算，符号：<code>\sqrt[开方数]{被开方数}</code>，如：$\sqrt[3]{x+y}$</p>
+</li>
+<li><p>对数运算，符号：<code>\log</code>，如：$\log(x)$</p>
+</li>
+<li><p>极限运算，符号：<code>\lim</code>，如：$\lim^{x \to \infty}_{y \to 0}{\displaystyle\frac{x}{y}}$</p>
+</li>
+<li><p>极限运算，符号：<code>\displaystyle \lim</code>，如：$\displaystyle \lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
+</li>
+<li><p>求和运算，符号：<code>\sum</code>，如：$\sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
+</li>
+<li><p>求和运算，符号：<code>\displaystyle \sum</code>，如：$\displaystyle \sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</p>
+</li>
+<li><p>积分运算，符号：<code>\int</code>，如：$\int^{\infty}_{0}{xdx}$</p>
+</li>
+<li><p>积分运算，符号：<code>\displaystyle \int</code>，如：$\displaystyle \int^{\infty}_{0}{xdx}$</p>
+</li>
+<li><p>微分运算，符号：<code>\partial</code>，如：$\frac{\partial x}{\partial y}$</p>
+</li>
+<li><p>矩阵表示，符号：<code>\begin{matrix} \end{matrix}</code>，如：</p>
+<p>$$  \qquad \left( \begin{matrix} 1 &amp;2 &amp;\cdots &amp;4 \ 5 &amp;6 &amp;\cdots &amp; 8 \ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \13 &amp;14 &amp;\cdots &amp;16\end{matrix} \right)    $$</p>
+</li>
+</ul>
+<h4 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h4><ul>
+<li><p>等于运算，符号：<code>=</code>，如：$x+y=z$</p>
+</li>
+<li><p>大于运算，符号：<code>&gt;</code>，如：$x+y&gt;z$</p>
+</li>
+<li><p>小于运算，符号：<code>&lt;</code>，如：$x+y&lt;z$</p>
+</li>
+<li><p>大于等于运算，符号：<code>\geq</code>，如：$x+y \geq z$</p>
+</li>
+<li><p>小于等于运算，符号：<code>\leq</code>，如：$x+y \leq z$</p>
+</li>
+<li><p>不等于运算，符号：<code>\neq</code>，如：$x+y \neq z$</p>
+</li>
+<li><p>不大于等于运算，符号：<code>\ngeq</code>，如：$x+y \ngeq z$</p>
+</li>
+<li><p>不大于等于运算，符号：<code>\not\geq</code>，如：$x+y \not\geq z$</p>
+</li>
+<li><p>不小于等于运算，符号：<code>\nleq</code>，如：$x+y \nleq z$</p>
+</li>
+<li><p>不小于等于运算，符号：<code>\not\leq</code>，如：$x+y \not\leq z$</p>
+</li>
+<li><p>约等于运算，符号：<code>\approx</code>，如：$x+y \approx z$</p>
+</li>
+<li><p>恒定等于运算，符号：<code>\equiv</code>，如：$x+y \equiv z$</p>
+</li>
+</ul>
+<h4 id="集合运算"><a href="#集合运算" class="headerlink" title="集合运算"></a>集合运算</h4><ul>
+<li><p>属于运算，符号：<code>\in</code>，如：$x \in y$</p>
+<p>不属于运算，符号：<code>\notin</code>，如：$x \notin y$</p>
+<p>不属于运算，符号：<code>\not\in</code>，如：$x \not\in y$</p>
+<p>子集运算，符号：<code>\subset</code>，如：$x \subset y$</p>
+<p>子集运算，符号：<code>\supset</code>，如：$x \supset y$</p>
+<p>真子集运算，符号：<code>\subseteq</code>，如：$x \subseteq y$</p>
+<p>非真子集运算，符号：<code>\subsetneq</code>，如：$x \subsetneq y$</p>
+<p>真子集运算，符号：<code>\supseteq</code>，如：$x \supseteq y$</p>
+<p>非真子集运算，符号：<code>\supsetneq</code>，如：$x \supsetneq y$</p>
+<p>非子集运算，符号：<code>\not\subset</code>，如：$x \not\subset y$</p>
+<p>非子集运算，符号：<code>\not\supset</code>，如：$x \not\supset y$</p>
+<p>并集运算，符号：<code>\cup</code>，如：$x \cup y$</p>
+<p>交集运算，符号：<code>\cap</code>，如：$x \cap y$</p>
+<p>差集运算，符号：<code>\setminus</code>，如：$x \setminus y$</p>
+<p>同或运算，符号：<code>\bigodot</code>，如：$x \bigodot y$</p>
+<p>同与运算，符号：<code>\bigotimes</code>，如：$x \bigotimes y$</p>
+<p>实数集合，符号：<code>\mathbb{R}</code>，如：$\mathbb{R}$</p>
+<p>自然数集合，符号：<code>\mathbb{Z}</code>，如:$\mathbb{Z}$</p>
+<p>空集，符号：<code>\emptyset</code>，如：$\emptyset$</p>
+</li>
+</ul>
+<h4 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h4><p>无穷，符号：<code>\infty</code>，如：$\infty$</p>
+<p>虚数，符号：<code>\imath</code>，如：$\imath$</p>
+<p>虚数，符号：<code>\jmath</code>，如：$\jmath$</p>
+<p>数学符号，符号<code>\hat{a}</code>，如：$\hat{a}$</p>
+<p>数学符号，符号<code>\check{a}</code>，如：$\check{a}$</p>
+<p>数学符号，符号<code>\breve{a}</code>，如：$\breve{a}$</p>
+<p>数学符号，符号<code>\tilde{a}</code>，如：$\tilde{a}$</p>
+<p>数学符号，符号<code>\bar{a}</code>，如：$\bar{a}$</p>
+<p>矢量符号，符号<code>\vec{a}</code>，如：$\vec{a}$</p>
+<p>数学符号，符号<code>\acute{a}</code>，如：$\acute{a}$</p>
+<p>数学符号，符号<code>\grave{a}</code>，如：$\grave{a}$</p>
+<p>数学符号，符号<code>\mathring{a}</code>，如：$\mathring{a}$</p>
+<p>一阶导数符号，符号<code>\dot{a}</code>，如：$\dot{a}$</p>
+<p>二阶导数符号，符号<code>\ddot{a}</code>，如：$\ddot{a}$</p>
+<p>上箭头，符号：<code>\uparrow</code>，如：$\uparrow$</p>
+<p>上箭头，符号：<code>\Uparrow</code>，如：$\Uparrow$</p>
+<p>下箭头，符号：<code>\downarrow</code>，如：$\downarrow$</p>
+<p>下箭头，符号：<code>\Downarrow</code>，如：$\Downarrow$</p>
+<p>左箭头，符号：<code>\leftarrow</code>，如：$\leftarrow$</p>
+<p>左箭头，符号：<code>\Leftarrow</code>，如：$\Leftarrow$</p>
+<p>右箭头，符号：<code>\rightarrow</code>，如：$\rightarrow$</p>
+<p>右箭头，符号：<code>\Rightarrow</code>，如：$\Rightarrow$</p>
+<p>底端对齐的省略号，符号：<code>\ldots</code>，如：$1,2,\ldots,n$</p>
+<p>中线对齐的省略号，符号：<code>\cdots</code>，如：$x_1^2 + x_2^2 + \cdots + x_n^2$</p>
+<p>竖直对齐的省略号，符号：<code>\vdots</code>，如：$\vdots$</p>
+<p>斜对齐的省略号，符号：<code>\ddots</code>，如：$\ddots$</p>
+<h4 id="希腊字符"><a href="#希腊字符" class="headerlink" title="希腊字符"></a>希腊字符</h4><p><img src="C:%5CUsers%5C31311%5CDesktop%5Cgithub_web%5Csource%5Cimages%5C%E5%AD%97%E7%AC%A6.png" alt=""></p>
+<p><img src="C:%5CUsers%5C31311%5CDesktop%5Cgithub_web%5Csource%5Cimages%5C%E5%AD%97%E7%AC%A62.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>-基础类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习导论</title>
+    <url>/2020/02/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/</url>
+    <content><![CDATA[<h1 id="机器学习导论"><a href="#机器学习导论" class="headerlink" title="机器学习导论"></a>机器学习导论</h1><blockquote>
+<p><strong><em>ML = Matrix （信息）+ Optimation（优化） + Algorithm（使优化更有效） +Statistics（建模）</em></strong></p>
+</blockquote>
+<a id="more"></a>
+
+<p>one-hot表示方法，单纯表示方法</p>
+<p>监督学习问题：分类问题和回归问题</p>
+<p>分类属于特殊的回归问题</p>
+<p>最小二乘估计‘</p>
+<p>矩阵求导相关？？</p>
+<p>岭回归（最小二乘估计加上惩罚）</p>
+<p>数据分为三组：Training data， Validation data，Test data</p>
+<p>极大似然估计（MLE</p>
+<p>无监督问题：聚类</p>
+<p>半监督学习</p>
+<p>迁移学习：将测试数据也放进去</p>
+<p>参数（模型参数固定，不需要训练，超参数）和非参数（需要训练，提前未给定）</p>
+<p>判别模型和生成模型</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>大数据机器学习</title>
+    <url>/2020/02/17/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="大数据机器学习"><a href="#大数据机器学习" class="headerlink" title="大数据机器学习"></a>大数据机器学习</h1><blockquote>
+<p>该篇介绍了python的基本语句</p>
+</blockquote>
+<a id="more"></a>
+
+<blockquote>
+<p> 机器学习是一门多领域交叉学课，涉及概率论，统计学，逼近论，图分析，算法复杂度理论，是自动“学习的算法”，与统计推断学密切相关，也被称为统计学习理论</p>
+</blockquote>
+<p><em>辉煌历史不提，比如深蓝，文字转换，3dvr，生物信息学</em></p>
+<p>机器学习是人工智能的计算方法，表示学习（浅层自编码器），深度学习（多层感知机）</p>
+<h3 id="共性和差异"><a href="#共性和差异" class="headerlink" title="共性和差异"></a>共性和差异</h3><ul>
+<li><p>基于规则的系统：不可学习，专家系统</p>
+</li>
+<li><p>基于表示的系统</p>
+<ul>
+<li>学习获得，经过特征映射得到</li>
+<li>深度学习，通过层的深入得到递进的特征，从而特征映射获得结果</li>
+</ul>
+</li>
+</ul>
+<p>计算机视觉是机器学习最重要的领域</p>
+<p>机器学</p>
+]]></content>
+  </entry>
+  <entry>
     <title>加性高斯模糊自编码器</title>
     <url>/2020/02/17/%E5%8A%A0%E6%80%A7%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8/</url>
     <content><![CDATA[<h1 id="加性高斯噪声自动编码器"><a href="#加性高斯噪声自动编码器" class="headerlink" title="加性高斯噪声自动编码器"></a>加性高斯噪声自动编码器</h1><blockquote>

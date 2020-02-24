@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-17T09:26:54.299Z</updated>
+  <updated>2020-02-24T10:45:05.972Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,111 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>矩阵求导</title>
+    <link href="http://yoursite.com/2020/02/24/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC/"/>
+    <id>http://yoursite.com/2020/02/24/%E7%9F%A9%E9%98%B5%E6%B1%82%E5%AF%BC/</id>
+    <published>2020-02-24T09:30:10.000Z</published>
+    <updated>2020-02-24T10:45:05.972Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;矩阵求导&quot;&gt;&lt;a href=&quot;#矩阵求导&quot; class=&quot;headerlink&quot; title=&quot;矩阵求导&quot;&gt;&lt;/a&gt;矩阵求导&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;该篇介绍了矩阵求导的基本方法&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="http://yoursite.com/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+      <category term="基础类" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%B1%BB/"/>
+    
+      <category term="数学" scheme="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性代数</title>
+    <link href="http://yoursite.com/2020/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    <id>http://yoursite.com/2020/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</id>
+    <published>2020-02-21T06:05:53.000Z</published>
+    <updated>2020-02-21T14:11:25.089Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;基本语句&quot;&gt;&lt;a href=&quot;#基本语句&quot; class=&quot;headerlink&quot; title=&quot;基本语句&quot;&gt;&lt;/a&gt;基本语句&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;该篇介绍了python的基本语句&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>markdown数学公式</title>
+    <link href="http://yoursite.com/2020/02/21/markdown%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
+    <id>http://yoursite.com/2020/02/21/markdown%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</id>
+    <published>2020-02-21T01:37:30.000Z</published>
+    <updated>2020-02-24T10:49:38.810Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;基本语句&quot;&gt;&lt;a href=&quot;#基本语句&quot; class=&quot;headerlink&quot; title=&quot;基本语句&quot;&gt;&lt;/a&gt;基本语句&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;该篇介绍了python的基本语句&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="markdown" scheme="http://yoursite.com/categories/markdown/"/>
+    
+    
+      <category term="-基础类" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习导论</title>
+    <link href="http://yoursite.com/2020/02/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/"/>
+    <id>http://yoursite.com/2020/02/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/</id>
+    <published>2020-02-17T13:33:39.000Z</published>
+    <updated>2020-02-19T12:36:25.127Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;机器学习导论&quot;&gt;&lt;a href=&quot;#机器学习导论&quot; class=&quot;headerlink&quot; title=&quot;机器学习导论&quot;&gt;&lt;/a&gt;机器学习导论&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;ML = Matrix （信息）+ Optimation（优化） + Algorithm（使优化更有效） +Statistics（建模）&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>大数据机器学习</title>
+    <link href="http://yoursite.com/2020/02/17/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2020/02/17/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</id>
+    <published>2020-02-17T13:11:18.000Z</published>
+    <updated>2020-02-17T13:36:08.327Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;大数据机器学习&quot;&gt;&lt;a href=&quot;#大数据机器学习&quot; class=&quot;headerlink&quot; title=&quot;大数据机器学习&quot;&gt;&lt;/a&gt;大数据机器学习&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;该篇介绍了python的基本语句&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>加性高斯模糊自编码器</title>
@@ -119,7 +224,7 @@
     <link href="http://yoursite.com/2020/02/15/%E5%87%BD%E6%95%B0%E6%A8%A1%E5%9D%97/"/>
     <id>http://yoursite.com/2020/02/15/%E5%87%BD%E6%95%B0%E6%A8%A1%E5%9D%97/</id>
     <published>2020-02-15T10:56:20.000Z</published>
-    <updated>2020-02-17T09:28:24.323Z</updated>
+    <updated>2020-02-17T09:58:52.610Z</updated>
     
     <summary type="html">
     
