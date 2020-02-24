@@ -428,7 +428,6 @@
 <p>该篇介绍了全连接神经网络，做了mnist的数据集</p>
 </blockquote>
 <a id="more"></a>
-
 <h3 id="全连接神经网络-1"><a href="#全连接神经网络-1" class="headerlink" title="全连接神经网络"></a>全连接神经网络</h3><p><strong>简单介绍：就相当于线性函数，用随机梯度优化算法进行优化</strong></p>
 <blockquote>
 <ul>
@@ -438,7 +437,6 @@
 </ul>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</span><br><span class="line">mnist = input_data.read_data_sets(<span class="string">"MNIST_data/"</span>, one_hot=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="comment">##会话的展开可以使用with tf.Session() as sess:</span></span><br><span class="line">sess = tf.InteractiveSession()</span><br><span class="line"></span><br><span class="line"><span class="comment">## 占位符，None可以批量处理数据</span></span><br><span class="line">x = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">28</span>*<span class="number">28</span>])</span><br><span class="line">y = tf.placeholder(tf.float32,[<span class="literal">None</span>,<span class="number">10</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">## 实际证明 zeros有用，比random好</span></span><br><span class="line"><span class="comment">#tf.random_normal(shape, mean=0.0, stddev=1.0, dtype=tf.float32, seed=None, name=None) </span></span><br><span class="line">W = tf.Variable(tf.zeros([<span class="number">784</span>,<span class="number">10</span>]))</span><br><span class="line">b = tf.Variable(tf.zeros([<span class="number">10</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment">#### 注意这里是matmul(矩阵乘)，而不是multiply或是*【这两者等价，皆为元素乘】</span></span><br><span class="line"><span class="comment">###  softmax是激活函数，就这个好用</span></span><br><span class="line">y_ = tf.nn.softmax(tf.matmul(x,W)+b)</span><br><span class="line"></span><br><span class="line"><span class="comment">### 香农熵 y * tf.log(y_)</span></span><br><span class="line"><span class="comment">### reduce_mean(input_tensor, axis=None) 返回均值，sum返回和</span></span><br><span class="line"><span class="comment">## axis是多维数组每个维度的坐标。还拿2维来说，数字3的坐标是[0, 1]，那么第一个数字0的axis是0，第二个数字1的axis是1</span></span><br><span class="line"><span class="comment">### 因此axis = 0 为按第一维度操作</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### 先sum每个样本的误差，然后求均值</span></span><br><span class="line">loss = tf.reduce_mean(-tf.reduce_sum(y * tf.log(y_), axis=<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">train_step = tf.train.GradientDescentOptimizer(<span class="number">0.5</span>).minimize(loss)</span><br><span class="line"></span><br><span class="line">init = tf.global_variables_initializer()</span><br><span class="line"></span><br><span class="line">sess.run(init)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000</span>):</span><br><span class="line">    xs,ys = mnist.train.next_batch(<span class="number">100</span>)</span><br><span class="line">    sess.run(train_step,feed_dict=&#123;x:xs,y:ys&#125;)</span><br><span class="line">    <span class="keyword">if</span> (i%<span class="number">100</span>==<span class="number">0</span>):</span><br><span class="line">        print(sess.run(loss,feed_dict=&#123;x:xs,y:ys&#125;))</span><br><span class="line"></span><br><span class="line">        <span class="comment">### tf.argmax(input,axis)根据axis取值的不同返回每行或者每列最大值的索引</span></span><br><span class="line"><span class="comment">###equal，相等的意思。顾名思义，就是判断，x, y 是不是相等，它的判断方法不是整体判断，</span></span><br><span class="line"><span class="comment">###而是逐个元素进行判断，如果相等就是True，不相等，就是False。</span></span><br><span class="line">correct_prediction = tf.equal(tf.argmax(y, <span class="number">1</span>), tf.argmax(y_, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">### tf.cast投射到浮点数</span></span><br><span class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))</span><br><span class="line"></span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line">print(sess.run(accuracy,feed_dict=&#123;x: mnist.test.images, y: mnist.test.labels&#125;))</span><br></pre></td></tr></table></figure>
-
 <pre><code>结果：
 1.7234213
 0.28298083
@@ -451,14 +449,14 @@
 0.33943504
 0.23404454
 
-准确率：0.9178</code></pre><h3 id="多层神经网络（MLP）"><a href="#多层神经网络（MLP）" class="headerlink" title="多层神经网络（MLP）"></a>多层神经网络（MLP）</h3><p>  <em>背景介绍（只加了层数和dropout）</em></p>
+准确率：0.9178
+</code></pre><h3 id="多层神经网络（MLP）"><a href="#多层神经网络（MLP）" class="headerlink" title="多层神经网络（MLP）"></a>多层神经网络（MLP）</h3><p>  <em>背景介绍（只加了层数和dropout）</em></p>
 <ol>
 <li><strong>Dropout说的简单一点就是：我们在前向传播的时候，让某个神经元的激活值以一定的概率p停止工作，这样可以使模型泛化性更强，因为它不会太依赖某些局部的特征，如图1所示。</strong></li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">mnist = input_data.read_data_sets(<span class="string">"MNIST_data/"</span>, one_hot=<span class="literal">True</span>)</span><br><span class="line">sess = tf.InteractiveSession()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">weight_variable</span><span class="params">(shape,stddev=<span class="number">0.1</span>)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> tf.Variable(tf.random_normal(shape=shape,stddev=stddev))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bias_variable</span><span class="params">(shape)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> tf.Variable(tf.zeros(shape))</span><br><span class="line"></span><br><span class="line">in_units = <span class="number">784</span></span><br><span class="line">h1_units = <span class="number">300</span></span><br><span class="line"></span><br><span class="line">x = tf.placeholder(tf.float32, [<span class="literal">None</span>, in_units])</span><br><span class="line">keep_prob = tf.placeholder(tf.float32)</span><br><span class="line">y_ = tf.placeholder(tf.float32, [<span class="literal">None</span>, <span class="number">10</span>])</span><br><span class="line"></span><br><span class="line">W1 = weight_variable([in_units,h1_units])</span><br><span class="line">b1 = bias_variable([h1_units])</span><br><span class="line"></span><br><span class="line">hidden1 = tf.nn.relu(tf.matmul(x, W1) + b1)</span><br><span class="line">hidden1_drop = tf.nn.dropout(hidden1, keep_prob)</span><br><span class="line"></span><br><span class="line">W2 = weight_variable([h1_units,<span class="number">10</span>])</span><br><span class="line">b2 = bias_variable([<span class="number">10</span>])</span><br><span class="line"></span><br><span class="line">y = tf.nn.softmax(tf.matmul(hidden1_drop, W2) + b2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define loss and optimizer</span></span><br><span class="line">cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), axis=<span class="number">1</span>))</span><br><span class="line">train_step = tf.train.AdagradOptimizer(<span class="number">0.3</span>).minimize(cross_entropy)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Train</span></span><br><span class="line">tf.global_variables_initializer().run()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3000</span>):</span><br><span class="line">  batch_xs, batch_ys = mnist.train.next_batch(<span class="number">100</span>)</span><br><span class="line">  train_step.run(&#123;x: batch_xs, y_: batch_ys, keep_prob: <span class="number">0.75</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Test trained model</span></span><br><span class="line">correct_prediction = tf.equal(tf.argmax(y, <span class="number">1</span>), tf.argmax(y_, <span class="number">1</span>))</span><br><span class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))</span><br><span class="line">print(accuracy.eval(&#123;x: mnist.test.images, y_: mnist.test.labels, keep_prob: <span class="number">1.0</span>&#125;))</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>0.9791</code></pre>
+<pre><code>0.9791
+</code></pre>
       
     </div>
     
@@ -583,7 +581,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1215,6 +1213,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

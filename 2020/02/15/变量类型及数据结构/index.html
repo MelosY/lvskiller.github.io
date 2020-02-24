@@ -428,7 +428,6 @@
 <p>该篇介绍了python的变量类型，字符串以及简单的列表，元组和字典</p>
 </blockquote>
 <a id="more"></a>
-
 <h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ol>
 <li><p>s=”a1a2···an”(n&gt;=0) </p>
 <ul>
@@ -440,42 +439,42 @@
 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">"hello,world"</span></span><br><span class="line">print(str)      <span class="comment"># 输出完成字符串</span></span><br><span class="line">print(str[<span class="number">2</span>])   <span class="comment"># 输出字符串的地三个字符</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## [x,y,z] 输出x到y间的字符，包括x，不包括y，步长为z</span></span><br><span class="line">print(str[<span class="number">2</span>:<span class="number">5</span>:<span class="number">2</span>]) <span class="comment"># 输出第三道第六个字符，不包括第六个</span></span><br><span class="line">print(str[<span class="number">2</span>:])  <span class="comment"># 输出第3个开头</span></span><br><span class="line">print(str*<span class="number">2</span>)</span><br><span class="line">print(str+<span class="string">"s"</span>)</span><br></pre></td></tr></table></figure>
-
 <pre><code>hello,world
 l
 lo
 llo,world
 hello,worldhello,world
-hello,worlds</code></pre><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><blockquote>
+hello,worlds
+</code></pre><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><blockquote>
 <p>操作同字符串</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">list = [ <span class="string">'runoob'</span>, <span class="number">786</span> , <span class="number">2.23</span>, <span class="string">'john'</span>, <span class="number">70.2</span> ]</span><br><span class="line">tinylist = [<span class="number">123</span>, <span class="string">'john'</span>]</span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> (list)               <span class="comment"># 输出完整列表</span></span><br><span class="line"><span class="keyword">print</span> (list[<span class="number">0</span>])            <span class="comment"># 输出列表的第一个元素</span></span><br><span class="line"><span class="keyword">print</span> (list[<span class="number">1</span>:<span class="number">3</span>] )         <span class="comment"># 输出第二个至第三个元素 </span></span><br><span class="line"><span class="keyword">print</span> (list[<span class="number">2</span>:] )          <span class="comment"># 输出从第三个开始至列表末尾的所有元素</span></span><br><span class="line"><span class="keyword">print</span> (tinylist * <span class="number">2</span>)       <span class="comment"># 输出列表两次</span></span><br><span class="line"><span class="keyword">print</span> (list + tinylist)    <span class="comment"># 打印组合的列表</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>[&apos;runoob&apos;, 786, 2.23, &apos;john&apos;, 70.2]
+<pre><code>[&#39;runoob&#39;, 786, 2.23, &#39;john&#39;, 70.2]
 runoob
 [786, 2.23]
-[2.23, &apos;john&apos;, 70.2]
-[123, &apos;john&apos;, 123, &apos;john&apos;]
-[&apos;runoob&apos;, 786, 2.23, &apos;john&apos;, 70.2, 123, &apos;john&apos;]</code></pre><h3 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h3><blockquote>
+[2.23, &#39;john&#39;, 70.2]
+[123, &#39;john&#39;, 123, &#39;john&#39;]
+[&#39;runoob&#39;, 786, 2.23, &#39;john&#39;, 70.2, 123, &#39;john&#39;]
+</code></pre><h3 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h3><blockquote>
 <p>相当于只读列表</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">list = (<span class="string">'runoob'</span>, <span class="number">786</span> , <span class="number">2.23</span>, <span class="string">'john'</span>, <span class="number">70.2</span> )</span><br><span class="line">tinylist = (<span class="number">123</span>, <span class="string">'john'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> (list)               <span class="comment"># 输出完整列表</span></span><br><span class="line"><span class="keyword">print</span> (list[<span class="number">0</span>])            <span class="comment"># 输出列表的第一个元素</span></span><br><span class="line"><span class="keyword">print</span> (list[<span class="number">1</span>:<span class="number">3</span>] )         <span class="comment"># 输出第二个至第三个元素 </span></span><br><span class="line"><span class="keyword">print</span> (list[<span class="number">2</span>:] )          <span class="comment"># 输出从第三个开始至列表末尾的所有元素</span></span><br><span class="line"><span class="keyword">print</span> (tinylist * <span class="number">2</span>)       <span class="comment"># 输出列表两次</span></span><br><span class="line"><span class="keyword">print</span> (list + tinylist)    <span class="comment"># 打印组合的列表</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>(&apos;runoob&apos;, 786, 2.23, &apos;john&apos;, 70.2)
+<pre><code>(&#39;runoob&#39;, 786, 2.23, &#39;john&#39;, 70.2)
 runoob
 (786, 2.23)
-(2.23, &apos;john&apos;, 70.2)
-(123, &apos;john&apos;, 123, &apos;john&apos;)
-(&apos;runoob&apos;, 786, 2.23, &apos;john&apos;, 70.2, 123, &apos;john&apos;)</code></pre><h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><blockquote>
+(2.23, &#39;john&#39;, 70.2)
+(123, &#39;john&#39;, 123, &#39;john&#39;)
+(&#39;runoob&#39;, 786, 2.23, &#39;john&#39;, 70.2, 123, &#39;john&#39;)
+</code></pre><h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><blockquote>
 <p>通过键来存取，而非偏移</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;&#125;</span><br><span class="line">dict[<span class="string">'one'</span>] = <span class="string">"This is one"</span></span><br><span class="line">dict[<span class="number">2</span>] = <span class="string">"This is two"</span></span><br><span class="line">tinydict = &#123;<span class="string">'name'</span>: <span class="string">'john'</span>,<span class="string">'code'</span>:<span class="number">6734</span>, <span class="string">'dept'</span>: <span class="string">'sales'</span>&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> (dict[<span class="string">'one'</span>])          <span class="comment"># 输出键为'one' 的值</span></span><br><span class="line"><span class="keyword">print</span> (dict[<span class="number">2</span>])              <span class="comment"># 输出键为 2 的值</span></span><br><span class="line"><span class="keyword">print</span> (tinydict)             <span class="comment"># 输出完整的字典</span></span><br><span class="line"><span class="keyword">print</span> (tinydict.keys())      <span class="comment"># 输出所有键,结果为列表</span></span><br><span class="line"><span class="keyword">print</span> (tinydict.values())    <span class="comment"># 输出所有值，结果为列表</span></span><br></pre></td></tr></table></figure>
-
 <pre><code>This is one
 This is two
-{&apos;name&apos;: &apos;john&apos;, &apos;code&apos;: 6734, &apos;dept&apos;: &apos;sales&apos;}
-dict_keys([&apos;name&apos;, &apos;code&apos;, &apos;dept&apos;])
-dict_values([&apos;john&apos;, 6734, &apos;sales&apos;])</code></pre><h3 id="数据转换类型"><a href="#数据转换类型" class="headerlink" title="数据转换类型"></a>数据转换类型</h3><p>列举较为重要的</p>
+{&#39;name&#39;: &#39;john&#39;, &#39;code&#39;: 6734, &#39;dept&#39;: &#39;sales&#39;}
+dict_keys([&#39;name&#39;, &#39;code&#39;, &#39;dept&#39;])
+dict_values([&#39;john&#39;, 6734, &#39;sales&#39;])
+</code></pre><h3 id="数据转换类型"><a href="#数据转换类型" class="headerlink" title="数据转换类型"></a>数据转换类型</h3><p>列举较为重要的</p>
 <ul>
 <li>tuple(s),list(s)</li>
 <li>set(s) 转换为可变集合</li>
@@ -607,7 +606,7 @@ dict_values([&apos;john&apos;, 6734, &apos;sales&apos;])</code></pre><h3 id="数
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1239,6 +1238,28 @@ dict_values([&apos;john&apos;, 6734, &apos;sales&apos;])</code></pre><h3 id="数
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

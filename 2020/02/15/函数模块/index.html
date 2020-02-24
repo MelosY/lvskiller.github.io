@@ -428,7 +428,6 @@
 <p>该篇介绍了python的自定义函数</p>
 </blockquote>
 <a id="more"></a>
-
 <h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><ol>
 <li>可变类型和不可变对象<ul>
 <li>strings, tuples, 和 numbers 是不可更改的对象，而 list,dict 等则是可以修改的对象。</li>
@@ -437,28 +436,28 @@
 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#不可变类型</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">changeInt</span><span class="params">(a)</span>:</span></span><br><span class="line">    a = <span class="number">10</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">changeInt(b)</span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">changeList</span><span class="params">(a)</span>:</span></span><br><span class="line">    a.extend([<span class="number">1</span>,<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> b</span><br><span class="line">b =[<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">changeList(b)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
-
 <pre><code>2
-[2, 3, 1, 2]</code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+[2, 3, 1, 2]
+</code></pre><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
 <li>必备参数</li>
 <li>关键字参数 ,可以不必要符合顺序</li>
 <li>默认参数 ，事先设置参数</li>
 <li>不定长参数,示例</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可写函数说明</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printinfo</span><span class="params">( arg1, *vartuple )</span>:</span></span><br><span class="line">   <span class="string">"打印任何传入的参数"</span></span><br><span class="line">   print( <span class="string">"输出: "</span>)</span><br><span class="line">   <span class="keyword">print</span> (arg1)</span><br><span class="line">   <span class="keyword">for</span> var <span class="keyword">in</span> vartuple:</span><br><span class="line">      <span class="keyword">print</span> (var)</span><br><span class="line">   <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用printinfo 函数</span></span><br><span class="line">printinfo( <span class="number">10</span> )</span><br><span class="line">printinfo( <span class="number">70</span>, <span class="number">60</span>, <span class="number">50</span> )</span><br></pre></td></tr></table></figure>
-
 <pre><code>输出: 
 10
 输出: 
 70
 60
-50</code></pre><h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><blockquote>
+50
+</code></pre><h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><blockquote>
 <p>同C语言的define方法，看示例</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sum = <span class="keyword">lambda</span> arg1, arg2: arg1 + arg2</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用sum函数</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"相加后的值为 : "</span>, sum( <span class="number">10</span>, <span class="number">20</span> ))</span><br><span class="line"><span class="keyword">print</span> (<span class="string">"相加后的值为 : "</span>, sum( <span class="number">20</span>, <span class="number">20</span> ))</span><br></pre></td></tr></table></figure>
-
 <pre><code>相加后的值为 :  30
-相加后的值为 :  40</code></pre><h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><blockquote>
+相加后的值为 :  40
+</code></pre><h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><blockquote>
 <p>同C语言</p>
 </blockquote>
 <h3 id="import-相关"><a href="#import-相关" class="headerlink" title="import 相关"></a>import 相关</h3><blockquote>
@@ -589,7 +588,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1221,6 +1220,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  608
+                  580
                 </span>
               
 
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  2
                 </span>
               
             </div>
@@ -428,24 +428,69 @@
 <p>该篇介绍了矩阵求导的基本方法</p>
 </blockquote>
 <a id="more"></a>
-
 <blockquote>
 <p>前言：对于机器学习来说，矩阵求导是很重要的一部分，同时对向量求导是其中的主要组成部分，这里 对于矩阵求导这里不展开。</p>
 </blockquote>
-<p>求导和梯度概念很相似，注意比较<br>$$<br>前置公式\quad x^T=[x_1\quad x_2 \quad \cdots \quad x_n]<br>$$</p>
-<p>基础公式：</p>
-<p>$$<br>f(x)是关于x的单值函数:<br>\所以 \quad<br>\frac {\partial f(x)} {\partial x^T} =<br>\left [<br>\frac {\partial f(x)} {\partial x_1} \quad \frac {\partial f(x)} {\partial x_2} \quad \cdots \quad \frac {\partial f(x)} {\partial x_n}</p>
-<p>\right]<br>\<br>\quad f(x)^T=\left [f_1(x)\quad f_2(x) \quad \cdots \quad f_n(x)\right ]<br>\<br>所以 \quad   \frac{\partial f(x)}{\partial x^T}=<br>\left( \begin{matrix}<br>   \frac{\partial f_1(x)}{\partial x_1} &amp;\frac{\partial f_1(x)}{\partial x_2} &amp;\cdots &amp;\frac{\partial f_1(x)}{\partial x_n}</p>
-<p>\ \frac{\partial f_2(x)}{\partial x_1} &amp;\frac{\partial f_2(x)}{\partial x_2} &amp;\cdots &amp;\frac{\partial f_2(x)}{\partial x_n}</p>
-<p>\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots</p>
-<p>\ \frac{\partial f_n(x)}{\partial x_1} &amp;\frac{\partial f_n(x)}{\partial x_2} &amp;\cdots &amp;\frac{\partial f_n(x)}{\partial x_n}<br>\end{matrix} \right)<br>\</p>
-<p>\frac{\partial f(x)^T}{\partial x}是行向量向列向量求导，和上面列向量对行向量求导类似<br>$$</p>
-<p>常用公式：<br>$$<br>\frac {\partial x^T}{\partial x} = I<br>$$<br>规则：<br>$$<br>当f(x)是单值函数时，线性法则，乘积法则和商法则同微积分\<br>链式法则，若y(x)时关于x的向量值函数(列向量)时。则\<br> \frac {\partial f(y(x))}{\partial x} = \frac {\partial y^T(x)} {\partial x}<br> \frac{\partial f(y)}{\partial y}<br>$$<br>常用公式：<br>$$<br>前提公式：x^Ty=&lt;x,y&gt;=y^Tx<br>$$</p>
-<p>$$<br>\frac{\partial a^Tx}{\partial x} =<br>\frac{\partial x^Ta}{\partial x} =a<br>\下面不展示转置后的项以及利用转置的步骤\<br>\frac{\partial a^Ty(x)}{\partial x} =\frac{\partial y^T(x)}{\partial x} a<br>\<br>\frac{\partial x^TAy}{\partial x} =Ay<br>\<br>\frac{\partial x^TAx}{\partial x} =(A+A^T)x  \quad如果A对称，则为2Ax<br>\<br>\frac{\partial y(x)^TAy(x)}{\partial x} =\frac {\partial y^T(x)}{\partial x}(A+A^T)y(x)<br>\<br>\frac{\partial y(x)^TAz(x)}{\partial x} =\frac {\partial y^T(x)}{\partial x}Az(x)+ \frac {\partial z^T(x)}{\partial x}A^Ty(x)<br>$$<br>单值函数的梯度矩阵(其余公式不证)<br>$$<br> \quad   \frac{\partial f(x)}{\partial A}=<br>\left( \begin{matrix}<br>   \frac{\partial f(x)}{\partial A_{11}} &amp;\frac{\partial f(x)}{\partial A_{12}} &amp;\cdots &amp;\frac{\partial f(x)}{\partial A_{1n}}</p>
-<p>\ \frac{\partial f(x)}{\partial A_{21}} &amp;\frac{\partial f(x)}{\partial A_{22}} &amp;\cdots &amp;\frac{\partial f(x)}{\partial A_{2n}}</p>
-<p>\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots</p>
-<p>\ \frac{\partial f(x)}{\partial A_{n1}} &amp;\frac{\partial f(x)}{\partial A_{n2}} &amp;\cdots &amp;\frac{\partial f(x)}{\partial A_{nn}}<br>\end{matrix} \right)<br>\<br>$$</p>
+<p>求导和梯度概念很相似，注意比较</p>
+<script type="math/tex; mode=display">
+前置公式\quad x^T=[x_1\quad x_2 \quad \cdots \quad x_n]</script><p>基础公式：</p>
+<script type="math/tex; mode=display">
+f(x)是关于x的单值函数:
+\\所以 \quad
+\frac {\partial f(x)} {\partial x^T} = 
+\left [ 
+\frac {\partial f(x)} {\partial x_1} \quad \frac {\partial f(x)} {\partial x_2} \quad \cdots \quad \frac {\partial f(x)} {\partial x_n}
 
+\right]  
+\\
+\quad f(x)^T=\left [f_1(x)\quad f_2(x) \quad \cdots \quad f_n(x)\right ]
+\\
+所以 \quad   \frac{\partial f(x)}{\partial x^T}=
+\left( \begin{matrix} 
+   \frac{\partial f_1(x)}{\partial x_1} &\frac{\partial f_1(x)}{\partial x_2} &\cdots &\frac{\partial f_1(x)}{\partial x_n}
+
+\\ \frac{\partial f_2(x)}{\partial x_1} &\frac{\partial f_2(x)}{\partial x_2} &\cdots &\frac{\partial f_2(x)}{\partial x_n}
+
+\\ \vdots &\vdots &\ddots &\vdots
+
+\\ \frac{\partial f_n(x)}{\partial x_1} &\frac{\partial f_n(x)}{\partial x_2} &\cdots &\frac{\partial f_n(x)}{\partial x_n}
+\end{matrix} \right)
+\\
+
+\frac{\partial f(x)^T}{\partial x}是行向量向列向量求导，和上面列向量对行向量求导类似</script><p>常用公式：</p>
+<script type="math/tex; mode=display">
+\frac {\partial x^T}{\partial x} = I</script><p>规则：</p>
+<script type="math/tex; mode=display">
+当f(x)是单值函数时，线性法则，乘积法则和商法则同微积分\\
+链式法则，若y(x)时关于x的向量值函数(列向量)时。则\\
+ \frac {\partial f(y(x))}{\partial x} = \frac {\partial y^T(x)} {\partial x}
+ \frac{\partial f(y)}{\partial y}</script><p>常用公式：</p>
+<script type="math/tex; mode=display">
+前提公式：x^Ty=<x,y>=y^Tx</script><script type="math/tex; mode=display">
+\frac{\partial a^Tx}{\partial x} =
+\frac{\partial x^Ta}{\partial x} =a
+\\下面不展示转置后的项以及利用转置的步骤\\
+\frac{\partial a^Ty(x)}{\partial x} =\frac{\partial y^T(x)}{\partial x} a
+\\
+\frac{\partial x^TAy}{\partial x} =Ay
+\\
+\frac{\partial x^TAx}{\partial x} =(A+A^T)x  \quad如果A对称，则为2Ax
+\\
+\frac{\partial y(x)^TAy(x)}{\partial x} =\frac {\partial y^T(x)}{\partial x}(A+A^T)y(x)
+\\
+\frac{\partial y(x)^TAz(x)}{\partial x} =\frac {\partial y^T(x)}{\partial x}Az(x)+ \frac {\partial z^T(x)}{\partial x}A^Ty(x)</script><p>单值函数的梯度矩阵(其余公式不证)</p>
+<script type="math/tex; mode=display">
+ \quad   \frac{\partial f(x)}{\partial A}=
+\left( \begin{matrix} 
+   \frac{\partial f(x)}{\partial A_{11}} &\frac{\partial f(x)}{\partial A_{12}} &\cdots &\frac{\partial f(x)}{\partial A_{1n}}
+
+\\ \frac{\partial f(x)}{\partial A_{21}} &\frac{\partial f(x)}{\partial A_{22}} &\cdots &\frac{\partial f(x)}{\partial A_{2n}}
+
+\\ \vdots &\vdots &\ddots &\vdots
+
+\\ \frac{\partial f(x)}{\partial A_{n1}} &\frac{\partial f(x)}{\partial A_{n2}} &\cdots &\frac{\partial f(x)}{\partial A_{nn}}
+\end{matrix} \right)
+\\</script>
       
     </div>
     
@@ -486,6 +531,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/24/xs/" rel="prev" title="xs">
+                xs <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -566,7 +615,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1198,6 +1247,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
