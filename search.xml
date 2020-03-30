@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>AlexNet</title>
+    <url>/2020/03/12/AlexNet/</url>
+    <content><![CDATA[<h1 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h1><blockquote>
+<p>该篇介绍了python的基本语句</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="AlexNet小技巧"><a href="#AlexNet小技巧" class="headerlink" title="AlexNet小技巧"></a>AlexNet小技巧</h4><ul>
+<li>使用Relu作为激活函数，验证其效果更佳，且解决了sigmoid在网络较深时的梯度弥散问题。</li>
+<li>dropout随机忽略一些神经元，以避免模型过拟合。</li>
+<li>采用最大池化，替代了平均池化，避免平均池化的模糊化效果。</li>
+<li>lrn层，实际没用</li>
+<li>数据增强</li>
+</ul>
+<h4 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h4><ul>
+<li>加深网络结构来提升性能</li>
+<li>多个核的使用是的对特征学习能力更强</li>
+<li>先训练级别A的简单网络，再服用A的网络权重来初始化后面的复杂模型，收敛速度提高</li>
+<li>用multi-scale来数据增强</li>
+<li></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>csp准备</title>
+    <url>/2020/03/02/csp%E5%87%86%E5%A4%87/</url>
+    <content><![CDATA[<h1 id="csp准备"><a href="#csp准备" class="headerlink" title="csp准备"></a>csp准备</h1><blockquote>
+<p>重拾C语言，准备csp的考试</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="奇技淫巧（小注意）"><a href="#奇技淫巧（小注意）" class="headerlink" title="奇技淫巧（小注意）"></a>奇技淫巧（小注意）</h4><ol>
+<li>i++ 和++i 老生常谈</li>
+<li>比较大的数组声明在main函数外，函数内申请内存有限制</li>
+<li>fgets(buf,maxn,fin)将读取完整的数量不超过maxn的一行放入buf钟，而gets(s)没有数量限制</li>
+<li>循环中不要对循环变量操作，千万不要！！！！！！！！！！！！！</li>
+<li>不知道为啥我总忘掉typedef  typedef struct {double x,y;}Point;</li>
+<li>对复杂表达式化简，减少运算并且要防止输出</li>
+<li>建议把为此</li>
+<li>把数组大小设置为 #define n 20，可以免去很多修改</li>
+<li>建议把谓词（判断事物是否具有某种特性的函数）命名为is_xx 的形式，返回int值，1代表有</li>
+<li>形参和实参，形实结合</li>
+<li>数组名实际是指针，所以传参时应该传给指针，未避免指针悬挂，应给数组的长度</li>
+<li>递归判断可用？：代替        return n==0? 1:n*f(n-1);</li>
+<li>未避免浮点误差 建议+0.5，这样库用四舍五入。</li>
+<li>从0~n-1到1~n的数学转化p=(p+n-1)%n+1;</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
     <title>xs</title>
     <url>/2020/02/24/xs/</url>
     <content><![CDATA[<h1 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h1><blockquote>
@@ -775,7 +823,7 @@ dict_values([&#39;john&#39;, 6734, &#39;sales&#39;])
 <li>在 Python 中，所有标识符可以包括英文、数字以及下划线(_)，但不能以数字开头。</li>
 <li>Python 中的标识符是区分大小写的。</li>
 <li>以下划线开头的标识符是有特殊意义的。以单下划线开头 _foo 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 from xxx import * 而导入。</li>
-<li>以双下划线开头的 <strong>foo 代表类的私有成员，以双下划线开头和结尾的 </strong>foo<strong> 代表 Python 里特殊方法专用的标识，如 </strong>init__() 代表类的构造函数。</li>
+<li>以双下划线开头的 <strong>foo 代表类的私有成员，以双下划线开头和结尾的 </strong>foo<strong> 代表 Python 里特殊方法专用的标识，如</strong> <strong>init__</strong>() 代表类的构造函数。</li>
 </ul>
 <hr>
 <h3 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h3><blockquote>
@@ -804,7 +852,7 @@ a
 -----
 a
 b
-</code></pre><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p><strong>多变量赋值</strong></p>
+</code></pre><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p><strong>多变量赋值(特别是内存的思考)</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">a=b=c a,b,c分在同一个内存区</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">a=b=c=<span class="number">1</span> </span><br><span class="line">print(a)</span><br><span class="line">b=<span class="number">2</span></span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">q,w=1,1 在多个位置</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">q,w =<span class="number">1</span>,<span class="number">1</span></span><br><span class="line">print(q)</span><br><span class="line">w=<span class="number">2</span></span><br><span class="line">print(w)</span><br><span class="line"></span><br><span class="line"><span class="comment">## del 删除了引用，但不是删除空间，所以b可以用</span></span><br><span class="line"><span class="keyword">del</span> a  </span><br><span class="line"><span class="comment">#print(a) 报错</span></span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
 <pre><code>1
 2
