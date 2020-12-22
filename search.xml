@@ -1,6 +1,434 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>“xx</title>
+    <url>/2020/10/02/%E2%80%9Cxx/</url>
+    <content><![CDATA[<h1 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h1><blockquote>
+<p>该篇介绍了python的基本语句</p>
+</blockquote>
+<a id="more"></a>]]></content>
+  </entry>
+  <entry>
+    <title>crnn</title>
+    <url>/2020/05/15/crnn/</url>
+    <content><![CDATA[<h1 id="CRNN"><a href="#CRNN" class="headerlink" title="CRNN"></a>CRNN</h1><blockquote>
+<p>该篇介绍了CRNN+tensforflow的模块</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><blockquote>
+<p>：当遇到一个陌生的python第三方库时，可以去pypi这个主页查看描述以迅速入门！<br> 或者 import time   dir(time)</p>
+</blockquote>
+<p>这里使用了一个easydict ，而easydict：<strong>可以使得以属性的方式去访问字典的值！</strong></p>
+<p>简单例子</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; from easydict import EasyDict as edict</span><br><span class="line">&gt;&gt;&gt; d &#x3D; edict(&#123;&#39;foo&#39;:3, &#39;bar&#39;:&#123;&#39;x&#39;:1, &#39;y&#39;:2&#125;&#125;)</span><br><span class="line">&gt;&gt;&gt; d.foo</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; d.bar.x</span><br><span class="line">1</span><br><span class="line"> </span><br><span class="line">&gt;&gt;&gt; d &#x3D; edict(foo&#x3D;3)</span><br><span class="line">&gt;&gt;&gt; d.foo</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<p>json文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; from easydict import EasyDict as edict</span><br><span class="line">&gt;&gt;&gt; from simplejson import loads</span><br><span class="line">&gt;&gt;&gt; j &#x3D; &quot;&quot;&quot;&#123;</span><br><span class="line">&quot;Buffer&quot;: 12,</span><br><span class="line">&quot;List1&quot;: [</span><br><span class="line">    &#123;&quot;type&quot; : &quot;point&quot;, &quot;coordinates&quot; : [100.1,54.9] &#125;,</span><br><span class="line">    &#123;&quot;type&quot; : &quot;point&quot;, &quot;coordinates&quot; : [109.4,65.1] &#125;,</span><br><span class="line">    &#123;&quot;type&quot; : &quot;point&quot;, &quot;coordinates&quot; : [115.2,80.2] &#125;,</span><br><span class="line">    &#123;&quot;type&quot; : &quot;point&quot;, &quot;coordinates&quot; : [150.9,97.8] &#125;</span><br><span class="line">]</span><br><span class="line">&#125;&quot;&quot;&quot;</span><br><span class="line">&gt;&gt;&gt; d &#x3D; edict(loads(j))</span><br><span class="line">&gt;&gt;&gt; d.Buffer</span><br><span class="line">12</span><br><span class="line">&gt;&gt;&gt; d.List1[0].coordinates[1]</span><br><span class="line">54.9</span><br></pre></td></tr></table></figure>
+<p>本例用的方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; d &#x3D; EasyDict()</span><br><span class="line">&gt;&gt;&gt; d.foo &#x3D; 3</span><br><span class="line">&gt;&gt;&gt; d.foo</span><br></pre></td></tr></table></figure>
+<h3 id="CNN模块"><a href="#CNN模块" class="headerlink" title="CNN模块"></a>CNN模块</h3><blockquote>
+<p>pass: 占位语句，避免空函数报错</p>
+<p>  @staticmethod #静态方法 类或实例均可调用，改静态方法函数里不传入self 或 cls</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>文字识别</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装ubuntu</title>
+    <url>/2020/05/13/%E5%AE%89%E8%A3%85ubuntu/</url>
+    <content><![CDATA[<h1 id="安装ubuntu"><a href="#安装ubuntu" class="headerlink" title="安装ubuntu"></a>安装ubuntu</h1><blockquote>
+<p>该篇介绍了python的基本语句</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li><p>镜像文件</p>
+</li>
+<li><p>破解的vmware </p>
+</li>
+<li><p>典型安装</p>
+</li>
+</ol>
+<h3 id><a href="#" class="headerlink" title=" "></a> </h3>]]></content>
+  </entry>
+  <entry>
+    <title>重构</title>
+    <url>/2020/03/31/%E9%87%8D%E6%9E%84/</url>
+    <content><![CDATA[<h1 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h1><blockquote>
+<p>该篇介绍了python的基本语句</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>背景：</p>
+<ol>
+<li>过度设计。设计模式固然美妙，但是一个具有高弹性，灵活的模式需要较长设计来构建，这不符合敏捷开发的道理。而且需求的变化需要我们未卜先知，所以有时候可能会做无用功。</li>
+<li>设计不足：没有时间重构，知识不足，需求变化</li>
+</ol>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>金融</title>
+    <url>/2020/03/30/%E9%87%91%E8%9E%8D/</url>
+    <content><![CDATA[<h1 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h1><blockquote>
+<p>该篇介绍了python的基本语句</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="思想观念"><a href="#思想观念" class="headerlink" title="思想观念"></a>思想观念</h4><blockquote>
+<p>一个人只有经济上独立了，才能在生活上获得心理上的安宁。</p>
+</blockquote>
+<ol>
+<li>注重积累、善于理财，小钱也能成就大财富。（给自己定下铁律：从每月薪水固定地投资）</li>
+<li>从自己“第一笔收入”开始</li>
+<li>人生不同阶段有不同的追求与需求，所以应根据轻重缓急逐个击破。</li>
+<li>甩掉思想包袱，投资不是储蓄，单纯储蓄没用</li>
+<li>建立正确的投资思路（投资是一种<strong>智力</strong>游戏）<ul>
+<li>巧妙分配（对个人和家庭资源进行管理）</li>
+<li>理财无须大资本，理财只是一种生活战略，用来保障生活</li>
+<li>对理财手法认识不够，用投入门槛低，进出方便的产品投资</li>
+<li>正确看待专家的观念，既不可以盲目信任，也不可断然不信，当作参考而已。</li>
+<li>驾驭好工具，要与时俱进。</li>
+</ul>
+</li>
+<li>走出理财误区<ul>
+<li>理财并不全是赚钱，也可以只是一种保障手段</li>
+<li>理财并不复杂，操作简单</li>
+<li>要行动起来，不要只心动，不行动</li>
+</ul>
+</li>
+</ol>
+<h3 id="个人理财"><a href="#个人理财" class="headerlink" title="个人理财"></a>个人理财</h3><ol>
+<li><p>分析自己的财产状况</p>
+<ul>
+<li>了解自己的负债情况以及债务的还款计划</li>
+<li>计算自己可支配财产</li>
+<li>预估未来收入情况</li>
+</ul>
+</li>
+<li><p>制定理财目标</p>
+<ul>
+<li>需要指定短期财务目标，即目标要量化</li>
+</ul>
+</li>
+<li><p>减少理财风险</p>
+<ul>
+<li>考虑理财产品在收入的比重</li>
+<li>综合分析自己的理财能力</li>
+<li>按照自己性格来承担风险</li>
+</ul>
+</li>
+<li><p>合理管理财产，需要谨慎，离职，不可盲目跟风投资，也不可草率投资</p>
+</li>
+</ol>
+<h3 id="家庭理财"><a href="#家庭理财" class="headerlink" title="家庭理财"></a>家庭理财</h3><ol>
+<li>统计各种财产</li>
+<li>做好收支记录，由于我的身份，我建议个人理财也可以做</li>
+<li>重视财产安全</li>
+<li>充分利用收入，增加支出</li>
+</ol>
+<hr>
+<h3 id="投资方式"><a href="#投资方式" class="headerlink" title="投资方式"></a>投资方式</h3><blockquote>
+<p> 安全保守型: 7:2:1 ,储蓄<strong>保险</strong>投资70%，债卷20%，其他10%</p>
+<p> 稳中求进型：4：2：2：1 ，储蓄保险40%，债卷20%，基金股票20%，其他20%</p>
+<p>冒险激进型：2：3：5，暂且不说</p>
+</blockquote>
+<p><strong>步骤</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>1.从现在开始</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2. 制定目标</td>
+</tr>
+<tr>
+<td>3.合理投资（保持稳健，适当高风险）</td>
+</tr>
+<tr>
+<td>4.每月固定投资，即使调整投资方向</td>
+</tr>
+<tr>
+<td>5.买了股票要长期持有，吃分红</td>
+</tr>
+<tr>
+<td>6. 让税务局成为你的伙伴，即使了解税务信息</td>
+</tr>
+<tr>
+<td>7. 减少不必要的消费/</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="思想原理"><a href="#思想原理" class="headerlink" title="思想原理"></a>思想原理</h3><ul>
+<li><p>墨菲定理，墨菲大法好，所以不要轻信市场当前情况</p>
+</li>
+<li><p>不要将所有鸡蛋放到一个篮子里，所以资产投资五等份</p>
+</li>
+<li><p>80原则，高风险资产比例不超过（80-20）%的</p>
+</li>
+<li><p>4321规律，收入，40%用来供房和投资，30%消费生活开支，20%存款，10%购买保险</p>
+</li>
+<li><p>双十定律，保险额度是家庭收入的10倍，保险支出不超过收入的10%</p>
+</li>
+<li><p>72定理，复利，本金翻倍的时间为72年除以年收入率</p>
+</li>
+<li><p>跑赢通货膨胀</p>
+</li>
+<li><p>不追逐热点，就是求稳，不以物喜，不以物悲</p>
+</li>
+</ul>
+<h3 id="不同阶段的投资方式"><a href="#不同阶段的投资方式" class="headerlink" title="不同阶段的投资方式"></a>不同阶段的投资方式</h3><p>家庭形成期，成长期，成熟期，衰退期，不表</p>
+<h3 id="tip"><a href="#tip" class="headerlink" title="tip"></a>tip</h3><ol>
+<li>做出日常收支表，观察自己干了啥</li>
+<li>做出负债表，看看自己该干啥</li>
+<li>设定管理目标，实现财产的保值和升值，也是个人的升值方式<ul>
+<li>合理规划生活，既有品质也节约</li>
+<li>了解风险敞口</li>
+<li>充分评估风险成熟能力</li>
+<li>合理设定目标（目标可衡量，目标可达成，目标有期限）</li>
+</ul>
+</li>
+</ol>
+<h3 id="资产配置"><a href="#资产配置" class="headerlink" title="资产配置"></a>资产配置</h3><ol>
+<li><p>基本层：日常生活。一般要留出2-6月的日常开销的钱，一般占收入的10%</p>
+</li>
+<li><p>基石层：财产保险，健康保险，意外保险</p>
+</li>
+<li><p>保值层：储蓄，定期存款，购买风险小的理财产品</p>
+</li>
+<li><p>增值层：股票，外汇和艺术品</p>
+</li>
+</ol>
+<h3 id="现金管理"><a href="#现金管理" class="headerlink" title="现金管理"></a>现金管理</h3><ol>
+<li><p>每天做好消费记录，记账本身不是为了记账，只是为了控制不必要的花费，和学习的时间一样</p>
+</li>
+<li><p>准备好家庭预留金，预留版半年到一年的生活费</p>
+</li>
+<li><p>理性消费</p>
+</li>
+<li><p>指定现金规划表，并严格执行。制定学习规划表，并严格执行</p>
+</li>
+<li><p>储蓄方式</p>
+<ul>
+<li><p>计划储蓄，根据收入和支出情况，指定储蓄方法</p>
+</li>
+<li><p>目标储蓄，设定目标</p>
+</li>
+<li><p>节约储蓄，节约的钱用来储蓄</p>
+</li>
+<li><p>缓买储蓄，不要冲动消费，等一会再买</p>
+</li>
+<li><p>降档储蓄，对于贵重物品降档，将余下的钱存下来</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="制表"><a href="#制表" class="headerlink" title="制表"></a>制表</h4><blockquote>
+<p>收入，支出，<strong>收支比</strong>（特别重要，在学习里）</p>
+</blockquote>
+<h4 id="投资"><a href="#投资" class="headerlink" title="投资"></a>投资</h4><ol>
+<li>短期投资<ul>
+<li>银行的各种存款，</li>
+<li>银行短期理财产品，</li>
+<li>货币基金，</li>
+<li>网络现金类理财产品</li>
+</ul>
+</li>
+<li>中长期<ul>
+<li>基金定投（选择何是的定投周期，设定定投实现，选择合适基金）</li>
+<li>年金保险（强制储蓄，缓解家庭压力）</li>
+</ul>
+</li>
+</ol>
+<h4 id="负债"><a href="#负债" class="headerlink" title="负债"></a>负债</h4><blockquote>
+<p>简单来说就是拿明天的钱，圆今天的梦。家庭在合理范围负债对家庭有益。</p>
+</blockquote>
+<ul>
+<li>负债率，（负债/资产）*100%。建议在30-50%（在有稳定收入的情况下），50%以上则过高</li>
+<li>当家庭负债率低于50%，每月所需还金额在收入的1/3时，那么家庭财务就是安全的。</li>
+<li>还债<ul>
+<li>急事先办，急事急办</li>
+<li>最大限度的提高还款金额</li>
+<li>选出利息最高的债务</li>
+<li>选取稳健的投资方式</li>
+</ul>
+</li>
+</ul>
+<h4 id="财产风险管理"><a href="#财产风险管理" class="headerlink" title="财产风险管理"></a>财产风险管理</h4><ol>
+<li>事前预防<ul>
+<li>深刻认识到财产风险的村子</li>
+<li>做到分散财产风险</li>
+</ul>
+</li>
+<li>事中控制（保护好自己，生命是第一位）</li>
+<li>事后补救。（<strong>家庭成员要进行烦死，但不要互相责怪，而应该以健康积极的态度振作起来</strong>）</li>
+<li><p>由于风险的存在，所以我们要做好风险预留。</p>
+<ul>
+<li><p>创造安全的家庭环境</p>
+</li>
+<li><p>提高家庭防范风险的意识</p>
+</li>
+<li><p>准备好一定的家庭应急备用金</p>
+</li>
+</ul>
+</li>
+<li><p>风险转移（主要是保险）</p>
+<ul>
+<li>人寿保险</li>
+<li>人身意外伤害险</li>
+<li>健康保险</li>
+</ul>
+</li>
+<li><p>婚姻风险（财产转移，隐瞒财产，对外举债，擅自处置财产）</p>
+<ul>
+<li>明确财产归属权（婚姻法）</li>
+<li>签订婚前协议</li>
+<li>婚内分割家庭财产</li>
+<li>父母出资和财产赠与的管理</li>
+</ul>
+</li>
+</ol>
+<h4 id="家庭财产投资管理"><a href="#家庭财产投资管理" class="headerlink" title="家庭财产投资管理"></a>家庭财产投资管理</h4><ol>
+<li><p>股票（各种种类）</p>
+<ul>
+<li>选择一支好的股票（熟悉，热门，题材股，成长空间大，公司稳定的股票）</li>
+<li>选择最佳购买时机（短线和中长线的时机不同）</li>
+<li>选择最佳卖出时机（别贪心）</li>
+</ul>
+</li>
+<li><p>基金（股票基金（较高风险，较高收益），债卷投资，货币基金，指数基金）</p>
+<ul>
+<li><p>选择合理的赎买时机。（设定理想目标&lt; 不要贪心&gt;，分析回报率）</p>
+</li>
+<li><p>选择合理的投资方式</p>
+</li>
+<li><p>| 532模式 | 敢于冒险的家庭     | 50%股票型，40%货币型，10%储蓄型 |<br>| ———- | :————————- | ———————————————- |<br>| 442模式 | 风险承受能力强的   | 40%股票型，40%货币型，20%储蓄型 |<br>| 334模式 | 不敢冒险的         | 30%股票型，30%货币型，40%储蓄型 |<br>| 244模式 | 不敢冒险的，开支大 | 20%股票型，40%货币型，40%储蓄型 |</p>
+</li>
+<li><p>基金定投也可</p>
+</li>
+</ul>
+</li>
+<li><p>债卷（几乎同上）</p>
+</li>
+<li><p>期货</p>
+<ul>
+<li>轻仓操作，衡量风险</li>
+<li>组合投资，分散风险</li>
+<li>及时止损！！！！！</li>
+</ul>
+</li>
+<li><p>房地产和艺术品投资（不讲）</p>
+</li>
+<li>银行类理财产品（固定收益和浮动收益）</li>
+<li><p>商业保险投资</p>
+<ul>
+<li>全面保险（家庭各个成员）</li>
+<li>保险额度适当，双十原则</li>
+<li>筛选性价比高的保险产品</li>
+</ul>
+</li>
+<li><p>健康投资（！！！！！）</p>
+<ul>
+<li>多运动，便宜大量</li>
+<li>定期接受检查</li>
+<li>购买营养品和健康书看</li>
+<li>购买健康保险</li>
+</ul>
+</li>
+</ol>
+<h3 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h3><blockquote>
+<p>理财观有很多误区，要避免误区，在早期积累本金之后，就可以进行理财了。理财需要理性与耐性，只需要基础的理财知识就可以进行了。</p>
+</blockquote>
+<hr>
+<h4 id="复利效应"><a href="#复利效应" class="headerlink" title="复利效应"></a>复利效应</h4><blockquote>
+<p>复利模式，即有益的利滚利模式，而坚持一项投资的时间越长，回报就越高。</p>
+</blockquote>
+<ul>
+<li>第一原则：不要间断。只要长期持有，时间越久，复利效果就越明显。这是金钱的时间价值。</li>
+<li>第二原则：等待。一旦冲破冗长的积累阶段，复利就可以有效果</li>
+<li>第三原则：人生也像是复利，同样的起点，每一步投资都是复利，在个人成就上，也就有了天差地别。所以，不管是投资和人生，从一开始我们都要持之以恒，只有这样才能得到最好的回报。</li>
+<li>72法则：看上面有。可以预测资产翻倍，购买力减半，以及年薪上涨时间。</li>
+</ul>
+<h4 id="投资100法则"><a href="#投资100法则" class="headerlink" title="投资100法则"></a>投资100法则</h4><blockquote>
+<p>理财要根据自己承受能力开选择合理的方案，这样自己才能在投资中放得开，而且最好的方式是跟着年龄走，学会分散投资，选择最佳的投资组合，实现最大化收益。</p>
+</blockquote>
+<ol>
+<li>即（100-年龄）%的资产可以投资于股票及股票基金等投资方式。</li>
+<li><p>投资新手要懂得分散投资：分散投资是一种经得起考验的投资策略。</p>
+<ul>
+<li>巴菲特把鸡蛋放到一个篮子里，那是人家强呀</li>
+<li>年轻人不能在理财上过于相信自己的直觉，收益高，风险高。</li>
+<li>投资不是赌博，不适合集中火力猛攻的投资方式</li>
+</ul>
+</li>
+<li><p>选择最适合的投资组合方式</p>
+<ul>
+<li>投资工具组合（储蓄，基金等），用投资五分法</li>
+<li>投资比例组合，上面有各种比例方式</li>
+<li>投资时间组合，即短期、中期、长期投资方式的组合</li>
+</ul>
+</li>
+</ol>
+<h4 id="投资报酬率"><a href="#投资报酬率" class="headerlink" title="投资报酬率"></a>投资报酬率</h4><blockquote>
+<p>看懂投资报酬率才能很好进行投资</p>
+</blockquote>
+<ol>
+<li>投资报酬率 = 利润总额/投资总额<em>100% =（净利息+利息费用+所得税）/投资总额</em>100%</li>
+<li>选择合理的理财方式（资产增值要克服通货膨胀的影响）<ul>
+<li>分散投资可能会造成买一些不太熟悉的投资</li>
+<li>集中投资前提是对公司规模前景充满信心。</li>
+</ul>
+</li>
+</ol>
+<h4 id="工薪阶层攒出第一桶金"><a href="#工薪阶层攒出第一桶金" class="headerlink" title="工薪阶层攒出第一桶金"></a>工薪阶层攒出第一桶金</h4><blockquote>
+<p>理财的中心是<strong>管钱</strong>，包括攒钱、生钱和护钱。</p>
+</blockquote>
+<ul>
+<li>强制储蓄</li>
+<li>计划消费</li>
+<li>尽量用现金付款</li>
+<li>将信用卡与储蓄卡绑到一起（我不用信用卡）</li>
+<li>延迟消费，不要追赶潮流，潮流较贵</li>
+<li>工资分割（观察哪部分工资超出了）</li>
+<li>记账与做预算，不做无谓的消费</li>
+<li>只花1/3的薪水</li>
+<li>节后理财，日后理财</li>
+<li>意外储蓄（意外收入存起来）</li>
+<li>小钱储蓄（获得的小金额利益进行储蓄）</li>
+<li>先储蓄后消费（强制储蓄的一部分）</li>
+</ul>
+<h4 id="股票和国债"><a href="#股票和国债" class="headerlink" title="股票和国债"></a>股票和国债</h4><blockquote>
+<p>略</p>
+</blockquote>
+<h4 id="基金"><a href="#基金" class="headerlink" title="基金"></a>基金</h4><blockquote>
+<p>基金有风险</p>
+</blockquote>
+<ol>
+<li>做一个明白的投资人（对于基金认识深刻，对自己更要深刻）</li>
+<li>做一个独立思考的投资人</li>
+<li>做一个耐心的投资人（相信基金，长期投资，学会换基 ）</li>
+<li>选好基金（532，50%的积极行，30适度积极，20储蓄）</li>
+<li>选3-5只基金</li>
+</ol>
+<h4 id="保险"><a href="#保险" class="headerlink" title="保险"></a>保险</h4><blockquote>
+<p>略</p>
+</blockquote>
+<h4 id="投资的风险"><a href="#投资的风险" class="headerlink" title="投资的风险"></a>投资的风险</h4><blockquote>
+<p>投资三要素：风险性，收益性和流动性</p>
+</blockquote>
+<ol>
+<li>拿得起，放不下就不要进行投资</li>
+</ol>
+<p>结束</p>
+]]></content>
+  </entry>
+  <entry>
     <title>AlexNet</title>
     <url>/2020/03/12/AlexNet/</url>
     <content><![CDATA[<h1 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h1><blockquote>

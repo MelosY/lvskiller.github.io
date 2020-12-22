@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="lvskiller's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="基本语句 该篇介绍了python的基本语句">
+<meta property="og:type" content="article">
+<meta property="og:title" content="金融">
+<meta property="og:url" content="http://yoursite.com/2020/03/30/%E9%87%91%E8%9E%8D/index.html">
+<meta property="og:site_name" content="lvskiller&#39;s Blog">
+<meta property="og:description" content="基本语句 该篇介绍了python的基本语句">
+<meta property="article:published_time" content="2020-03-30T12:45:06.000Z">
+<meta property="article:modified_time" content="2020-04-04T12:43:51.500Z">
+<meta property="article:author" content="lvskiller">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+<script>
+(function(){
+ if('123456'){
+ if (prompt('请输入文章密码') !== '123456'){
+                 alert('密码错误！');
+                                 history.back();
+                                             
+ }
+         
+ }
+     
+ })();
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/30/金融/"/>
+
+
+
+
+
+
+
+
+  <title>金融 | lvskiller's Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lvskiller's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/%E9%87%91%E8%9E%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lvskiller">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lvskiller's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">金融</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-30T20:45:06+08:00">
+                2020-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h1><blockquote>
+<p>该篇介绍了python的基本语句</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="思想观念"><a href="#思想观念" class="headerlink" title="思想观念"></a>思想观念</h4><blockquote>
+<p>一个人只有经济上独立了，才能在生活上获得心理上的安宁。</p>
+</blockquote>
+<ol>
+<li>注重积累、善于理财，小钱也能成就大财富。（给自己定下铁律：从每月薪水固定地投资）</li>
+<li>从自己“第一笔收入”开始</li>
+<li>人生不同阶段有不同的追求与需求，所以应根据轻重缓急逐个击破。</li>
+<li>甩掉思想包袱，投资不是储蓄，单纯储蓄没用</li>
+<li>建立正确的投资思路（投资是一种<strong>智力</strong>游戏）<ul>
+<li>巧妙分配（对个人和家庭资源进行管理）</li>
+<li>理财无须大资本，理财只是一种生活战略，用来保障生活</li>
+<li>对理财手法认识不够，用投入门槛低，进出方便的产品投资</li>
+<li>正确看待专家的观念，既不可以盲目信任，也不可断然不信，当作参考而已。</li>
+<li>驾驭好工具，要与时俱进。</li>
+</ul>
+</li>
+<li>走出理财误区<ul>
+<li>理财并不全是赚钱，也可以只是一种保障手段</li>
+<li>理财并不复杂，操作简单</li>
+<li>要行动起来，不要只心动，不行动</li>
+</ul>
+</li>
+</ol>
+<h3 id="个人理财"><a href="#个人理财" class="headerlink" title="个人理财"></a>个人理财</h3><ol>
+<li><p>分析自己的财产状况</p>
+<ul>
+<li>了解自己的负债情况以及债务的还款计划</li>
+<li>计算自己可支配财产</li>
+<li>预估未来收入情况</li>
+</ul>
+</li>
+<li><p>制定理财目标</p>
+<ul>
+<li>需要指定短期财务目标，即目标要量化</li>
+</ul>
+</li>
+<li><p>减少理财风险</p>
+<ul>
+<li>考虑理财产品在收入的比重</li>
+<li>综合分析自己的理财能力</li>
+<li>按照自己性格来承担风险</li>
+</ul>
+</li>
+<li><p>合理管理财产，需要谨慎，离职，不可盲目跟风投资，也不可草率投资</p>
+</li>
+</ol>
+<h3 id="家庭理财"><a href="#家庭理财" class="headerlink" title="家庭理财"></a>家庭理财</h3><ol>
+<li>统计各种财产</li>
+<li>做好收支记录，由于我的身份，我建议个人理财也可以做</li>
+<li>重视财产安全</li>
+<li>充分利用收入，增加支出</li>
+</ol>
+<hr>
+<h3 id="投资方式"><a href="#投资方式" class="headerlink" title="投资方式"></a>投资方式</h3><blockquote>
+<p> 安全保守型: 7:2:1 ,储蓄<strong>保险</strong>投资70%，债卷20%，其他10%</p>
+<p> 稳中求进型：4：2：2：1 ，储蓄保险40%，债卷20%，基金股票20%，其他20%</p>
+<p>冒险激进型：2：3：5，暂且不说</p>
+</blockquote>
+<p><strong>步骤</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>1.从现在开始</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2. 制定目标</td>
+</tr>
+<tr>
+<td>3.合理投资（保持稳健，适当高风险）</td>
+</tr>
+<tr>
+<td>4.每月固定投资，即使调整投资方向</td>
+</tr>
+<tr>
+<td>5.买了股票要长期持有，吃分红</td>
+</tr>
+<tr>
+<td>6. 让税务局成为你的伙伴，即使了解税务信息</td>
+</tr>
+<tr>
+<td>7. 减少不必要的消费/</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="思想原理"><a href="#思想原理" class="headerlink" title="思想原理"></a>思想原理</h3><ul>
+<li><p>墨菲定理，墨菲大法好，所以不要轻信市场当前情况</p>
+</li>
+<li><p>不要将所有鸡蛋放到一个篮子里，所以资产投资五等份</p>
+</li>
+<li><p>80原则，高风险资产比例不超过（80-20）%的</p>
+</li>
+<li><p>4321规律，收入，40%用来供房和投资，30%消费生活开支，20%存款，10%购买保险</p>
+</li>
+<li><p>双十定律，保险额度是家庭收入的10倍，保险支出不超过收入的10%</p>
+</li>
+<li><p>72定理，复利，本金翻倍的时间为72年除以年收入率</p>
+</li>
+<li><p>跑赢通货膨胀</p>
+</li>
+<li><p>不追逐热点，就是求稳，不以物喜，不以物悲</p>
+</li>
+</ul>
+<h3 id="不同阶段的投资方式"><a href="#不同阶段的投资方式" class="headerlink" title="不同阶段的投资方式"></a>不同阶段的投资方式</h3><p>家庭形成期，成长期，成熟期，衰退期，不表</p>
+<h3 id="tip"><a href="#tip" class="headerlink" title="tip"></a>tip</h3><ol>
+<li>做出日常收支表，观察自己干了啥</li>
+<li>做出负债表，看看自己该干啥</li>
+<li>设定管理目标，实现财产的保值和升值，也是个人的升值方式<ul>
+<li>合理规划生活，既有品质也节约</li>
+<li>了解风险敞口</li>
+<li>充分评估风险成熟能力</li>
+<li>合理设定目标（目标可衡量，目标可达成，目标有期限）</li>
+</ul>
+</li>
+</ol>
+<h3 id="资产配置"><a href="#资产配置" class="headerlink" title="资产配置"></a>资产配置</h3><ol>
+<li><p>基本层：日常生活。一般要留出2-6月的日常开销的钱，一般占收入的10%</p>
+</li>
+<li><p>基石层：财产保险，健康保险，意外保险</p>
+</li>
+<li><p>保值层：储蓄，定期存款，购买风险小的理财产品</p>
+</li>
+<li><p>增值层：股票，外汇和艺术品</p>
+</li>
+</ol>
+<h3 id="现金管理"><a href="#现金管理" class="headerlink" title="现金管理"></a>现金管理</h3><ol>
+<li><p>每天做好消费记录，记账本身不是为了记账，只是为了控制不必要的花费，和学习的时间一样</p>
+</li>
+<li><p>准备好家庭预留金，预留版半年到一年的生活费</p>
+</li>
+<li><p>理性消费</p>
+</li>
+<li><p>指定现金规划表，并严格执行。制定学习规划表，并严格执行</p>
+</li>
+<li><p>储蓄方式</p>
+<ul>
+<li><p>计划储蓄，根据收入和支出情况，指定储蓄方法</p>
+</li>
+<li><p>目标储蓄，设定目标</p>
+</li>
+<li><p>节约储蓄，节约的钱用来储蓄</p>
+</li>
+<li><p>缓买储蓄，不要冲动消费，等一会再买</p>
+</li>
+<li><p>降档储蓄，对于贵重物品降档，将余下的钱存下来</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="制表"><a href="#制表" class="headerlink" title="制表"></a>制表</h4><blockquote>
+<p>收入，支出，<strong>收支比</strong>（特别重要，在学习里）</p>
+</blockquote>
+<h4 id="投资"><a href="#投资" class="headerlink" title="投资"></a>投资</h4><ol>
+<li>短期投资<ul>
+<li>银行的各种存款，</li>
+<li>银行短期理财产品，</li>
+<li>货币基金，</li>
+<li>网络现金类理财产品</li>
+</ul>
+</li>
+<li>中长期<ul>
+<li>基金定投（选择何是的定投周期，设定定投实现，选择合适基金）</li>
+<li>年金保险（强制储蓄，缓解家庭压力）</li>
+</ul>
+</li>
+</ol>
+<h4 id="负债"><a href="#负债" class="headerlink" title="负债"></a>负债</h4><blockquote>
+<p>简单来说就是拿明天的钱，圆今天的梦。家庭在合理范围负债对家庭有益。</p>
+</blockquote>
+<ul>
+<li>负债率，（负债/资产）*100%。建议在30-50%（在有稳定收入的情况下），50%以上则过高</li>
+<li>当家庭负债率低于50%，每月所需还金额在收入的1/3时，那么家庭财务就是安全的。</li>
+<li>还债<ul>
+<li>急事先办，急事急办</li>
+<li>最大限度的提高还款金额</li>
+<li>选出利息最高的债务</li>
+<li>选取稳健的投资方式</li>
+</ul>
+</li>
+</ul>
+<h4 id="财产风险管理"><a href="#财产风险管理" class="headerlink" title="财产风险管理"></a>财产风险管理</h4><ol>
+<li>事前预防<ul>
+<li>深刻认识到财产风险的村子</li>
+<li>做到分散财产风险</li>
+</ul>
+</li>
+<li>事中控制（保护好自己，生命是第一位）</li>
+<li>事后补救。（<strong>家庭成员要进行烦死，但不要互相责怪，而应该以健康积极的态度振作起来</strong>）</li>
+<li><p>由于风险的存在，所以我们要做好风险预留。</p>
+<ul>
+<li><p>创造安全的家庭环境</p>
+</li>
+<li><p>提高家庭防范风险的意识</p>
+</li>
+<li><p>准备好一定的家庭应急备用金</p>
+</li>
+</ul>
+</li>
+<li><p>风险转移（主要是保险）</p>
+<ul>
+<li>人寿保险</li>
+<li>人身意外伤害险</li>
+<li>健康保险</li>
+</ul>
+</li>
+<li><p>婚姻风险（财产转移，隐瞒财产，对外举债，擅自处置财产）</p>
+<ul>
+<li>明确财产归属权（婚姻法）</li>
+<li>签订婚前协议</li>
+<li>婚内分割家庭财产</li>
+<li>父母出资和财产赠与的管理</li>
+</ul>
+</li>
+</ol>
+<h4 id="家庭财产投资管理"><a href="#家庭财产投资管理" class="headerlink" title="家庭财产投资管理"></a>家庭财产投资管理</h4><ol>
+<li><p>股票（各种种类）</p>
+<ul>
+<li>选择一支好的股票（熟悉，热门，题材股，成长空间大，公司稳定的股票）</li>
+<li>选择最佳购买时机（短线和中长线的时机不同）</li>
+<li>选择最佳卖出时机（别贪心）</li>
+</ul>
+</li>
+<li><p>基金（股票基金（较高风险，较高收益），债卷投资，货币基金，指数基金）</p>
+<ul>
+<li><p>选择合理的赎买时机。（设定理想目标&lt; 不要贪心&gt;，分析回报率）</p>
+</li>
+<li><p>选择合理的投资方式</p>
+</li>
+<li><p>| 532模式 | 敢于冒险的家庭     | 50%股票型，40%货币型，10%储蓄型 |<br>| ———- | :————————- | ———————————————- |<br>| 442模式 | 风险承受能力强的   | 40%股票型，40%货币型，20%储蓄型 |<br>| 334模式 | 不敢冒险的         | 30%股票型，30%货币型，40%储蓄型 |<br>| 244模式 | 不敢冒险的，开支大 | 20%股票型，40%货币型，40%储蓄型 |</p>
+</li>
+<li><p>基金定投也可</p>
+</li>
+</ul>
+</li>
+<li><p>债卷（几乎同上）</p>
+</li>
+<li><p>期货</p>
+<ul>
+<li>轻仓操作，衡量风险</li>
+<li>组合投资，分散风险</li>
+<li>及时止损！！！！！</li>
+</ul>
+</li>
+<li><p>房地产和艺术品投资（不讲）</p>
+</li>
+<li>银行类理财产品（固定收益和浮动收益）</li>
+<li><p>商业保险投资</p>
+<ul>
+<li>全面保险（家庭各个成员）</li>
+<li>保险额度适当，双十原则</li>
+<li>筛选性价比高的保险产品</li>
+</ul>
+</li>
+<li><p>健康投资（！！！！！）</p>
+<ul>
+<li>多运动，便宜大量</li>
+<li>定期接受检查</li>
+<li>购买营养品和健康书看</li>
+<li>购买健康保险</li>
+</ul>
+</li>
+</ol>
+<h3 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h3><blockquote>
+<p>理财观有很多误区，要避免误区，在早期积累本金之后，就可以进行理财了。理财需要理性与耐性，只需要基础的理财知识就可以进行了。</p>
+</blockquote>
+<hr>
+<h4 id="复利效应"><a href="#复利效应" class="headerlink" title="复利效应"></a>复利效应</h4><blockquote>
+<p>复利模式，即有益的利滚利模式，而坚持一项投资的时间越长，回报就越高。</p>
+</blockquote>
+<ul>
+<li>第一原则：不要间断。只要长期持有，时间越久，复利效果就越明显。这是金钱的时间价值。</li>
+<li>第二原则：等待。一旦冲破冗长的积累阶段，复利就可以有效果</li>
+<li>第三原则：人生也像是复利，同样的起点，每一步投资都是复利，在个人成就上，也就有了天差地别。所以，不管是投资和人生，从一开始我们都要持之以恒，只有这样才能得到最好的回报。</li>
+<li>72法则：看上面有。可以预测资产翻倍，购买力减半，以及年薪上涨时间。</li>
+</ul>
+<h4 id="投资100法则"><a href="#投资100法则" class="headerlink" title="投资100法则"></a>投资100法则</h4><blockquote>
+<p>理财要根据自己承受能力开选择合理的方案，这样自己才能在投资中放得开，而且最好的方式是跟着年龄走，学会分散投资，选择最佳的投资组合，实现最大化收益。</p>
+</blockquote>
+<ol>
+<li>即（100-年龄）%的资产可以投资于股票及股票基金等投资方式。</li>
+<li><p>投资新手要懂得分散投资：分散投资是一种经得起考验的投资策略。</p>
+<ul>
+<li>巴菲特把鸡蛋放到一个篮子里，那是人家强呀</li>
+<li>年轻人不能在理财上过于相信自己的直觉，收益高，风险高。</li>
+<li>投资不是赌博，不适合集中火力猛攻的投资方式</li>
+</ul>
+</li>
+<li><p>选择最适合的投资组合方式</p>
+<ul>
+<li>投资工具组合（储蓄，基金等），用投资五分法</li>
+<li>投资比例组合，上面有各种比例方式</li>
+<li>投资时间组合，即短期、中期、长期投资方式的组合</li>
+</ul>
+</li>
+</ol>
+<h4 id="投资报酬率"><a href="#投资报酬率" class="headerlink" title="投资报酬率"></a>投资报酬率</h4><blockquote>
+<p>看懂投资报酬率才能很好进行投资</p>
+</blockquote>
+<ol>
+<li>投资报酬率 = 利润总额/投资总额<em>100% =（净利息+利息费用+所得税）/投资总额</em>100%</li>
+<li>选择合理的理财方式（资产增值要克服通货膨胀的影响）<ul>
+<li>分散投资可能会造成买一些不太熟悉的投资</li>
+<li>集中投资前提是对公司规模前景充满信心。</li>
+</ul>
+</li>
+</ol>
+<h4 id="工薪阶层攒出第一桶金"><a href="#工薪阶层攒出第一桶金" class="headerlink" title="工薪阶层攒出第一桶金"></a>工薪阶层攒出第一桶金</h4><blockquote>
+<p>理财的中心是<strong>管钱</strong>，包括攒钱、生钱和护钱。</p>
+</blockquote>
+<ul>
+<li>强制储蓄</li>
+<li>计划消费</li>
+<li>尽量用现金付款</li>
+<li>将信用卡与储蓄卡绑到一起（我不用信用卡）</li>
+<li>延迟消费，不要追赶潮流，潮流较贵</li>
+<li>工资分割（观察哪部分工资超出了）</li>
+<li>记账与做预算，不做无谓的消费</li>
+<li>只花1/3的薪水</li>
+<li>节后理财，日后理财</li>
+<li>意外储蓄（意外收入存起来）</li>
+<li>小钱储蓄（获得的小金额利益进行储蓄）</li>
+<li>先储蓄后消费（强制储蓄的一部分）</li>
+</ul>
+<h4 id="股票和国债"><a href="#股票和国债" class="headerlink" title="股票和国债"></a>股票和国债</h4><blockquote>
+<p>略</p>
+</blockquote>
+<h4 id="基金"><a href="#基金" class="headerlink" title="基金"></a>基金</h4><blockquote>
+<p>基金有风险</p>
+</blockquote>
+<ol>
+<li>做一个明白的投资人（对于基金认识深刻，对自己更要深刻）</li>
+<li>做一个独立思考的投资人</li>
+<li>做一个耐心的投资人（相信基金，长期投资，学会换基 ）</li>
+<li>选好基金（532，50%的积极行，30适度积极，20储蓄）</li>
+<li>选3-5只基金</li>
+</ol>
+<h4 id="保险"><a href="#保险" class="headerlink" title="保险"></a>保险</h4><blockquote>
+<p>略</p>
+</blockquote>
+<h4 id="投资的风险"><a href="#投资的风险" class="headerlink" title="投资的风险"></a>投资的风险</h4><blockquote>
+<p>投资三要素：风险性，收益性和流动性</p>
+</blockquote>
+<ol>
+<li>拿得起，放不下就不要进行投资</li>
+</ol>
+<p>结束</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/12/AlexNet/" rel="next" title="AlexNet">
+                <i class="fa fa-chevron-left"></i> AlexNet
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/31/%E9%87%8D%E6%9E%84/" rel="prev" title="重构">
+                重构 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="lvskiller" />
+            
+              <p class="site-author-name" itemprop="name">lvskiller</p>
+              <p class="site-description motion-element" itemprop="description">生命有无限的可能</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/lvskiller" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本语句"><span class="nav-text">基本语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思想观念"><span class="nav-text">思想观念</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个人理财"><span class="nav-text">个人理财</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#家庭理财"><span class="nav-text">家庭理财</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#投资方式"><span class="nav-text">投资方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思想原理"><span class="nav-text">思想原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同阶段的投资方式"><span class="nav-text">不同阶段的投资方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tip"><span class="nav-text">tip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资产配置"><span class="nav-text">资产配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#现金管理"><span class="nav-text">现金管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#制表"><span class="nav-text">制表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#投资"><span class="nav-text">投资</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#负债"><span class="nav-text">负债</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#财产风险管理"><span class="nav-text">财产风险管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#家庭财产投资管理"><span class="nav-text">家庭财产投资管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理财"><span class="nav-text">理财</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#复利效应"><span class="nav-text">复利效应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#投资100法则"><span class="nav-text">投资100法则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#投资报酬率"><span class="nav-text">投资报酬率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工薪阶层攒出第一桶金"><span class="nav-text">工薪阶层攒出第一桶金</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#股票和国债"><span class="nav-text">股票和国债</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基金"><span class="nav-text">基金</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保险"><span class="nav-text">保险</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#投资的风险"><span class="nav-text">投资的风险</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lvskiller</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">12.3k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
