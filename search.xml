@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>吴恩达机器学习</title>
+    <url>/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="吴恩达机器学习笔记"><a href="#吴恩达机器学习笔记" class="headerlink" title="吴恩达机器学习笔记"></a>吴恩达机器学习笔记</h1><blockquote>
+<p>学习地址：<a href="https://www.bilibili.com/video/BV164411b7dx" target="_blank" rel="noopener">B站</a></p>
+<p>学习时间：2020.12.20 ~2021.1.5（15天）</p>
+<p>学习内容：基本的机器学习和一些技巧</p>
+<p>注解：由于本文和cs231n有些重合，所以相关内容可能大幅省略，详见cs231n</p>
+</blockquote>
+<p>关键词：<strong>传统机器学习（ML）</strong>  <strong>深度机器学习（DNN）</strong>  <strong>小技巧</strong></p>
+<a id="more"></a>
+<h2 id="梗概"><a href="#梗概" class="headerlink" title="梗概"></a>梗概</h2><p>机器学习是一种强大的技术，它广泛地应用于NLP（自然语言处理）、CV（计算机视觉）、self-customizing program（自适应编程）、Database Mining（数据挖掘）。</p>
+<p>定义：a well-posed learning problem <strong>A</strong> 、a program is said to learn from experience <strong>E</strong>、a task <strong>T</strong> 、a performance <strong>P</strong> .Then machine learning is the performance on <strong>T</strong> ,as measured by <strong>P</strong>, which can improves with  experience <strong>E</strong>.（机器学习是在任务T上通过P测出来的表现能通过经验E改善。）</p>
+<p>那么核心就是：</p>
+<ul>
+<li><p>怎么去定义任务T，怎么预处理T，这些都可以在<strong><em>数据预处理</em></strong>中看到。（<em>简</em>）</p>
+</li>
+<li><p>怎么去测试表现，这个P怎么去操作，不同的P是怎么样测试不同表现，这些都在<strong><em>loss（cost）</em></strong></p>
+</li>
+<li>怎么去通过经验改善表现，这些可以在<strong><em>梯度下降</em></strong>看到。</li>
+</ul>
+<p>最后在这些问题中，有两种常用的架构：<strong>传统机器学习</strong>和<strong>深度神经网络</strong></p>
+<p><em>本文首先分开介绍上述三个核心，以及这里所包含的一些技巧，再介绍传统机器学习和深度神经问题，最后介绍一些应用</em></p>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>两个重要概念：overfitting（过拟合）、underfitting(欠拟合)</p>
+<p>过拟合：模型过于复杂，挑选过多复杂的特征等等经过训练后，这个模型适用于训练的数据，但是不适用于测试的数据。 如图</p>
+<hr>
+<p>欠拟合：模型过于简单等问题经过训练后，这个模型连训练数据都无法拟合。如图</p>
+<hr>
+<p>下面是一些概念，这里不做详细介绍</p>
+<p><strong>supervised learning(监督学习)</strong>：给定label</p>
+<p><strong>unsupervised learning（非监督学习）</strong>：不给定label</p>
+<p><strong>classification（分类）</strong> <strong>regression(回归)</strong>    <strong>clustering（聚类）</strong> </p>
+<p><strong>hypothesis（假设 用h表示）</strong> </p>
+<p>下面是一些必要知识：</p>
+<p><strong>线性代数</strong>：主要是一些向量的操作，还有一些乘的操作</p>
+<p><strong>矩阵求导</strong>：这个在用数学公式直接算得最优解中有涉及。</p>
+<p><strong>微积分</strong>：这里主要是求导。</p>
+<p><strong>一些简单的数学知识</strong></p>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><ul>
+<li>Feature Scaling（特征缩放）：to make $-1&lt;=x=&lt;1$</li>
+<li></li>
+</ul>
+<h2 id="loss（损失、误差）"><a href="#loss（损失、误差）" class="headerlink" title="loss（损失、误差）"></a>loss（损失、误差）</h2><p>J(θ)=θminCi=1∑m[y(i)cost1(θTx(i))+(1−y(i))cost0(θTx(i))]+21i=1∑nθj2</p>
+<h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h2 id="传统神经网络"><a href="#传统神经网络" class="headerlink" title="传统神经网络"></a>传统神经网络</h2><h2 id="深度神经网络"><a href="#深度神经网络" class="headerlink" title="深度神经网络"></a>深度神经网络</h2><h2 id="一些应用"><a href="#一些应用" class="headerlink" title="一些应用"></a>一些应用</h2>]]></content>
+  </entry>
+  <entry>
     <title>crnn</title>
     <url>/2020/05/15/crnn/</url>
     <content><![CDATA[<h1 id="CRNN"><a href="#CRNN" class="headerlink" title="CRNN"></a>CRNN</h1><blockquote>

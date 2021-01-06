@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-15T07:21:59.281Z</updated>
+  <updated>2021-01-06T05:11:01.988Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>吴恩达机器学习</title>
+    <link href="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</id>
+    <published>2021-01-06T05:02:57.000Z</published>
+    <updated>2021-01-06T05:11:01.988Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;吴恩达机器学习笔记&quot;&gt;&lt;a href=&quot;#吴恩达机器学习笔记&quot; class=&quot;headerlink&quot; title=&quot;吴恩达机器学习笔记&quot;&gt;&lt;/a&gt;吴恩达机器学习笔记&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;学习地址：&lt;a href=&quot;https://www.bilibili.com/video/BV164411b7dx&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;B站&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;学习时间：2020.12.20 ~2021.1.5（15天）&lt;/p&gt;
+&lt;p&gt;学习内容：基本的机器学习和一些技巧&lt;/p&gt;
+&lt;p&gt;注解：由于本文和cs231n有些重合，所以相关内容可能大幅省略，详见cs231n&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;关键词：&lt;strong&gt;传统机器学习（ML）&lt;/strong&gt;  &lt;strong&gt;深度机器学习（DNN）&lt;/strong&gt;  &lt;strong&gt;小技巧&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>crnn</title>
@@ -417,31 +440,6 @@
     
       &lt;h1 id=&quot;基本语句&quot;&gt;&lt;a href=&quot;#基本语句&quot; class=&quot;headerlink&quot; title=&quot;基本语句&quot;&gt;&lt;/a&gt;基本语句&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;该篇介绍了python的基本语句&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="基础类" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%B1%BB/"/>
-    
-      <category term="语言" scheme="http://yoursite.com/tags/%E8%AF%AD%E8%A8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>变量类型及数据结构</title>
-    <link href="http://yoursite.com/2020/02/15/%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    <id>http://yoursite.com/2020/02/15/%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</id>
-    <published>2020-02-15T09:20:10.000Z</published>
-    <updated>2020-02-15T09:43:44.765Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;变量类型及数据结构&quot;&gt;&lt;a href=&quot;#变量类型及数据结构&quot; class=&quot;headerlink&quot; title=&quot;变量类型及数据结构&quot;&gt;&lt;/a&gt;变量类型及数据结构&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;该篇介绍了python的变量类型，字符串以及简单的列表，元组和字典&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
