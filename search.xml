@@ -69,20 +69,15 @@
 <blockquote>
 <p>简单来说，就是一个容器，那么有三种方式去填充容器。</p>
 <ol>
-<li><p>```<br>network1 = nn.Sequential(</p>
+<li><p>```python<br>network1 = nn.Sequential(</p>
 <pre><code>nn.Flatten(start_dim = 1),
 nn.Linear(in_features, out_features),
-</code></pre><h1 id="nn-BatchNorm2d-6-添加BN的示例"><a href="#nn-BatchNorm2d-6-添加BN的示例" class="headerlink" title="nn.BatchNorm2d(6) 添加BN的示例"></a>nn.BatchNorm2d(6) 添加BN的示例</h1><pre><code>nn.Linear(out_features, out_classes)
+nn.BatchNorm2d(6) 添加BN的示例
+nn.Linear(out_features, out_classes)
 </code></pre><p>)</p>
-<h2 id="这样处理，每一层就只有一个id作为名字"><a href="#这样处理，每一层就只有一个id作为名字" class="headerlink" title="这样处理，每一层就只有一个id作为名字"></a>这样处理，每一层就只有一个id作为名字</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">2. </span><br></pre></td></tr></table></figure>
-<p>layers = OrderedDict([</p>
-<pre><code>(&#39;flat&#39;, nn.Flatten(start_dim = 1)),
-(&#39;hidden&#39;,nn.Linear(in_features, out_features)),
-(&#39;output&#39;, nn.Linear(out_features, out_classes))
-</code></pre><p>])</p>
-<p>network2 = nn.Sequential(layers)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">3. </span><br></pre></td></tr></table></figure>
-<p>network3 = nn.Sequential()<br>network3.add_module(‘flat’, nn.Flatten(start_dim = 1))<br>network3.add_module(‘hidden’, nn.Linear(in_features, out_features))<br>network3.add_module(‘output’, nn.Linear(out_features, out_classes))</p>
+<h2 id="这样处理，每一层就只有一个id作为名字"><a href="#这样处理，每一层就只有一个id作为名字" class="headerlink" title="这样处理，每一层就只有一个id作为名字"></a>这样处理，每一层就只有一个id作为名字</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">2. &#96;&#96;&#96;python</span><br><span class="line">      </span><br><span class="line">   layers &#x3D; OrderedDict([</span><br><span class="line">       (&#39;flat&#39;, nn.Flatten(start_dim &#x3D; 1)),</span><br><span class="line">       (&#39;hidden&#39;,nn.Linear(in_features, out_features)),</span><br><span class="line">       (&#39;output&#39;, nn.Linear(out_features, out_classes))</span><br><span class="line">   ])</span><br><span class="line">   </span><br><span class="line">   network2 &#x3D; nn.Sequential(layers)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>```python<br>network3 = nn.Sequential()<br>network3.add_module(‘flat’, nn.Flatten(start_dim = 1))<br>network3.add_module(‘hidden’, nn.Linear(in_features, out_features))<br>network3.add_module(‘output’, nn.Linear(out_features, out_classes))</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">   在大型网络中，我推荐2和3的混用，同时这个nn.Sequential是可以嵌套调用的。</span><br><span class="line"></span><br><span class="line">我们再看一下它具体实现细节，</span><br><span class="line"></span><br><span class="line">![](C:&#x2F;Users&#x2F;31311&#x2F;Desktop&#x2F;实习报告&#x2F;PeLeeNet代码解读&#x2F;Sequential.png)</span><br><span class="line"></span><br><span class="line">那么我继承这个类干点事情，重写&#96;__init__&#96;就可以完成了。然后利用第三种方式来add_module，而forword是自己它应该实现好了，所以直接不用了。</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;python</span><br><span class="line">class _DenseBlock(nn.Sequential):</span><br><span class="line"></span><br><span class="line">   def __init__(self, num_layers, num_input_features, bn_size, growth_rate, drop_rate):</span><br><span class="line">       super(_DenseBlock, self).__init__()</span><br><span class="line">       for i in range(num_layers):</span><br><span class="line">           layer &#x3D; _DenseLayer(num_input_features + i *</span><br><span class="line">                               growth_rate, growth_rate, bn_size, drop_rate)</span><br><span class="line">           self.add_module(&#39;denselayer%d&#39; % (i + 1), layer) </span><br></pre></td></tr></table></figure>
 </li>
 </ol>
