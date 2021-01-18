@@ -81,16 +81,25 @@
 
 
 
-<meta name="description" content="安装ubuntu 该篇介绍了python的基本语句">
+<meta name="description" content="pix2pix论文精读 学习论文：Image-to-Image Translation with Conditional Adversarial Networks 论文目的：To achieve Image-to-image translation,it propose a new GAN callded Conditional Adversarial Networks(cGAN).  论文摘要:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安装ubuntu">
-<meta property="og:url" content="http://yoursite.com/2020/05/13/%E5%AE%89%E8%A3%85ubuntu/index.html">
+<meta property="og:title" content="p论文精读">
+<meta property="og:url" content="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/index.html">
 <meta property="og:site_name" content="lvskiller&#39;s Blog">
-<meta property="og:description" content="安装ubuntu 该篇介绍了python的基本语句">
-<meta property="article:published_time" content="2020-05-13T03:18:30.000Z">
-<meta property="article:modified_time" content="2020-05-13T03:47:36.091Z">
+<meta property="og:description" content="pix2pix论文精读 学习论文：Image-to-Image Translation with Conditional Adversarial Networks 论文目的：To achieve Image-to-image translation,it propose a new GAN callded Conditional Adversarial Networks(cGAN).  论文摘要:">
+<meta property="og:image" content="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/introduction.png">
+<meta property="og:image" content="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/V.png">
+<meta property="og:image" content="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGan_V.png">
+<meta property="og:image" content="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/L1_Loss.png">
+<meta property="og:image" content="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/Loss.png">
+<meta property="og:image" content="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/presentation.png">
+<meta property="og:image" content="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/U-Net.png">
+<meta property="og:image" content="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/N.png">
+<meta property="article:published_time" content="2021-01-18T06:31:31.000Z">
+<meta property="article:modified_time" content="2021-01-18T13:11:18.096Z">
 <meta property="article:author" content="lvskiller">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/introduction.png">
 
 
 
@@ -134,7 +143,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/13/安装ubuntu/"/>
+  <link rel="canonical" href="http://yoursite.com/2021/01/18/cGAN论文精读/"/>
 
 
 
@@ -143,7 +152,7 @@
 
 
 
-  <title>安装ubuntu | lvskiller's Blog</title>
+  <title>p论文精读 | lvskiller's Blog</title>
   
 
 
@@ -314,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/13/%E5%AE%89%E8%A3%85ubuntu/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lvskiller">
@@ -331,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">安装ubuntu</h1>
+          <h1 class="post-title" itemprop="name headline">p论文精读</h1>
         
 
         <div class="post-meta">
@@ -343,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-13T11:18:30+08:00">
-                2020-05-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-18T14:31:31+08:00">
+                2021-01-18
               </time>
             
 
@@ -380,7 +389,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  30
+                  2.8k
                 </span>
               
 
@@ -396,7 +405,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  11
                 </span>
               
             </div>
@@ -417,19 +426,86 @@
       
 
       
-        <h1 id="安装ubuntu"><a href="#安装ubuntu" class="headerlink" title="安装ubuntu"></a>安装ubuntu</h1><blockquote>
-<p>该篇介绍了python的基本语句</p>
+        <h1 id="pix2pix论文精读"><a href="#pix2pix论文精读" class="headerlink" title="pix2pix论文精读"></a>pix2pix论文精读</h1><blockquote>
+<p>学习论文：Image-to-Image Translation with Conditional Adversarial Networks</p>
+<p>论文目的：To achieve Image-to-image translation,it propose a new GAN callded Conditional Adversarial Networks(cGAN). </p>
+<p>论文摘要: Image-to-image translation is a important topic,such as  colorizing the picturces,reconstruct the objects from edge edges.And it also get many application.Our purpose is developing a common framwork to complete this problem instead of special-purpose machine.</p>
+<p>关键词：<strong>cGAN</strong>     <strong>Image-to-image translation</strong></p>
 </blockquote>
 <a id="more"></a>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
-<li><p>镜像文件</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>本文误读了一件事，就是把pix2pix误解成了cGAN。</p>
+<p>我无需过多介绍这个图片迁移任务，就是从一个图片域到另外一个图片域。在这之前的方法是建立一个专家系统，但是本文提出了一个通用系统。</p>
+<p>传统的CNN网络是为了最小化一个loss，但是常用的区别距离是使用欧几里得距离，但这会导致产生blurring，因为欧几里得距离会平均所有可行解，但是我们真正想要的是清晰、真实的图片，所以我们需要搞清楚我们到底需要什么。</p>
+<p>但是GAN是不容忍模糊的，因为D会判断这是fake的，而本文就是探索了这种<strong>GANs in the conditional setting</strong> ，本论文主要贡献有：</p>
+<ol>
+<li><p><em>cGAN可以产生很多合理的结果</em></p>
 </li>
-<li><p>破解的vmware </p>
-</li>
-<li><p>典型安装</p>
+<li><p><em>产生了一个通用的结构，分析了几个重要的结构选择</em></p>
 </li>
 </ol>
-<h3 id><a href="#" class="headerlink" title=" "></a> </h3>
+<h3 id="最近工作"><a href="#最近工作" class="headerlink" title="最近工作"></a>最近工作</h3><ol>
+<li>结构性损失，早期的方法是认为将输出空间认为是非结构性的，所以输出的每个像素是独立于所有输入的像素，而cGAN则可以学习到结构性损失（？？）早期也有很多相关的方法，但是这些我都不知道。</li>
+<li>其他GAN，其他也有人做了用GAN去完成图片迁移，但仅仅是用其他条件（L2回归）来约束将输出依靠输入。但是这些都是专门做一个任务，而本文是一个通用的结构。</li>
+<li>细节结构，本文G首先应用了一个<strong>U-Net</strong>结构作为基本结构（这个结构也是一篇论文U-net: Convolutional networks for biomedical image segmentation，以后会读），同时D也用了一个PatchGAN的技巧（ C. Li and M. Wand. Precomputed real-time texture synthesis with markovian generative adversarial networks. ECCV,）</li>
+</ol>
+<h3 id="正文方法"><a href="#正文方法" class="headerlink" title="正文方法"></a>正文方法</h3><h4 id="总纲"><a href="#总纲" class="headerlink" title="总纲"></a>总纲</h4><p>首先传统G目的是将一个随机噪声映射到图片域，而本文是将一个图片域和噪声映射到一个图片域。</p>
+<p>用数学的语言来重新描述一下这个问题：传统是G：z→y,本文则是G:(x,z)→y。</p>
+<p>而D的目标则是尽可能识别出来谁是真是是假。这里用图表示一下</p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\introduction.png" alt></p>
+<h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><p>这里和传统的目标有一些区别，传统的GAN只是输入一个噪声，但是现在要多输入一个x。</p>
+<p>传统目标为,这里x是目标y，因为复制原论文的缘故。</p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\V.png" alt></p>
+<p>现在目标则是,这里则是没有minmax，和上面一样。</p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\cGan_V.png" alt></p>
+<blockquote>
+<p> 解读一个疑问，为啥你感觉minmax好像反过来了。因为信息熵是带负号的呢，所以论文去掉了这个负号，相应就反过来了。同时由于很多框架自带的优化器都是minimize，所以这里也做了全部去min的操作。</p>
+</blockquote>
+<p>除了上面的对抗损失，还增加了L1_Loss，这个是为了保证一件事，那就是尽量保证生成的目标不仅要真，还要尽可能要和目标相似，所以采用增加了一个相似损失，因为L1_Loss比L2_Loss更鼓励少模糊。这个类似就是 </p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\L1_Loss.png" alt></p>
+<p>所以最后的总loss就是，其中$\lambda$是一个超参。</p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\Loss.png" alt></p>
+<p>这里还存在一个问题，那就是随机性的问题，如果不增加随机噪声，那么就会产生确定性输出，就损失了多样性。但是实验表明，增加随机噪声作为输入并不是很有效果。本文是通过在某几层增加dropout类型的噪声（估计得看代码我才能理解），但是仍然存在问题，随机性还是不强。产生强随机分布的结果仍是一个问题。</p>
+<h4 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h4><p>首先时采用conv_BN_ReLu结构，忘了是那篇论文介绍过这个问题。</p>
+<p>然后本文假设了一个前提，那就是源域和目标域尽管rendering不同，但是实际上底层结构相同。不同于其他方法使用的encoder-decoder（这个结构又是一篇论文G. E. Hinton and R. R. Salakhutdinov. Reducing the dimensionality of data with neural networks. Science, 313(5786):504–507, 20）结构，因为这个结构可以使得大量的底层信息在网络中穿梭。这篇文章采用了U-Net结构，然后在layer i 和layer n-i 之间增加skip connection。</p>
+<p>再者，L2_Loss和L1_Loss在高频特性不好，但是在低频已经足够了。</p>
+<blockquote>
+<p>这里引申一下高频信息和低频信息。图像的频率：灰度值变化剧烈程度的指标，是灰度在平面空间上的梯度。</p>
+<p>（1）什么是低频?<br>   低频就是颜色缓慢地变化,也就是灰度缓慢地变化,就代表着那是连续渐变的一块区域,这部分就是低频. 对于一幅图像来说，除去高频的就是低频了，也就是边缘以内的内容为低频，而边缘内的内容就是图像的大部分信息，即图像的大致概貌和轮廓，是图像的近似信息。</p>
+<p>（2）什么是高频?</p>
+<p>   反过来, 高频就是频率变化快.图像中什么时候灰度变化快?就是相邻区域之间灰度相差很大,这就是变化得快.图像中,一个影像与背景的边缘部位,通常会有明显的差别,也就是说变化那条边线那里,灰度变化很快,也即是变化频率高的部位.因此，图像边缘的灰度值变化快，就对应着频率高，即高频显示图像边缘。图像的细节处也是属于灰度值急剧变化的区域，正是因为灰度值的急剧变化，才会出现细节。<br>   另外噪声（即噪点）也是这样,在一个像素所在的位置,之所以是噪点,就是因为它与正常的点颜色不一样了，也就是说该像素点灰度值明显不一样了,,也就是灰度有快速地变化了,所以是高频部分，因此有噪声在高频这么一说。</p>
+</blockquote>
+<p>所以为了解决这个问题，我们采用了一个神奇的方法，PatchGAN，即将图片切成N*N小片，检验每个小片是真是假，最后均衡得出结果。至于这个N是一个超参，实际上N小一点会有助于训练，此时参数更少，训练速度更快，也能运行大型模型。</p>
+<p>优化问题，此时就不需要隔几步训练，用Mini-Batch SGD 和Adam。另外在推理的时侯所有设置和训练的时侯一致，比如此时test的时侯也要用dropout，同时BN用的也是测试集的方差均值。最后batch-size设置为1，则从BN变成了IN，事实证明IN对该问题更有效果。</p>
+<h4 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h4><ol>
+<li><p>首先是AMT perceptual studies，这个就类似人工评定，这是最强的方法啊。</p>
+</li>
+<li><p>FCN-scores:这个就是拿预训练的模型来跑，如果足够真实，那么就会分类正确呢。</p>
+</li>
+<li><p>上述loss的设计说明图</p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\presentation.png" alt></p>
+<p>这里图片上面一行是利用原来传统的对抗损失，即不将x输入。而下一行则是本文设计的。而接下来每一列就是生成的使用对应的loss，然后在上面跑FCN,这里不展开。</p>
+</li>
+<li><p>他还有一个显著提升，就是产生了清晰的图片，好像都对频度维度有“锐化”作用。L1loss会鼓励产生一些平均的灰白色的图片，这会导致不真实，使得图片分布比真实分布更窄，但是用cGAN则会改善这一点，会使它逼近真实分布。</p>
+</li>
+<li>接下来就是U-Net的作用了，这个显然效果很好</li>
+</ol>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\U-Net.png" alt></p>
+<ol>
+<li>接下来就是那个超参N了，这里直接展示效果,显然过大过小都不好。还有PatchGAN的好处，就是此时切片之后就能固定大小了，有助于设计网络。</li>
+</ol>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\N.png" alt></p>
+<ol>
+<li>最后他还在不同测试集上运行，发现不同数据集有着不同的表现。</li>
+<li>最后的语义分割，原本的很多问题都是输出的复杂度远大于输入，而此时则是相反，这个效果他也还是不要错的。因为此时目标更加清楚，细节更少一些。</li>
+</ol>
+<h3 id="代码解读"><a href="#代码解读" class="headerlink" title="代码解读"></a>代码解读</h3><h4 id="U-Net"><a href="#U-Net" class="headerlink" title="U-Net"></a>U-Net</h4><p>首先是U-Net，这里设计比较简单。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UNetDown</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, in_size, out_size, normalize=True, dropout=<span class="number">0.0</span>)</span>:</span></span><br><span class="line">        super(UNetDown, self).__init__()</span><br><span class="line">        layers = [nn.Conv2d(in_size, out_size, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, bias=<span class="literal">False</span>)]</span><br><span class="line">        <span class="keyword">if</span> normalize:</span><br><span class="line">            layers.append(nn.InstanceNorm2d(out_size))</span><br><span class="line">        layers.append(nn.LeakyReLU(<span class="number">0.2</span>))</span><br><span class="line">        <span class="keyword">if</span> dropout:</span><br><span class="line">            layers.append(nn.Dropout(dropout))</span><br><span class="line">        self.model = nn.Sequential(*layers)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.model(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UNetUp</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, in_size, out_size, dropout=<span class="number">0.0</span>)</span>:</span></span><br><span class="line">        super(UNetUp, self).__init__()</span><br><span class="line">        layers = [</span><br><span class="line">            nn.ConvTranspose2d(in_size, out_size, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.InstanceNorm2d(out_size),</span><br><span class="line">            nn.ReLU(inplace=<span class="literal">True</span>),</span><br><span class="line">        ]</span><br><span class="line">        <span class="keyword">if</span> dropout:</span><br><span class="line">            layers.append(nn.Dropout(dropout))</span><br><span class="line"></span><br><span class="line">        self.model = nn.Sequential(*layers)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, skip_input)</span>:</span></span><br><span class="line">        x = self.model(x)</span><br><span class="line">        x = torch.cat((x, skip_input), <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+<p>这里就要介绍一个重要的函数了nn.ConvTranspose2d</p>
+<h4 id="G"><a href="#G" class="headerlink" title="G"></a>G</h4><p>这里就按照U-Net的跨接方式完成</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GeneratorUNet</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, in_channels=<span class="number">3</span>, out_channels=<span class="number">3</span>)</span>:</span></span><br><span class="line">        super(GeneratorUNet, self).__init__()</span><br><span class="line"></span><br><span class="line">        self.down1 = UNetDown(in_channels, <span class="number">64</span>, normalize=<span class="literal">False</span>)</span><br><span class="line">        self.down2 = UNetDown(<span class="number">64</span>, <span class="number">128</span>)</span><br><span class="line">        self.down3 = UNetDown(<span class="number">128</span>, <span class="number">256</span>)</span><br><span class="line">        self.down4 = UNetDown(<span class="number">256</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.down5 = UNetDown(<span class="number">512</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.down6 = UNetDown(<span class="number">512</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.down7 = UNetDown(<span class="number">512</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.down8 = UNetDown(<span class="number">512</span>, <span class="number">512</span>, normalize=<span class="literal">False</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">        self.up1 = UNetUp(<span class="number">512</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.up2 = UNetUp(<span class="number">1024</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.up3 = UNetUp(<span class="number">1024</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.up4 = UNetUp(<span class="number">1024</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.up5 = UNetUp(<span class="number">1024</span>, <span class="number">256</span>)</span><br><span class="line">        self.up6 = UNetUp(<span class="number">512</span>, <span class="number">128</span>)</span><br><span class="line">        self.up7 = UNetUp(<span class="number">256</span>, <span class="number">64</span>)</span><br><span class="line"></span><br><span class="line">        self.final = nn.Sequential(</span><br><span class="line">            nn.Upsample(scale_factor=<span class="number">2</span>),</span><br><span class="line">            nn.ZeroPad2d((<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>)),</span><br><span class="line">            nn.Conv2d(<span class="number">128</span>, out_channels, <span class="number">4</span>, padding=<span class="number">1</span>),</span><br><span class="line">            nn.Tanh(),</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="comment"># U-Net generator with skip connections from encoder to decoder</span></span><br><span class="line">        d1 = self.down1(x)</span><br><span class="line">        d2 = self.down2(d1)</span><br><span class="line">        d3 = self.down3(d2)</span><br><span class="line">        d4 = self.down4(d3)</span><br><span class="line">        d5 = self.down5(d4)</span><br><span class="line">        d6 = self.down6(d5)</span><br><span class="line">        d7 = self.down7(d6)</span><br><span class="line">        d8 = self.down8(d7)</span><br><span class="line">        u1 = self.up1(d8, d7)</span><br><span class="line">        u2 = self.up2(u1, d6)</span><br><span class="line">        u3 = self.up3(u2, d5)</span><br><span class="line">        u4 = self.up4(u3, d4)</span><br><span class="line">        u5 = self.up5(u4, d3)</span><br><span class="line">        u6 = self.up6(u5, d2)</span><br><span class="line">        u7 = self.up7(u6, d1)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.final(u7)</span><br></pre></td></tr></table></figure>
+<h4 id="D"><a href="#D" class="headerlink" title="D"></a>D</h4><p>接下来就是最后的判别器，这里我没有看出PatchGAN的目的，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Discriminator(nn.Module):</span><br><span class="line">    def __init__(self, in_channels&#x3D;3):</span><br><span class="line">        super(Discriminator, self).__init__()</span><br><span class="line"></span><br><span class="line">        def discriminator_block(in_filters, out_filters, normalization&#x3D;True):</span><br><span class="line">            &quot;&quot;&quot;Returns downsampling layers of each discriminator block&quot;&quot;&quot;</span><br><span class="line">            layers &#x3D; [nn.Conv2d(in_filters, out_filters, 4, stride&#x3D;2, padding&#x3D;1)]</span><br><span class="line">            if normalization:</span><br><span class="line">                layers.append(nn.InstanceNorm2d(out_filters))</span><br><span class="line">            layers.append(nn.LeakyReLU(0.2, inplace&#x3D;True))</span><br><span class="line">            return layers</span><br><span class="line"></span><br><span class="line">        self.model &#x3D; nn.Sequential(</span><br><span class="line">            *discriminator_block(in_channels * 2, 64, normalization&#x3D;False),</span><br><span class="line">            *discriminator_block(64, 128),</span><br><span class="line">            *discriminator_block(128, 256),</span><br><span class="line">            *discriminator_block(256, 512),</span><br><span class="line">            nn.ZeroPad2d((1, 0, 1, 0)),</span><br><span class="line">            nn.Conv2d(512, 1, 4, padding&#x3D;1, bias&#x3D;False)</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def forward(self, img_A, img_B):</span><br><span class="line">        # Concatenate image and condition image by channels to produce input</span><br><span class="line">        img_input &#x3D; torch.cat((img_A, img_B), 1)</span><br><span class="line">        return self.model(img_input)</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -453,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/31/%E9%87%8D%E6%9E%84/" rel="next" title="重构">
-                <i class="fa fa-chevron-left"></i> 重构
+              <a href="/2021/01/18/CycleGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/" rel="next" title="CycleGAN论文精读">
+                <i class="fa fa-chevron-left"></i> CycleGAN论文精读
               </a>
             
           </div>
@@ -462,10 +538,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/05/15/crnn/" rel="prev" title="crnn">
-                crnn <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -618,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装ubuntu"><span class="nav-text">安装ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-text"> </span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pix2pix论文精读"><span class="nav-text">pix2pix论文精读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最近工作"><span class="nav-text">最近工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文方法"><span class="nav-text">正文方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总纲"><span class="nav-text">总纲</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目标"><span class="nav-text">目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络结构"><span class="nav-text">网络结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#评估"><span class="nav-text">评估</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码解读"><span class="nav-text">代码解读</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#U-Net"><span class="nav-text">U-Net</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#G"><span class="nav-text">G</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#D"><span class="nav-text">D</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

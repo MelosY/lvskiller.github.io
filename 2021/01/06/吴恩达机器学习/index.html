@@ -87,17 +87,17 @@
 <meta property="og:url" content="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="lvskiller&#39;s Blog">
 <meta property="og:description" content="吴恩达机器学习笔记 学习地址：B站 学习时间：2020.12.20 ~2021.1.5（15天） 学习内容：基本的机器学习和一些技巧 注解：由于本文和cs231n有些重合，所以相关内容可能大幅省略，详见cs231n  关键词：传统机器学习（ML）  深度机器学习（DNN）  小技巧">
-<meta property="og:image" content="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Users/31311/Desktop/%E5%AE%9E%E4%B9%A0%E6%8A%A5%E5%91%8A/%E5%90%B4%E6%81%A9%E8%BE%BE/fitting.png">
+<meta property="og:image" content="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/fitting.png">
 <meta property="og:image" content="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Users/31311/Desktop/%E5%AE%9E%E4%B9%A0%E6%8A%A5%E5%91%8A/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/MSE_loss.png">
 <meta property="og:image" content="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Users/31311/Desktop/%E5%AE%9E%E4%B9%A0%E6%8A%A5%E5%91%8A/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/sigmoid.png">
 <meta property="og:image" content="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Users/31311/Desktop/%E5%AE%9E%E4%B9%A0%E6%8A%A5%E5%91%8A/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/gradient.png">
 <meta property="og:image" content="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Users/31311/Desktop/%E5%AE%9E%E4%B9%A0%E6%8A%A5%E5%91%8A/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/s_lr.png">
 <meta property="og:image" content="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Users/31311/Desktop/%E5%AE%9E%E4%B9%A0%E6%8A%A5%E5%91%8A/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/l_sr.png">
 <meta property="article:published_time" content="2021-01-06T05:02:57.000Z">
-<meta property="article:modified_time" content="2021-01-06T10:15:02.795Z">
+<meta property="article:modified_time" content="2021-01-16T14:38:30.601Z">
 <meta property="article:author" content="lvskiller">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Users/31311/Desktop/%E5%AE%9E%E4%B9%A0%E6%8A%A5%E5%91%8A/%E5%90%B4%E6%81%A9%E8%BE%BE/fitting.png">
+<meta name="twitter:image" content="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/fitting.png">
 
 
 
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.9k
+                  3.5k
                 </span>
               
 
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10
+                  13
                 </span>
               
             </div>
@@ -447,7 +447,7 @@
 <h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>两个重要概念：overfitting（过拟合）、underfitting(欠拟合)</p>
 <p>过拟合：模型过于复杂，挑选过多复杂的特征等等经过训练后，这个模型适用于训练的数据，但是不适用于测试的数据。 </p>
 <p>欠拟合：模型过于简单等问题经过训练后，这个模型连训练数据都无法拟合。见下图</p>
-<p><img src="/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Users/31311/Desktop/实习报告/吴恩达/fitting.png" alt></p>
+<p><img src="/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/fitting.png" alt></p>
 <p>下面是一些概念，这里不做详细介绍</p>
 <p><strong>supervised learning(监督学习)</strong>：给定label</p>
 <p><strong>unsupervised learning（非监督学习）</strong>：不给定label</p>
@@ -535,7 +535,63 @@ loss = -ylog(h_\theta(x))-(1-y)log(1-h_\theta(x))</script><p>显然，我们可�
 </ol>
 <p>​       小批量梯度下降法是批量梯度下降法和随机梯度下降法的折衷，也就是对于m个样本，我们采用x个样子来迭           代，1&lt;x&lt;m。一般可以取x=10，当然根据样本的数据，可以调整这个x的值。对应的更新公式是：</p>
 <p>​                  $θ_i=θ_i−α\sum^{t+x+1}_{j=t}(h_\theta(x_0^{(j)},x_1^{(j)},……x_n^{(j)})-y^{(j)})x_i^{(j)}$</p>
-<h2 id="传统神经网络"><a href="#传统神经网络" class="headerlink" title="传统神经网络"></a>传统神经网络</h2><h2 id="深度神经网络"><a href="#深度神经网络" class="headerlink" title="深度神经网络"></a>深度神经网络</h2><h2 id="一些应用"><a href="#一些应用" class="headerlink" title="一些应用"></a>一些应用</h2>
+<hr>
+<p>显然上述的一些知识已经足够你进行机器学习了。</p>
+<p>简单来说训练流程：</p>
+<ol>
+<li><p>数据预处理</p>
+</li>
+<li><p>设计loss，这里的loss有多种。同时权重惩罚是其中比较特殊的一个损失，他是用来防止过拟合的一个操作（显然还有其他防止过拟合的操作，这里会在cs231n里详细介绍）。</p>
+<blockquote>
+<p>这里介绍一下过拟合和欠拟合</p>
+<ol>
+<li>overfitting ：high variance，low bias。 多是由于模型过于复杂所引起的，他能很好的吻合训练数据，但是在测试数据中表现极差。这里可以通过一下手段进行遏制。<ul>
+<li>人工选择特征</li>
+<li>更换模型</li>
+<li>增加正则项</li>
+</ul>
+</li>
+<li>underfitting： 这里和上述正好想反，high variance，high bias。模型过于简单，连测试数据都弄不好的废物何谈训练数据。</li>
+</ol>
+</blockquote>
+</li>
+<li><p>开始前向传播。</p>
+</li>
+<li><p>计算loss</p>
+</li>
+<li><p>后向传播，这里就设计学习率的问题了，过大和过小都会导致问题。还有权重损失的比例，毕竟大部分都是加上了正则化的。</p>
+</li>
+</ol>
+<blockquote>
+<p>一些debug的技巧和获得更好表现的技巧：</p>
+<ol>
+<li>获得更多训练数据</li>
+<li>尝试更少的特征。</li>
+<li>获得更多的特征。（两者不是矛盾的）</li>
+<li>fine-tune 学习率</li>
+</ol>
+</blockquote>
+<h2 id="其他模型"><a href="#其他模型" class="headerlink" title="其他模型"></a>其他模型</h2><h4 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h4><p>首先不得不提到SVM，其实听他介绍感觉和logistics回归差不多。</p>
+<p>这里待续，我不是很想花篇幅在上面，建议直接找其他文章读。</p>
+<h4 id="K-Means算法"><a href="#K-Means算法" class="headerlink" title="K-Means算法"></a>K-Means算法</h4><p>作为无监督学习算法中聚类算法的典例，有必要稍微介绍一下它的流程</p>
+<blockquote>
+<ol>
+<li>随机选取几个据类中心，也即k个</li>
+<li>簇分配</li>
+<li>移动据类中心（到簇的平均）</li>
+<li>重复2，3到簇不再移动。</li>
+</ol>
+<p>换成数学的语言来描述：</p>
+<p>设$\mu_k$是据类中心，$\mu_{c_i}$是$x_i$ 所属的簇的聚类中心</p>
+<p>则$J(\mu_i,c_i)=1/m \Sigma||x^{(i)}-\mu_{c^{(i)}}||^2$</p>
+<p>这就是大概的误差，那么2相当于对c求偏导，3相当于对$\mu$求偏导。</p>
+<p>最开始的初始化，可以就是随机选取。</p>
+</blockquote>
+<h4 id="PCA算法"><a href="#PCA算法" class="headerlink" title="PCA算法"></a>PCA算法</h4><p>很有用的算法，我直接理解为找到一个平面去投影，不断找直到降到能看清楚。这里的过程还是简单的。</p>
+<h4 id="推荐系统"><a href="#推荐系统" class="headerlink" title="推荐系统"></a>推荐系统</h4><p>这里的 协同训练很有意思，不想拓展</p>
+<h4 id="最后的建议"><a href="#最后的建议" class="headerlink" title="最后的建议"></a>最后的建议</h4><p>进行上限分析，找到最能提升性能的进行修改。。</p>
+<p>完结撒花。。</p>
+
       
     </div>
     
@@ -652,7 +708,7 @@ loss = -ylog(h_\theta(x))-(1-y)log(1-h_\theta(x))</script><p>显然，我们可�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -724,7 +780,7 @@ loss = -ylog(h_\theta(x))-(1-y)log(1-h_\theta(x))</script><p>显然，我们可�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#吴恩达机器学习笔记"><span class="nav-text">吴恩达机器学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#梗概"><span class="nav-text">梗概</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预备知识"><span class="nav-text">预备知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理"><span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#loss（损失、误差）"><span class="nav-text">loss（损失、误差）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MSE-loss"><span class="nav-text">MSE loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-Entropy-Error-Function"><span class="nav-text">Cross Entropy Error Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F1-score"><span class="nav-text">F1 score</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权重惩罚"><span class="nav-text">权重惩罚</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直观解释"><span class="nav-text">直观解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#训练过程"><span class="nav-text">训练过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么判断收敛呢"><span class="nav-text">怎么判断收敛呢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同的梯度下降方法"><span class="nav-text">不同的梯度下降方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传统神经网络"><span class="nav-text">传统神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度神经网络"><span class="nav-text">深度神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些应用"><span class="nav-text">一些应用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#吴恩达机器学习笔记"><span class="nav-text">吴恩达机器学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#梗概"><span class="nav-text">梗概</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预备知识"><span class="nav-text">预备知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理"><span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#loss（损失、误差）"><span class="nav-text">loss（损失、误差）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MSE-loss"><span class="nav-text">MSE loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-Entropy-Error-Function"><span class="nav-text">Cross Entropy Error Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F1-score"><span class="nav-text">F1 score</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权重惩罚"><span class="nav-text">权重惩罚</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直观解释"><span class="nav-text">直观解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#训练过程"><span class="nav-text">训练过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#怎么判断收敛呢"><span class="nav-text">怎么判断收敛呢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同的梯度下降方法"><span class="nav-text">不同的梯度下降方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他模型"><span class="nav-text">其他模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SVM"><span class="nav-text">SVM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#K-Means算法"><span class="nav-text">K-Means算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PCA算法"><span class="nav-text">PCA算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推荐系统"><span class="nav-text">推荐系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后的建议"><span class="nav-text">最后的建议</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -758,7 +814,7 @@ loss = -ylog(h_\theta(x))-(1-y)log(1-h_\theta(x))</script><p>显然，我们可�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">23.6k</span>
+    <span title="Site words total count">27k</span>
   
 </div>
 

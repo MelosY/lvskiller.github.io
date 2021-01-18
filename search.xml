@@ -1,6 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>p论文精读</title>
+    <url>/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</url>
+    <content><![CDATA[<h1 id="pix2pix论文精读"><a href="#pix2pix论文精读" class="headerlink" title="pix2pix论文精读"></a>pix2pix论文精读</h1><blockquote>
+<p>学习论文：Image-to-Image Translation with Conditional Adversarial Networks</p>
+<p>论文目的：To achieve Image-to-image translation,it propose a new GAN callded Conditional Adversarial Networks(cGAN). </p>
+<p>论文摘要: Image-to-image translation is a important topic,such as  colorizing the picturces,reconstruct the objects from edge edges.And it also get many application.Our purpose is developing a common framwork to complete this problem instead of special-purpose machine.</p>
+<p>关键词：<strong>cGAN</strong>     <strong>Image-to-image translation</strong></p>
+</blockquote>
+<a id="more"></a>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>本文误读了一件事，就是把pix2pix误解成了cGAN。</p>
+<p>我无需过多介绍这个图片迁移任务，就是从一个图片域到另外一个图片域。在这之前的方法是建立一个专家系统，但是本文提出了一个通用系统。</p>
+<p>传统的CNN网络是为了最小化一个loss，但是常用的区别距离是使用欧几里得距离，但这会导致产生blurring，因为欧几里得距离会平均所有可行解，但是我们真正想要的是清晰、真实的图片，所以我们需要搞清楚我们到底需要什么。</p>
+<p>但是GAN是不容忍模糊的，因为D会判断这是fake的，而本文就是探索了这种<strong>GANs in the conditional setting</strong> ，本论文主要贡献有：</p>
+<ol>
+<li><p><em>cGAN可以产生很多合理的结果</em></p>
+</li>
+<li><p><em>产生了一个通用的结构，分析了几个重要的结构选择</em></p>
+</li>
+</ol>
+<h3 id="最近工作"><a href="#最近工作" class="headerlink" title="最近工作"></a>最近工作</h3><ol>
+<li>结构性损失，早期的方法是认为将输出空间认为是非结构性的，所以输出的每个像素是独立于所有输入的像素，而cGAN则可以学习到结构性损失（？？）早期也有很多相关的方法，但是这些我都不知道。</li>
+<li>其他GAN，其他也有人做了用GAN去完成图片迁移，但仅仅是用其他条件（L2回归）来约束将输出依靠输入。但是这些都是专门做一个任务，而本文是一个通用的结构。</li>
+<li>细节结构，本文G首先应用了一个<strong>U-Net</strong>结构作为基本结构（这个结构也是一篇论文U-net: Convolutional networks for biomedical image segmentation，以后会读），同时D也用了一个PatchGAN的技巧（ C. Li and M. Wand. Precomputed real-time texture synthesis with markovian generative adversarial networks. ECCV,）</li>
+</ol>
+<h3 id="正文方法"><a href="#正文方法" class="headerlink" title="正文方法"></a>正文方法</h3><h4 id="总纲"><a href="#总纲" class="headerlink" title="总纲"></a>总纲</h4><p>首先传统G目的是将一个随机噪声映射到图片域，而本文是将一个图片域和噪声映射到一个图片域。</p>
+<p>用数学的语言来重新描述一下这个问题：传统是G：z→y,本文则是G:(x,z)→y。</p>
+<p>而D的目标则是尽可能识别出来谁是真是是假。这里用图表示一下</p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\introduction.png" alt></p>
+<h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><p>这里和传统的目标有一些区别，传统的GAN只是输入一个噪声，但是现在要多输入一个x。</p>
+<p>传统目标为,这里x是目标y，因为复制原论文的缘故。</p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\V.png" alt></p>
+<p>现在目标则是,这里则是没有minmax，和上面一样。</p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\cGan_V.png" alt></p>
+<blockquote>
+<p> 解读一个疑问，为啥你感觉minmax好像反过来了。因为信息熵是带负号的呢，所以论文去掉了这个负号，相应就反过来了。同时由于很多框架自带的优化器都是minimize，所以这里也做了全部去min的操作。</p>
+</blockquote>
+<p>除了上面的对抗损失，还增加了L1_Loss，这个是为了保证一件事，那就是尽量保证生成的目标不仅要真，还要尽可能要和目标相似，所以采用增加了一个相似损失，因为L1_Loss比L2_Loss更鼓励少模糊。这个类似就是 </p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\L1_Loss.png" alt></p>
+<p>所以最后的总loss就是，其中$\lambda$是一个超参。</p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\Loss.png" alt></p>
+<p>这里还存在一个问题，那就是随机性的问题，如果不增加随机噪声，那么就会产生确定性输出，就损失了多样性。但是实验表明，增加随机噪声作为输入并不是很有效果。本文是通过在某几层增加dropout类型的噪声（估计得看代码我才能理解），但是仍然存在问题，随机性还是不强。产生强随机分布的结果仍是一个问题。</p>
+<h4 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h4><p>首先时采用conv_BN_ReLu结构，忘了是那篇论文介绍过这个问题。</p>
+<p>然后本文假设了一个前提，那就是源域和目标域尽管rendering不同，但是实际上底层结构相同。不同于其他方法使用的encoder-decoder（这个结构又是一篇论文G. E. Hinton and R. R. Salakhutdinov. Reducing the dimensionality of data with neural networks. Science, 313(5786):504–507, 20）结构，因为这个结构可以使得大量的底层信息在网络中穿梭。这篇文章采用了U-Net结构，然后在layer i 和layer n-i 之间增加skip connection。</p>
+<p>再者，L2_Loss和L1_Loss在高频特性不好，但是在低频已经足够了。</p>
+<blockquote>
+<p>这里引申一下高频信息和低频信息。图像的频率：灰度值变化剧烈程度的指标，是灰度在平面空间上的梯度。</p>
+<p>（1）什么是低频?<br>   低频就是颜色缓慢地变化,也就是灰度缓慢地变化,就代表着那是连续渐变的一块区域,这部分就是低频. 对于一幅图像来说，除去高频的就是低频了，也就是边缘以内的内容为低频，而边缘内的内容就是图像的大部分信息，即图像的大致概貌和轮廓，是图像的近似信息。</p>
+<p>（2）什么是高频?</p>
+<p>   反过来, 高频就是频率变化快.图像中什么时候灰度变化快?就是相邻区域之间灰度相差很大,这就是变化得快.图像中,一个影像与背景的边缘部位,通常会有明显的差别,也就是说变化那条边线那里,灰度变化很快,也即是变化频率高的部位.因此，图像边缘的灰度值变化快，就对应着频率高，即高频显示图像边缘。图像的细节处也是属于灰度值急剧变化的区域，正是因为灰度值的急剧变化，才会出现细节。<br>   另外噪声（即噪点）也是这样,在一个像素所在的位置,之所以是噪点,就是因为它与正常的点颜色不一样了，也就是说该像素点灰度值明显不一样了,,也就是灰度有快速地变化了,所以是高频部分，因此有噪声在高频这么一说。</p>
+</blockquote>
+<p>所以为了解决这个问题，我们采用了一个神奇的方法，PatchGAN，即将图片切成N*N小片，检验每个小片是真是假，最后均衡得出结果。至于这个N是一个超参，实际上N小一点会有助于训练，此时参数更少，训练速度更快，也能运行大型模型。</p>
+<p>优化问题，此时就不需要隔几步训练，用Mini-Batch SGD 和Adam。另外在推理的时侯所有设置和训练的时侯一致，比如此时test的时侯也要用dropout，同时BN用的也是测试集的方差均值。最后batch-size设置为1，则从BN变成了IN，事实证明IN对该问题更有效果。</p>
+<h4 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h4><ol>
+<li><p>首先是AMT perceptual studies，这个就类似人工评定，这是最强的方法啊。</p>
+</li>
+<li><p>FCN-scores:这个就是拿预训练的模型来跑，如果足够真实，那么就会分类正确呢。</p>
+</li>
+<li><p>上述loss的设计说明图</p>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\presentation.png" alt></p>
+<p>这里图片上面一行是利用原来传统的对抗损失，即不将x输入。而下一行则是本文设计的。而接下来每一列就是生成的使用对应的loss，然后在上面跑FCN,这里不展开。</p>
+</li>
+<li><p>他还有一个显著提升，就是产生了清晰的图片，好像都对频度维度有“锐化”作用。L1loss会鼓励产生一些平均的灰白色的图片，这会导致不真实，使得图片分布比真实分布更窄，但是用cGAN则会改善这一点，会使它逼近真实分布。</p>
+</li>
+<li>接下来就是U-Net的作用了，这个显然效果很好</li>
+</ol>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\U-Net.png" alt></p>
+<ol>
+<li>接下来就是那个超参N了，这里直接展示效果,显然过大过小都不好。还有PatchGAN的好处，就是此时切片之后就能固定大小了，有助于设计网络。</li>
+</ol>
+<p><img src="/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGAN论文精读\N.png" alt></p>
+<ol>
+<li>最后他还在不同测试集上运行，发现不同数据集有着不同的表现。</li>
+<li>最后的语义分割，原本的很多问题都是输出的复杂度远大于输入，而此时则是相反，这个效果他也还是不要错的。因为此时目标更加清楚，细节更少一些。</li>
+</ol>
+<h3 id="代码解读"><a href="#代码解读" class="headerlink" title="代码解读"></a>代码解读</h3><h4 id="U-Net"><a href="#U-Net" class="headerlink" title="U-Net"></a>U-Net</h4><p>首先是U-Net，这里设计比较简单。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UNetDown</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, in_size, out_size, normalize=True, dropout=<span class="number">0.0</span>)</span>:</span></span><br><span class="line">        super(UNetDown, self).__init__()</span><br><span class="line">        layers = [nn.Conv2d(in_size, out_size, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, bias=<span class="literal">False</span>)]</span><br><span class="line">        <span class="keyword">if</span> normalize:</span><br><span class="line">            layers.append(nn.InstanceNorm2d(out_size))</span><br><span class="line">        layers.append(nn.LeakyReLU(<span class="number">0.2</span>))</span><br><span class="line">        <span class="keyword">if</span> dropout:</span><br><span class="line">            layers.append(nn.Dropout(dropout))</span><br><span class="line">        self.model = nn.Sequential(*layers)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.model(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UNetUp</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, in_size, out_size, dropout=<span class="number">0.0</span>)</span>:</span></span><br><span class="line">        super(UNetUp, self).__init__()</span><br><span class="line">        layers = [</span><br><span class="line">            nn.ConvTranspose2d(in_size, out_size, <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, bias=<span class="literal">False</span>),</span><br><span class="line">            nn.InstanceNorm2d(out_size),</span><br><span class="line">            nn.ReLU(inplace=<span class="literal">True</span>),</span><br><span class="line">        ]</span><br><span class="line">        <span class="keyword">if</span> dropout:</span><br><span class="line">            layers.append(nn.Dropout(dropout))</span><br><span class="line"></span><br><span class="line">        self.model = nn.Sequential(*layers)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, skip_input)</span>:</span></span><br><span class="line">        x = self.model(x)</span><br><span class="line">        x = torch.cat((x, skip_input), <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+<p>这里就要介绍一个重要的函数了nn.ConvTranspose2d</p>
+<h4 id="G"><a href="#G" class="headerlink" title="G"></a>G</h4><p>这里就按照U-Net的跨接方式完成</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GeneratorUNet</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, in_channels=<span class="number">3</span>, out_channels=<span class="number">3</span>)</span>:</span></span><br><span class="line">        super(GeneratorUNet, self).__init__()</span><br><span class="line"></span><br><span class="line">        self.down1 = UNetDown(in_channels, <span class="number">64</span>, normalize=<span class="literal">False</span>)</span><br><span class="line">        self.down2 = UNetDown(<span class="number">64</span>, <span class="number">128</span>)</span><br><span class="line">        self.down3 = UNetDown(<span class="number">128</span>, <span class="number">256</span>)</span><br><span class="line">        self.down4 = UNetDown(<span class="number">256</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.down5 = UNetDown(<span class="number">512</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.down6 = UNetDown(<span class="number">512</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.down7 = UNetDown(<span class="number">512</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.down8 = UNetDown(<span class="number">512</span>, <span class="number">512</span>, normalize=<span class="literal">False</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">        self.up1 = UNetUp(<span class="number">512</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.up2 = UNetUp(<span class="number">1024</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.up3 = UNetUp(<span class="number">1024</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.up4 = UNetUp(<span class="number">1024</span>, <span class="number">512</span>, dropout=<span class="number">0.5</span>)</span><br><span class="line">        self.up5 = UNetUp(<span class="number">1024</span>, <span class="number">256</span>)</span><br><span class="line">        self.up6 = UNetUp(<span class="number">512</span>, <span class="number">128</span>)</span><br><span class="line">        self.up7 = UNetUp(<span class="number">256</span>, <span class="number">64</span>)</span><br><span class="line"></span><br><span class="line">        self.final = nn.Sequential(</span><br><span class="line">            nn.Upsample(scale_factor=<span class="number">2</span>),</span><br><span class="line">            nn.ZeroPad2d((<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>)),</span><br><span class="line">            nn.Conv2d(<span class="number">128</span>, out_channels, <span class="number">4</span>, padding=<span class="number">1</span>),</span><br><span class="line">            nn.Tanh(),</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="comment"># U-Net generator with skip connections from encoder to decoder</span></span><br><span class="line">        d1 = self.down1(x)</span><br><span class="line">        d2 = self.down2(d1)</span><br><span class="line">        d3 = self.down3(d2)</span><br><span class="line">        d4 = self.down4(d3)</span><br><span class="line">        d5 = self.down5(d4)</span><br><span class="line">        d6 = self.down6(d5)</span><br><span class="line">        d7 = self.down7(d6)</span><br><span class="line">        d8 = self.down8(d7)</span><br><span class="line">        u1 = self.up1(d8, d7)</span><br><span class="line">        u2 = self.up2(u1, d6)</span><br><span class="line">        u3 = self.up3(u2, d5)</span><br><span class="line">        u4 = self.up4(u3, d4)</span><br><span class="line">        u5 = self.up5(u4, d3)</span><br><span class="line">        u6 = self.up6(u5, d2)</span><br><span class="line">        u7 = self.up7(u6, d1)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.final(u7)</span><br></pre></td></tr></table></figure>
+<h4 id="D"><a href="#D" class="headerlink" title="D"></a>D</h4><p>接下来就是最后的判别器，这里我没有看出PatchGAN的目的，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Discriminator(nn.Module):</span><br><span class="line">    def __init__(self, in_channels&#x3D;3):</span><br><span class="line">        super(Discriminator, self).__init__()</span><br><span class="line"></span><br><span class="line">        def discriminator_block(in_filters, out_filters, normalization&#x3D;True):</span><br><span class="line">            &quot;&quot;&quot;Returns downsampling layers of each discriminator block&quot;&quot;&quot;</span><br><span class="line">            layers &#x3D; [nn.Conv2d(in_filters, out_filters, 4, stride&#x3D;2, padding&#x3D;1)]</span><br><span class="line">            if normalization:</span><br><span class="line">                layers.append(nn.InstanceNorm2d(out_filters))</span><br><span class="line">            layers.append(nn.LeakyReLU(0.2, inplace&#x3D;True))</span><br><span class="line">            return layers</span><br><span class="line"></span><br><span class="line">        self.model &#x3D; nn.Sequential(</span><br><span class="line">            *discriminator_block(in_channels * 2, 64, normalization&#x3D;False),</span><br><span class="line">            *discriminator_block(64, 128),</span><br><span class="line">            *discriminator_block(128, 256),</span><br><span class="line">            *discriminator_block(256, 512),</span><br><span class="line">            nn.ZeroPad2d((1, 0, 1, 0)),</span><br><span class="line">            nn.Conv2d(512, 1, 4, padding&#x3D;1, bias&#x3D;False)</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    def forward(self, img_A, img_B):</span><br><span class="line">        # Concatenate image and condition image by channels to produce input</span><br><span class="line">        img_input &#x3D; torch.cat((img_A, img_B), 1)</span><br><span class="line">        return self.model(img_input)</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>CycleGAN论文精读</title>
+    <url>/2021/01/18/CycleGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</url>
+    <content><![CDATA[<h1 id="CycleGAN论文精读"><a href="#CycleGAN论文精读" class="headerlink" title="CycleGAN论文精读"></a>CycleGAN论文精读</h1><blockquote>
+<p>学习论文：Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks</p>
+<p>论文目的：Traditional Image-to-image translation is</p>
+<p>论文摘要: Traditional Image-to-image translation need aligned image pairs,however it’s hard to achieve.</p>
+<p>关键词：<strong>CycleLoss</strong>    <strong>GAN</strong>     <strong>Image-to-image translation</strong></p>
+</blockquote>
+<a id="more"></a>]]></content>
+  </entry>
+  <entry>
     <title>DCGAN</title>
     <url>/2021/01/13/DCGAN/</url>
     <content><![CDATA[<h1 id="DCGAN论文精读"><a href="#DCGAN论文精读" class="headerlink" title="DCGAN论文精读"></a>DCGAN论文精读</h1><blockquote>
@@ -331,7 +426,7 @@
 <h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>两个重要概念：overfitting（过拟合）、underfitting(欠拟合)</p>
 <p>过拟合：模型过于复杂，挑选过多复杂的特征等等经过训练后，这个模型适用于训练的数据，但是不适用于测试的数据。 </p>
 <p>欠拟合：模型过于简单等问题经过训练后，这个模型连训练数据都无法拟合。见下图</p>
-<p><img src="/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Users/31311/Desktop/实习报告/吴恩达/fitting.png" alt></p>
+<p><img src="/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/fitting.png" alt></p>
 <p>下面是一些概念，这里不做详细介绍</p>
 <p><strong>supervised learning(监督学习)</strong>：给定label</p>
 <p><strong>unsupervised learning（非监督学习）</strong>：不给定label</p>
@@ -419,7 +514,63 @@ loss = -ylog(h_\theta(x))-(1-y)log(1-h_\theta(x))</script><p>显然，我们可�
 </ol>
 <p>​       小批量梯度下降法是批量梯度下降法和随机梯度下降法的折衷，也就是对于m个样本，我们采用x个样子来迭           代，1&lt;x&lt;m。一般可以取x=10，当然根据样本的数据，可以调整这个x的值。对应的更新公式是：</p>
 <p>​                  $θ_i=θ_i−α\sum^{t+x+1}_{j=t}(h_\theta(x_0^{(j)},x_1^{(j)},……x_n^{(j)})-y^{(j)})x_i^{(j)}$</p>
-<h2 id="传统神经网络"><a href="#传统神经网络" class="headerlink" title="传统神经网络"></a>传统神经网络</h2><h2 id="深度神经网络"><a href="#深度神经网络" class="headerlink" title="深度神经网络"></a>深度神经网络</h2><h2 id="一些应用"><a href="#一些应用" class="headerlink" title="一些应用"></a>一些应用</h2>]]></content>
+<hr>
+<p>显然上述的一些知识已经足够你进行机器学习了。</p>
+<p>简单来说训练流程：</p>
+<ol>
+<li><p>数据预处理</p>
+</li>
+<li><p>设计loss，这里的loss有多种。同时权重惩罚是其中比较特殊的一个损失，他是用来防止过拟合的一个操作（显然还有其他防止过拟合的操作，这里会在cs231n里详细介绍）。</p>
+<blockquote>
+<p>这里介绍一下过拟合和欠拟合</p>
+<ol>
+<li>overfitting ：high variance，low bias。 多是由于模型过于复杂所引起的，他能很好的吻合训练数据，但是在测试数据中表现极差。这里可以通过一下手段进行遏制。<ul>
+<li>人工选择特征</li>
+<li>更换模型</li>
+<li>增加正则项</li>
+</ul>
+</li>
+<li>underfitting： 这里和上述正好想反，high variance，high bias。模型过于简单，连测试数据都弄不好的废物何谈训练数据。</li>
+</ol>
+</blockquote>
+</li>
+<li><p>开始前向传播。</p>
+</li>
+<li><p>计算loss</p>
+</li>
+<li><p>后向传播，这里就设计学习率的问题了，过大和过小都会导致问题。还有权重损失的比例，毕竟大部分都是加上了正则化的。</p>
+</li>
+</ol>
+<blockquote>
+<p>一些debug的技巧和获得更好表现的技巧：</p>
+<ol>
+<li>获得更多训练数据</li>
+<li>尝试更少的特征。</li>
+<li>获得更多的特征。（两者不是矛盾的）</li>
+<li>fine-tune 学习率</li>
+</ol>
+</blockquote>
+<h2 id="其他模型"><a href="#其他模型" class="headerlink" title="其他模型"></a>其他模型</h2><h4 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h4><p>首先不得不提到SVM，其实听他介绍感觉和logistics回归差不多。</p>
+<p>这里待续，我不是很想花篇幅在上面，建议直接找其他文章读。</p>
+<h4 id="K-Means算法"><a href="#K-Means算法" class="headerlink" title="K-Means算法"></a>K-Means算法</h4><p>作为无监督学习算法中聚类算法的典例，有必要稍微介绍一下它的流程</p>
+<blockquote>
+<ol>
+<li>随机选取几个据类中心，也即k个</li>
+<li>簇分配</li>
+<li>移动据类中心（到簇的平均）</li>
+<li>重复2，3到簇不再移动。</li>
+</ol>
+<p>换成数学的语言来描述：</p>
+<p>设$\mu_k$是据类中心，$\mu_{c_i}$是$x_i$ 所属的簇的聚类中心</p>
+<p>则$J(\mu_i,c_i)=1/m \Sigma||x^{(i)}-\mu_{c^{(i)}}||^2$</p>
+<p>这就是大概的误差，那么2相当于对c求偏导，3相当于对$\mu$求偏导。</p>
+<p>最开始的初始化，可以就是随机选取。</p>
+</blockquote>
+<h4 id="PCA算法"><a href="#PCA算法" class="headerlink" title="PCA算法"></a>PCA算法</h4><p>很有用的算法，我直接理解为找到一个平面去投影，不断找直到降到能看清楚。这里的过程还是简单的。</p>
+<h4 id="推荐系统"><a href="#推荐系统" class="headerlink" title="推荐系统"></a>推荐系统</h4><p>这里的 协同训练很有意思，不想拓展</p>
+<h4 id="最后的建议"><a href="#最后的建议" class="headerlink" title="最后的建议"></a>最后的建议</h4><p>进行上限分析，找到最能提升性能的进行修改。。</p>
+<p>完结撒花。。</p>
+]]></content>
   </entry>
   <entry>
     <title>crnn</title>

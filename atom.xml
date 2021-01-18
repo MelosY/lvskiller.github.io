@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-14T13:39:14.596Z</updated>
+  <updated>2021-01-18T13:11:18.096Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>p论文精读</title>
+    <link href="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/"/>
+    <id>http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</id>
+    <published>2021-01-18T06:31:31.000Z</published>
+    <updated>2021-01-18T13:11:18.096Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;pix2pix论文精读&quot;&gt;&lt;a href=&quot;#pix2pix论文精读&quot; class=&quot;headerlink&quot; title=&quot;pix2pix论文精读&quot;&gt;&lt;/a&gt;pix2pix论文精读&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;学习论文：Image-to-Image Translation with Conditional Adversarial Networks&lt;/p&gt;
+&lt;p&gt;论文目的：To achieve Image-to-image translation,it propose a new GAN callded Conditional Adversarial Networks(cGAN). &lt;/p&gt;
+&lt;p&gt;论文摘要: Image-to-image translation is a important topic,such as  colorizing the picturces,reconstruct the objects from edge edges.And it also get many application.Our purpose is developing a common framwork to complete this problem instead of special-purpose machine.&lt;/p&gt;
+&lt;p&gt;关键词：&lt;strong&gt;cGAN&lt;/strong&gt;     &lt;strong&gt;Image-to-image translation&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CycleGAN论文精读</title>
+    <link href="http://yoursite.com/2021/01/18/CycleGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/"/>
+    <id>http://yoursite.com/2021/01/18/CycleGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</id>
+    <published>2021-01-18T05:17:19.000Z</published>
+    <updated>2021-01-18T06:38:05.153Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;CycleGAN论文精读&quot;&gt;&lt;a href=&quot;#CycleGAN论文精读&quot; class=&quot;headerlink&quot; title=&quot;CycleGAN论文精读&quot;&gt;&lt;/a&gt;CycleGAN论文精读&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;学习论文：Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks&lt;/p&gt;
+&lt;p&gt;论文目的：Traditional Image-to-image translation is&lt;/p&gt;
+&lt;p&gt;论文摘要: Traditional Image-to-image translation need aligned image pairs,however it’s hard to achieve.&lt;/p&gt;
+&lt;p&gt;关键词：&lt;strong&gt;CycleLoss&lt;/strong&gt;    &lt;strong&gt;GAN&lt;/strong&gt;     &lt;strong&gt;Image-to-image translation&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>DCGAN</title>
@@ -85,7 +129,7 @@
     <link href="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     <id>http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</id>
     <published>2021-01-06T05:02:57.000Z</published>
-    <updated>2021-01-06T10:15:02.795Z</updated>
+    <updated>2021-01-16T14:38:30.601Z</updated>
     
     <summary type="html">
     
@@ -392,54 +436,6 @@
       <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>全连接神经网络</title>
-    <link href="http://yoursite.com/2020/02/17/%E5%85%A8%E8%BF%9E%E6%8E%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    <id>http://yoursite.com/2020/02/17/%E5%85%A8%E8%BF%9E%E6%8E%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</id>
-    <published>2020-02-17T08:57:51.000Z</published>
-    <updated>2020-02-17T09:27:03.009Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;全连接神经网络&quot;&gt;&lt;a href=&quot;#全连接神经网络&quot; class=&quot;headerlink&quot; title=&quot;全连接神经网络&quot;&gt;&lt;/a&gt;全连接神经网络&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;该篇介绍了全连接神经网络，做了mnist的数据集&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>时间模块</title>
-    <link href="http://yoursite.com/2020/02/17/%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/"/>
-    <id>http://yoursite.com/2020/02/17/%E6%97%B6%E9%97%B4%E6%A8%A1%E5%9D%97/</id>
-    <published>2020-02-17T08:01:57.000Z</published>
-    <updated>2020-02-17T08:02:51.743Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;时间&quot;&gt;&lt;a href=&quot;#时间&quot; class=&quot;headerlink&quot; title=&quot;时间&quot;&gt;&lt;/a&gt;时间&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;time 和calendar 的简单应用&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="-基础类 -语言" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%B1%BB-%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
