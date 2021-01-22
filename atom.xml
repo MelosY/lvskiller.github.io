@@ -36,28 +36,6 @@
   </entry>
   
   <entry>
-    <title>p论文精读</title>
-    <link href="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/"/>
-    <id>http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</id>
-    <published>2021-01-18T06:31:31.000Z</published>
-    <updated>2021-01-18T13:11:18.096Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;pix2pix论文精读&quot;&gt;&lt;a href=&quot;#pix2pix论文精读&quot; class=&quot;headerlink&quot; title=&quot;pix2pix论文精读&quot;&gt;&lt;/a&gt;pix2pix论文精读&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;学习论文：Image-to-Image Translation with Conditional Adversarial Networks&lt;/p&gt;
-&lt;p&gt;论文目的：To achieve Image-to-image translation,it propose a new GAN callded Conditional Adversarial Networks(cGAN). &lt;/p&gt;
-&lt;p&gt;论文摘要: Image-to-image translation is a important topic,such as  colorizing the picturces,reconstruct the objects from edge edges.And it also get many application.Our purpose is developing a common framwork to complete this problem instead of special-purpose machine.&lt;/p&gt;
-&lt;p&gt;关键词：&lt;strong&gt;cGAN&lt;/strong&gt;     &lt;strong&gt;Image-to-image translation&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>pix2pix论文精读</title>
     <link href="http://yoursite.com/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/"/>
     <id>http://yoursite.com/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</id>
@@ -84,14 +62,14 @@
     <link href="http://yoursite.com/2021/01/18/CycleGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/"/>
     <id>http://yoursite.com/2021/01/18/CycleGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</id>
     <published>2021-01-18T05:17:19.000Z</published>
-    <updated>2021-01-18T06:38:05.153Z</updated>
+    <updated>2021-01-22T14:27:58.584Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;CycleGAN论文精读&quot;&gt;&lt;a href=&quot;#CycleGAN论文精读&quot; class=&quot;headerlink&quot; title=&quot;CycleGAN论文精读&quot;&gt;&lt;/a&gt;CycleGAN论文精读&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;学习论文：Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks&lt;/p&gt;
-&lt;p&gt;论文目的：Traditional Image-to-image translation is&lt;/p&gt;
-&lt;p&gt;论文摘要: Traditional Image-to-image translation need aligned image pairs,however it’s hard to achieve.&lt;/p&gt;
+&lt;p&gt;论文目的：Traditional Image-to-image translation is a important topic,this paper propose a new loss to make the translation consitent in the absense of paired training datas.&lt;/p&gt;
+&lt;p&gt;论文摘要: Traditional Image-to-image translation need aligned image pairs,however it’s hard to achieve.So this paper uses  Cycle Loss to solve this problem.&lt;/p&gt;
 &lt;p&gt;关键词：&lt;strong&gt;CycleLoss&lt;/strong&gt;    &lt;strong&gt;GAN&lt;/strong&gt;     &lt;strong&gt;Image-to-image translation&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -427,6 +405,31 @@
     </summary>
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>加性高斯模糊自编码器</title>
+    <link href="http://yoursite.com/2020/02/17/%E5%8A%A0%E6%80%A7%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8/"/>
+    <id>http://yoursite.com/2020/02/17/%E5%8A%A0%E6%80%A7%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8/</id>
+    <published>2020-02-17T08:58:23.000Z</published>
+    <updated>2020-02-17T09:26:54.299Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;加性高斯噪声自动编码器&quot;&gt;&lt;a href=&quot;#加性高斯噪声自动编码器&quot; class=&quot;headerlink&quot; title=&quot;加性高斯噪声自动编码器&quot;&gt;&lt;/a&gt;加性高斯噪声自动编码器&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;该篇介绍了加性高斯噪声自动编码器的构造方法，用类实现方便集成&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
