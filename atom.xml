@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-18T13:11:18.096Z</updated>
+  <updated>2021-01-18T13:35:44.921Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,52 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CSP-位运算</title>
+    <link href="http://yoursite.com/2021/01/18/CSP-%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    <id>http://yoursite.com/2021/01/18/CSP-%E4%BD%8D%E8%BF%90%E7%AE%97/</id>
+    <published>2021-01-18T13:25:41.000Z</published>
+    <updated>2021-01-18T13:35:44.921Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;CSP-位运算&quot;&gt;&lt;a href=&quot;#CSP-位运算&quot; class=&quot;headerlink&quot; title=&quot;CSP-位运算&quot;&gt;&lt;/a&gt;CSP-位运算&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;该篇介绍了介绍了位运算这种常用的算法以及使用位优化进行的算法。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>p论文精读</title>
     <link href="http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/"/>
     <id>http://yoursite.com/2021/01/18/cGAN%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</id>
     <published>2021-01-18T06:31:31.000Z</published>
     <updated>2021-01-18T13:11:18.096Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;pix2pix论文精读&quot;&gt;&lt;a href=&quot;#pix2pix论文精读&quot; class=&quot;headerlink&quot; title=&quot;pix2pix论文精读&quot;&gt;&lt;/a&gt;pix2pix论文精读&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;学习论文：Image-to-Image Translation with Conditional Adversarial Networks&lt;/p&gt;
+&lt;p&gt;论文目的：To achieve Image-to-image translation,it propose a new GAN callded Conditional Adversarial Networks(cGAN). &lt;/p&gt;
+&lt;p&gt;论文摘要: Image-to-image translation is a important topic,such as  colorizing the picturces,reconstruct the objects from edge edges.And it also get many application.Our purpose is developing a common framwork to complete this problem instead of special-purpose machine.&lt;/p&gt;
+&lt;p&gt;关键词：&lt;strong&gt;cGAN&lt;/strong&gt;     &lt;strong&gt;Image-to-image translation&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>pix2pix论文精读</title>
+    <link href="http://yoursite.com/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/"/>
+    <id>http://yoursite.com/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</id>
+    <published>2021-01-18T06:31:31.000Z</published>
+    <updated>2021-01-22T03:06:17.076Z</updated>
     
     <summary type="html">
     
@@ -386,56 +427,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>加性高斯模糊自编码器</title>
-    <link href="http://yoursite.com/2020/02/17/%E5%8A%A0%E6%80%A7%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8/"/>
-    <id>http://yoursite.com/2020/02/17/%E5%8A%A0%E6%80%A7%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8/</id>
-    <published>2020-02-17T08:58:23.000Z</published>
-    <updated>2020-02-17T09:26:54.299Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;加性高斯噪声自动编码器&quot;&gt;&lt;a href=&quot;#加性高斯噪声自动编码器&quot; class=&quot;headerlink&quot; title=&quot;加性高斯噪声自动编码器&quot;&gt;&lt;/a&gt;加性高斯噪声自动编码器&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;该篇介绍了加性高斯噪声自动编码器的构造方法，用类实现方便集成&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>卷积神经网络</title>
-    <link href="http://yoursite.com/2020/02/17/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    <id>http://yoursite.com/2020/02/17/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</id>
-    <published>2020-02-17T08:58:01.000Z</published>
-    <updated>2020-02-17T09:26:18.507Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;卷积神经网络&quot;&gt;&lt;a href=&quot;#卷积神经网络&quot; class=&quot;headerlink&quot; title=&quot;卷积神经网络&quot;&gt;&lt;/a&gt;卷积神经网络&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;该篇介绍了卷积神经网络的基本构造方法以及相关函数&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
