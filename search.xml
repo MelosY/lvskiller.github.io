@@ -36,17 +36,17 @@
 <h3 id="正文方法"><a href="#正文方法" class="headerlink" title="正文方法"></a>正文方法</h3><h4 id="总纲"><a href="#总纲" class="headerlink" title="总纲"></a>总纲</h4><p>首先传统G目的是将一个随机噪声映射到图片域，而本文是将一个图片域和噪声映射到一个图片域。</p>
 <p>用数学的语言来重新描述一下这个问题：传统是G：z→y,本文则是G:(x,z)→y。</p>
 <p>而D的目标则是尽可能识别出来谁是真是是假。这里用图表示一下</p>
-<p><img src="/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/pix2pix论文精读\introduction.png" alt></p>
+<p><img src="/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/introduction.png" alt></p>
 <h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><p>这里和传统的目标有一些区别，传统的GAN只是输入一个噪声，但是现在要多输入一个x。</p>
 <p>传统目标为,这里x是目标y，因为复制原论文的缘故。</p>
-<p><img src="/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/pix2pix论文精读\V.png" alt></p>
+<p><img src="/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/V.png" alt></p>
 <p>现在目标则是,这里则是没有minmax，和上面一样。</p>
-<p><img src="/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/pix2pix论文精读\cGan_V.png" alt></p>
+<p><img src="/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/cGan_V.png" alt></p>
 <blockquote>
 <p> 解读一个疑问，为啥你感觉minmax好像反过来了。因为信息熵是带负号的呢，所以论文去掉了这个负号，相应就反过来了。同时由于很多框架自带的优化器都是minimize，所以这里也做了全部去min的操作。</p>
 </blockquote>
 <p>除了上面的对抗损失，还增加了L1_Loss，这个是为了保证一件事，那就是尽量保证生成的目标不仅要真，还要尽可能要和目标相似，所以采用增加了一个相似损失，因为L1_Loss比L2_Loss更鼓励少模糊。这个类似就是 </p>
-<p><img src="/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/pix2pix论文精读\L1_Loss.png" alt></p>
+<p><img src="/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/L1_Loss.png" alt></p>
 <p>所以最后的总loss就是，其中$\lambda$是一个超参。</p>
 <p><img src="/2021/01/18/pix2pix%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/pix2pix论文精读\Loss.png" alt></p>
 <p>这里还存在一个问题，那就是随机性的问题，如果不增加随机噪声，那么就会产生确定性输出，就损失了多样性。但是实验表明，增加随机噪声作为输入并不是很有效果。本文是通过在某几层增加dropout类型的噪声（估计得看代码我才能理解），但是仍然存在问题，随机性还是不强。产生强随机分布的结果仍是一个问题。</p>
