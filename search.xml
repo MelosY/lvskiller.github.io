@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SPADE论文精读</title>
+    <url>/2021/01/23/SPADE%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</url>
+    <content><![CDATA[<h1 id="SPADE论文精读"><a href="#SPADE论文精读" class="headerlink" title="SPADE论文精读"></a>SPADE论文精读</h1><blockquote>
+<p>学习论文：Semantic Image Synthesis with Spatially-Adaptive Normalization</p>
+<p>论文目的：It propose a new normalization layer to solve the problem of original normalization.</p>
+<p>论文摘要：To solve the normalization tend to “wash away” semantic information,the paper propose a new Spatially-Adaptive Normalization.And it also can control over both semantic and style.</p>
+<p>关键词： <strong>Spatially-Adaptive Normalization</strong></p>
+</blockquote>
+<a id="more"></a>
+<h3 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h3><p>本文在意的是做一些semantic image synthesis，但是传统的是卷积层和非线性层的堆积，而normalization layer可能会wash off the semantic information，所以本文提出了一个Spatially-Adaptive Normalization，它是一个条件的归一化层，会从input中用空间自适应的方法去提取到变换方法。</p>
+<p>增加了这个附带的层在几个数据集表现还是不错的，如e COCO-Stuff [4, 32], the ADE20K [58], and the Cityscapes，同时这个也支持 multimodal and style-guided image synthesis, enabling controllable, diverse outputs。这些效果可以在这里可以看到。</p>
+<p><img src="/2021/01/23/SPADE%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/表现.png" alt></p>
+<h3 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h3><ol>
+<li>Deep generative models ：这里首推GAN和VAE，当然本文是基于GAN的。</li>
+<li>Conditional image synthesis：首先是,class-conditional models ，然后就是pix2pix了，本文专注于converting segmentation masks to photorealistic images，在提出的这个特殊层的帮助下，取得了不错的成果。</li>
+<li>Unconditional normalization layers：这里有很多比如IN，BN，LN，GN，WN等等，有些解读在以前了</li>
+<li>Conditional normalization layers：首先是Conditional BatchNorm和AdaIN，这两个都类似一个normalize和denormalize的过程。因为空间坐标的不同之类的问题，所以不同。最相近的一篇文章是超分辨率，他也利用了语义的信息。而本文则是希望在不同尺度上使用语义信息。</li>
+</ol>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="SPADE-layer"><a href="#SPADE-layer" class="headerlink" title="SPADE layer"></a>SPADE layer</h4><p>首先是这个SPADE的设计</p>
+<p><img src="/2021/01/23/SPADE%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/SPADE.png" alt></p>
+<p>如果联想到BN，我们可以直接理解为$\gamma$ 和$\beta$不再是一个独立的学习参数，而是从原有的图片中去学习到这个参数。</p>
+<p>换用数学语言表示，这里（1）式子就是变换的方法，而$\gamma$ 和$\beta$则是要靠学习的。</p>
+<p><img src="/2021/01/23/SPADE%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/SP.png" alt></p>
+<p>据说这里SPADE可以变成另外两样东西,但是我没有看懂？？？</p>
+<h4 id="SPADE-Generator"><a href="#SPADE-Generator" class="headerlink" title="SPADE Generator"></a>SPADE Generator</h4><p>这里又有一个操作，就是由于在这个SPADE中已经获得了足够的图片的信息，所以就不再需要编码了，就会极大的减少参数量，也是轻量化的一个方法。同时也可以用噪声来作为输入，进行multi-modal synthesis。</p>
+<p>本文还用了pix2pixHD（论文是T.-C. Wang, M.-Y. Liu, J.-Y. Zhu, A. Tao, J. Kautz, and B. Catanzaro. High-resolution image synthesis and semantic manipulation with conditional gans. I）这里还说了一个概念，由于残差块是运行在不同大小下的，所以他也与此同时也做了下采样，以匹配空间结构。这里它用来hinge_loss代替了二次损失。同时使用这个SPADE可能可以提高训练速度。</p>
+<p>具体结构是：</p>
+<p><img src="/2021/01/23/SPADE%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/G.png" alt></p>
+<p>至于为什么这个SPADE可以做的很好呢，我们设想直接一个Conv后面接BN，这样就会直接产生一张同颜色的图片久丢失了语义信息（？？？），而这个就不会出现这种情况。请看下文</p>
+<p><img src="/2021/01/23/SPADE%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/Short.png" alt></p>
+<p>这还可以做multi-modal synthesis，这里好像也涉及VAE，它先用一个编码器把real_image 编码成一个random vector，接着再进入G里训练。原话就是the generator combines the encoded style and the segmentation mask information via the SPADEs to reconstruct the original image。</p>
+<h3 id="表现"><a href="#表现" class="headerlink" title="表现"></a>表现</h3><p>这个就牛了，这里采用了很多数据集，COCO-Stuff（普通方法不行），ADE20K，ADE20K-outdoor，Cityscapes，Flickr Landscapes（用DeepLabV2获得segmentation map）</p>
+<p>这里的评价指标比较有灵性，就是用生成出来的图片区做语义分割，如果生成的效果好的话，那么理论上这个语义分割效果也很好，那怎么衡量这个的效果呢，一个是交集（mIOU），pixel accuracy（accu），这些都是好理解的，但在此之外论文还增加了一个Frechet Inception Distance (FID)，去测量生成图片和真实图片之间的区别。</p>
+<p>Baseline：用的是pix2pixHD,CRN,SIMS,这些我说实话都不是很知道？？？？根据上面的几个指标，这个方法明显优势。比较图是</p>
+<p><img src="/2021/01/23/SPADE%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/对比.png" alt></p>
+<p>SIMS在小数据集是蛮好的，因为SIMS通过首先从训练数据集中拼接图像补丁来合成图像，</p>
+<p>接下来它进行了一些参数的比较，这个炼金就没啥好说的。</p>
+<p>Multi-modal synthesis：这里就是通过不同的输入噪声来控制不同的style。下面就是表现</p>
+<p><img src="/2021/01/23/SPADE%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/Multi.png" alt></p>
+<p>Semantic manipulation and guided image synthesis：我上面所说的就可以控制了，只要输入不同的噪声就可以完成风格控制，这个我说实话有点不懂？？？</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>虽然有读过，但是还是觉得真难逐字读。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>CSP-位运算</title>
     <url>/2021/01/18/CSP-%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
     <content><![CDATA[<h1 id="CSP-位运算"><a href="#CSP-位运算" class="headerlink" title="CSP-位运算"></a>CSP-位运算</h1><blockquote>
@@ -1123,7 +1167,7 @@ loss = -ylog(h_\theta(x))-(1-y)log(1-h_\theta(x))</script><p>显然，我们可�
 <p>该篇介绍了python的基本语句</p>
 </blockquote>
 <a id="more"></a>
-<p><img src="/2020/02/24/xs/avatar.jpg" alt></p>
+<p><img src="/2020/02/24/xs/avatar.jpg" alt="a"></p>
 ]]></content>
   </entry>
   <entry>

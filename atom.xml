@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-18T13:35:44.921Z</updated>
+  <updated>2021-01-23T08:48:28.839Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SPADE论文精读</title>
+    <link href="http://yoursite.com/2021/01/23/SPADE%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/"/>
+    <id>http://yoursite.com/2021/01/23/SPADE%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</id>
+    <published>2021-01-23T00:05:58.000Z</published>
+    <updated>2021-01-23T08:48:28.839Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;SPADE论文精读&quot;&gt;&lt;a href=&quot;#SPADE论文精读&quot; class=&quot;headerlink&quot; title=&quot;SPADE论文精读&quot;&gt;&lt;/a&gt;SPADE论文精读&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;学习论文：Semantic Image Synthesis with Spatially-Adaptive Normalization&lt;/p&gt;
+&lt;p&gt;论文目的：It propose a new normalization layer to solve the problem of original normalization.&lt;/p&gt;
+&lt;p&gt;论文摘要：To solve the normalization tend to “wash away” semantic information,the paper propose a new Spatially-Adaptive Normalization.And it also can control over both semantic and style.&lt;/p&gt;
+&lt;p&gt;关键词： &lt;strong&gt;Spatially-Adaptive Normalization&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>CSP-位运算</title>
@@ -289,7 +311,7 @@
     <link href="http://yoursite.com/2020/02/24/xs/"/>
     <id>http://yoursite.com/2020/02/24/xs/</id>
     <published>2020-02-24T11:41:44.000Z</published>
-    <updated>2020-02-24T11:49:58.719Z</updated>
+    <updated>2021-01-22T14:34:55.005Z</updated>
     
     <summary type="html">
     
@@ -405,31 +427,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>加性高斯模糊自编码器</title>
-    <link href="http://yoursite.com/2020/02/17/%E5%8A%A0%E6%80%A7%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8/"/>
-    <id>http://yoursite.com/2020/02/17/%E5%8A%A0%E6%80%A7%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8/</id>
-    <published>2020-02-17T08:58:23.000Z</published>
-    <updated>2020-02-17T09:26:54.299Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;加性高斯噪声自动编码器&quot;&gt;&lt;a href=&quot;#加性高斯噪声自动编码器&quot; class=&quot;headerlink&quot; title=&quot;加性高斯噪声自动编码器&quot;&gt;&lt;/a&gt;加性高斯噪声自动编码器&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;该篇介绍了加性高斯噪声自动编码器的构造方法，用类实现方便集成&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
