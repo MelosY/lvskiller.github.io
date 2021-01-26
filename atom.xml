@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-23T08:48:28.839Z</updated>
+  <updated>2021-01-26T09:25:14.341Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Perceptual-Losses</title>
+    <link href="http://yoursite.com/2021/01/24/Perceptual-Losses/"/>
+    <id>http://yoursite.com/2021/01/24/Perceptual-Losses/</id>
+    <published>2021-01-24T12:12:07.000Z</published>
+    <updated>2021-01-26T09:25:14.341Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Perceptual-Losses&quot;&gt;&lt;a href=&quot;#Perceptual-Losses&quot; class=&quot;headerlink&quot; title=&quot;Perceptual Losses&quot;&gt;&lt;/a&gt;Perceptual Losses&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;学习论文：Perceptual Losses for Real-Time Style Transfer and Super-Resolution&lt;/p&gt;
+&lt;p&gt;论文目的：This paper propose a loss(Maybe has parallel work，but this paper is much faster),called Perceptual Loss to take place with per-pixel loss,and it also get application in Style transfer, super-resolution。&lt;/p&gt;
+&lt;p&gt;关键词：&lt;strong&gt;Style transfer&lt;/strong&gt;    &lt;strong&gt;super-resolution&lt;/strong&gt;    &lt;strong&gt;Perceptual Losses&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>SPADE论文精读</title>
@@ -403,25 +424,6 @@
     
       &lt;h1 id=&quot;机器学习导论&quot;&gt;&lt;a href=&quot;#机器学习导论&quot; class=&quot;headerlink&quot; title=&quot;机器学习导论&quot;&gt;&lt;/a&gt;机器学习导论&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;ML = Matrix （信息）+ Optimation（优化） + Algorithm（使优化更有效） +Statistics（建模）&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>大数据机器学习</title>
-    <link href="http://yoursite.com/2020/02/17/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://yoursite.com/2020/02/17/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</id>
-    <published>2020-02-17T13:11:18.000Z</published>
-    <updated>2020-02-17T13:36:08.327Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;大数据机器学习&quot;&gt;&lt;a href=&quot;#大数据机器学习&quot; class=&quot;headerlink&quot; title=&quot;大数据机器学习&quot;&gt;&lt;/a&gt;大数据机器学习&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;该篇介绍了python的基本语句&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
