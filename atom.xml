@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-26T09:25:14.341Z</updated>
+  <updated>2021-01-28T10:11:44.540Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FaseShifer论文精读</title>
+    <link href="http://yoursite.com/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/"/>
+    <id>http://yoursite.com/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</id>
+    <published>2021-01-26T09:35:45.000Z</published>
+    <updated>2021-01-28T10:11:44.540Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;FaseShifer论文精读&quot;&gt;&lt;a href=&quot;#FaseShifer论文精读&quot; class=&quot;headerlink&quot; title=&quot;FaseShifer论文精读&quot;&gt;&lt;/a&gt;FaseShifer论文精读&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;学习论文：FaceShifter: Towards High Fidelity And Occlusion Aware Face Swapping&lt;/p&gt;
+&lt;p&gt;论文目的：This paper proposes a two-staged method callded FaceShifer to get high quality Face Swap.AEI-net make full use of the information from the targert image.And Hear-net can explozit the Fidelity and occlusion.&lt;/p&gt;
+&lt;p&gt;关键词：&lt;strong&gt;Face Swap&lt;/strong&gt;   &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Perceptual-Losses</title>
@@ -410,25 +431,6 @@
     
     
       <category term="-基础类" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习导论</title>
-    <link href="http://yoursite.com/2020/02/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/"/>
-    <id>http://yoursite.com/2020/02/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/</id>
-    <published>2020-02-17T13:33:39.000Z</published>
-    <updated>2020-02-19T12:36:25.127Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;机器学习导论&quot;&gt;&lt;a href=&quot;#机器学习导论&quot; class=&quot;headerlink&quot; title=&quot;机器学习导论&quot;&gt;&lt;/a&gt;机器学习导论&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;ML = Matrix （信息）+ Optimation（优化） + Algorithm（使优化更有效） +Statistics（建模）&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
     
   </entry>
   

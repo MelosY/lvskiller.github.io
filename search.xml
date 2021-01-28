@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>FaseShifer论文精读</title>
+    <url>/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</url>
+    <content><![CDATA[<h1 id="FaseShifer论文精读"><a href="#FaseShifer论文精读" class="headerlink" title="FaseShifer论文精读"></a>FaseShifer论文精读</h1><blockquote>
+<p>学习论文：FaceShifter: Towards High Fidelity And Occlusion Aware Face Swapping</p>
+<p>论文目的：This paper proposes a two-staged method callded FaceShifer to get high quality Face Swap.AEI-net make full use of the information from the targert image.And Hear-net can explozit the Fidelity and occlusion.</p>
+<p>关键词：<strong>Face Swap</strong>   </p>
+</blockquote>
+<a id="more"></a>
+<h3 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h3><p>换脸这项工作的应用很多，但是发现这个很容易被一个二分类器所区分，所以效果不是很好。一些以前的工作只代替脸部的像素，但是它对于姿势和视角的变化很敏感。而用3D-model来处理它的准确率和鲁棒性都不是很好；所以如何获得真实的和高保真的换脸仍然是个问题。</p>
+<p>这里传统会用<strong>alpha or Poisson blending</strong>，可以扩展一下，但是这个只能很好处理pose和exression，但是更多一致性不好：比如: the rendering of the swapped face should be faithful to the lighting (e.g. direction, intensity, color) of the target scene, the pixel resolution of the swapped face should also be consistent with the target image resolution。所以我们需要<em>a thorough and adaptive integration of target image attributes during the synthesis of the swapped face</em></p>
+<p>常见的方法就是提取到pose and expression guidances，然后利用目标图片的mask来进行混合，但是这样就很容易人造性：1)只利用了目标图片的少量信息，不能尊重目标图片的光照之类的 2）丢失了太多源图片的信息，只用了源图片的mask附近的信息。比如IPGAN，RSGAN，FSNet等等</p>
+<p>接下来就是Hear-Net，这个是用来提取遮挡信息的，将同一张图片作为源和目标图片输入AEI-Net，而生成的图片和源图片的差距就提示着遮罩了。</p>
+<h3 id="Related-works"><a href="#Related-works" class="headerlink" title="Related works"></a>Related works</h3><p>这里很急着学代码，等会再写</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>文章提出的结构是FaceShiferter，这个分为两个阶段：获得高保真度交换图片的AEI-Net，处理遮挡和精细化的Hear-Net。</p>
+<h4 id="AEI-Net"><a href="#AEI-Net" class="headerlink" title="AEI-Net"></a>AEI-Net</h4><h5 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h5><p>这个需要保存源图片的identity和目标图片的attribute。这个又分为3个组成部分：1）Identity Encoder 2）Multi-level Attributes Encoder 3）Adaptive Attentional Denormalization Generator</p>
+<ol>
+<li><p>Identity Encoder :我们用当前最先进的识别模型作为提取特征的模型，去掉了最后的Fc，同时我们相信这个比3DMM模型提取更多消息。</p>
+</li>
+<li><p>Multi-level Attributes Encoder：这里用了一个U-Net类似的模型来多尺度提取信息，但是这里是要靠训练的，最后提取的信息为：$z_{att}(Xt) = \{z1_{att(}Xt), z2_{att}(Xt), ···,zn_{att}(Xt)\}  $,</p>
+</li>
+<li><p>Adaptive Attentional Denormalization Generator:这是最重要的模块。</p>
+<p><img src="/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/Structure.png" alt></p>
+</li>
+</ol>
+<p>这就是他的构成模块，最重要的当然是这个ADD，这里将h和$z_{att}$和$z_{id}$合成在一起。最开始h进行了一次IN，进行了一次平均，可以当作不存在吧</p>
+<p>这里合成分为了三个分支</p>
+<ul>
+<li>首先介绍M，这是类似一个mask，经过一次卷积直接就得到了<strong>$M^k$</strong></li>
+<li>其次再是A，这里有点借鉴了SPADE的做法，$A^k = γ^k_{att} ⊗ h_k + β^k_{att}$，这里的$\gamma$和$\beta$都是从$z_{att}$中训练得到的。同时这里学习到的和$h^k$的大小是一致的，可能就是这样提取信息比较多。</li>
+<li>接着就是I，这里和上面A几乎一致，$I^k = γ^k_{id}⊗h_k + β^k_{id}$，这里就获得了I，但是这里区别一点，这里的$\gamma$和$\beta$是1Dvector</li>
+<li>最后将这些合成，$h^k_{out} = (1 − M^k ) ⊗ A^k + M^k⊗ I^k$</li>
+</ul>
+<p>总体结构也如a一样。</p>
+<h5 id="loss"><a href="#loss" class="headerlink" title="loss"></a>loss</h5><p>接下来就是loss了：</p>
+<ol>
+<li><p>最简单就是adversarial loss，这是使得尽可能真实的。</p>
+</li>
+<li><p>identity loss，显而易见，只不过这里用的是余弦相似度。这里就不是很想解释                                                 <img src="/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/id.png" alt></p>
+</li>
+<li><p>接下来是attribute ，这里也蛮明显的。</p>
+<p><img src="/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/attribute.png" alt></p>
+</li>
+<li><p>接下来就是reconstruction loss，这个loss也蛮常见的，他这是只在目标和源一致的情况下才计算的。</p>
+</li>
+</ol>
+<p><img src="/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/reconstruction.png" alt></p>
+<p>这几个loss都不需要赘述，直接看就好了。</p>
+<h3 id="代码解读"><a href="#代码解读" class="headerlink" title="代码解读"></a>代码解读</h3><p>太想直接看代码了</p>
+<p>啊啊啊</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Perceptual-Losses</title>
     <url>/2021/01/24/Perceptual-Losses/</url>
     <content><![CDATA[<h1 id="Perceptual-Losses"><a href="#Perceptual-Losses" class="headerlink" title="Perceptual Losses"></a>Perceptual Losses</h1><blockquote>
