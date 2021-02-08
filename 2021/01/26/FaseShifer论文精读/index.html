@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/reconstruction.png">
 <meta property="og:image" content="http://yoursite.com/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/hinge_loss.png">
 <meta property="article:published_time" content="2021-01-26T09:35:45.000Z">
-<meta property="article:modified_time" content="2021-01-29T01:52:03.007Z">
+<meta property="article:modified_time" content="2021-01-30T08:03:54.562Z">
 <meta property="article:author" content="lvskiller">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/Structure.png">
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.7k
+                  4k
                 </span>
               
 
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  16
+                  18
                 </span>
               
             </div>
@@ -525,6 +525,11 @@
 </li>
 </ol>
 <p>好像这是之后也没啥好说的整体流程了，接下来就是改进的工作了。</p>
+<h4 id="改进流程"><a href="#改进流程" class="headerlink" title="改进流程"></a>改进流程</h4><p>首先是features的大小</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">24</span></span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">64</span>, <span class="number">56</span>, <span class="number">56</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">64</span>, <span class="number">56</span>, <span class="number">56</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">64</span>, <span class="number">56</span>, <span class="number">56</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">128</span>, <span class="number">28</span>, <span class="number">28</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">128</span>, <span class="number">28</span>, <span class="number">28</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">128</span>, <span class="number">28</span>, <span class="number">28</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">128</span>, <span class="number">28</span>, <span class="number">28</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">14</span>, <span class="number">14</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">512</span>, <span class="number">7</span>, <span class="number">7</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">512</span>, <span class="number">7</span>, <span class="number">7</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">512</span>, <span class="number">7</span>, <span class="number">7</span>])</span><br></pre></td></tr></table></figure>
+<p>如果要操作，我觉得可以考虑和原文不一样的操作，attr和id都是用3D vector，原文中id则是1D vector.</p>
+<p>我看一下，attr的大小</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">torch.Size([<span class="number">4</span>, <span class="number">1024</span>, <span class="number">2</span>, <span class="number">2</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">2048</span>, <span class="number">4</span>, <span class="number">4</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">1024</span>, <span class="number">8</span>, <span class="number">8</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">512</span>, <span class="number">16</span>, <span class="number">16</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">256</span>, <span class="number">32</span>, <span class="number">32</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">128</span>, <span class="number">64</span>, <span class="number">64</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">64</span>, <span class="number">128</span>, <span class="number">128</span>])</span><br><span class="line">torch.Size([<span class="number">4</span>, <span class="number">64</span>, <span class="number">256</span>, <span class="number">256</span>])</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -558,6 +563,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/30/Javax%E5%88%9D%E5%AD%A6/" rel="prev" title="Javax初学">
+                Javax初学 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -638,7 +647,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -649,7 +658,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -710,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FaseShifer论文精读"><span class="nav-text">FaseShifer论文精读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-text">introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Related-works"><span class="nav-text">Related works</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AEI-Net"><span class="nav-text">AEI-Net</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#流程"><span class="nav-text">流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#loss"><span class="nav-text">loss</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码解读"><span class="nav-text">代码解读</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AAD模块"><span class="nav-text">AAD模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AAD-ResBlock"><span class="nav-text">AAD ResBlock</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小块"><span class="nav-text">小块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MLAttrEncoder"><span class="nav-text">MLAttrEncoder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AADGenerator"><span class="nav-text">AADGenerator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AEI-Net-1"><span class="nav-text">AEI_Net</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整体流程"><span class="nav-text">整体流程</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FaseShifer论文精读"><span class="nav-text">FaseShifer论文精读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-text">introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Related-works"><span class="nav-text">Related works</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正文"><span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AEI-Net"><span class="nav-text">AEI-Net</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#流程"><span class="nav-text">流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#loss"><span class="nav-text">loss</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码解读"><span class="nav-text">代码解读</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AAD模块"><span class="nav-text">AAD模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AAD-ResBlock"><span class="nav-text">AAD ResBlock</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小块"><span class="nav-text">小块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MLAttrEncoder"><span class="nav-text">MLAttrEncoder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AADGenerator"><span class="nav-text">AADGenerator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AEI-Net-1"><span class="nav-text">AEI_Net</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整体流程"><span class="nav-text">整体流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改进流程"><span class="nav-text">改进流程</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -744,7 +753,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36.4k</span>
+    <span title="Site words total count">41.7k</span>
   
 </div>
 

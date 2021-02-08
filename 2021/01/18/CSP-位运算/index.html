@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="lvskiller&#39;s Blog">
 <meta property="og:description" content="CSP-位运算 该篇介绍了介绍了位运算这种常用的算法以及使用位优化进行的算法。">
 <meta property="article:published_time" content="2021-01-18T13:25:41.000Z">
-<meta property="article:modified_time" content="2021-01-18T13:35:44.921Z">
+<meta property="article:modified_time" content="2021-02-08T02:57:21.551Z">
 <meta property="article:author" content="lvskiller">
 <meta name="twitter:card" content="summary">
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  34
+                  1.3k
                 </span>
               
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -421,6 +421,58 @@
 <p>该篇介绍了介绍了位运算这种常用的算法以及使用位优化进行的算法。</p>
 </blockquote>
 <a id="more"></a>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>大一水平该知道的。</p>
+<p>成对变换，x xor 1 可以构成成对变换。</p>
+<p>lowbit运算，最低位及其后面所有的0，公式为 <code>n&amp;(-n)</code>,用这个就可以实现找到整数二进制表示下所有是1的位。</p>
+<ol>
+<li><p>个数，这个就是加一下就好了。</p>
+</li>
+<li><p>输出那些位是1，利用log，但是由于原生的库只有以e为底的，所以用hash代替。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> h[<span class="number">1</span>&lt;&lt;<span class="number">20</span>+<span class="number">1</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;=<span class="number">20</span>;i++)</span><br><span class="line">    h[<span class="number">1</span>&lt;&lt;i]=i;</span><br><span class="line"><span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;h[n&amp;(-n)];<span class="comment">//输出位数</span></span><br><span class="line">    n -= n&amp;(-n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>但是上述方法明显有空间问题，这里利用0=&lt;k&lt;36,2的k次方mod37互不相等</p>
+</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> h[<span class="number">37</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;<span class="number">36</span>;i++)</span><br><span class="line">    h[(<span class="number">1l</span>l&lt;&lt;i)%<span class="number">37</span>]=i;<span class="comment">//这里就</span></span><br><span class="line"><span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;h[n&amp;(-n)%<span class="number">37</span>];<span class="comment">//输出位数</span></span><br><span class="line">    n -= n&amp;(-n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h3><h4 id="幂次方"><a href="#幂次方" class="headerlink" title="幂次方"></a>幂次方</h4><blockquote>
+<p>题目为求a的b次方对p的取模，1&lt;a,b,p&lt;$10^9$</p>
+</blockquote>
+<p>明确一件事情，int的范围足够cover了，longlong 太奢侈了。</p>
+<p>第一时间想到的是顺序做法，直接暴毙，不用思考，然后想到二分法。尝试一下写。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LL <span class="title">solve</span><span class="params">(LL a,LL b,LL p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(b%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        LL t=solve((a*a)%p,b/<span class="number">2</span>,p);</span><br><span class="line">        <span class="keyword">return</span> (t*t)%p;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        LL t=solve((a*a)%p,b/<span class="number">2</span>,p);</span><br><span class="line">        <span class="keyword">return</span> t*t*a%p;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外写法为,这个写法更好，是我以前写的。这里理解是将b理解为一个二进制数，这里的处理写法所以和上面很不一样，但是时间复杂度都是一致的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">sol</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> result=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n!=<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((n&amp;<span class="number">1</span>)!=<span class="number">0</span>)</span><br><span class="line">            result=(result*x)%k;</span><br><span class="line">        x=(x*x)%k;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result%k;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来的变种思考，为啥我要用long long呢，为了运算方便一些，因为2个int运算的时侯可能会越界截至，当然可以用强制类型转化一个数，就使得运算高阶一下。不考虑</p>
+<h4 id="64位乘法"><a href="#64位乘法" class="headerlink" title="64位乘法"></a>64位乘法</h4><blockquote>
+<p>求a*b对p的取模，1&lt;a,b,p&lt;$10^{18}$</p>
+</blockquote>
+<p>这里看上去很简单，但是实际有些门道，因为a,b都是long long，他们相乘的中间结果就超过了 long long的结果，这就会被舍去了。</p>
+<ol>
+<li><p>思考将b当作一个二进制，所以就将它转换了一个递推的效果，这里就看代码就理解了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LL <span class="title">mul</span><span class="params">(LL a,LL b,LL p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LL ans =<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(b!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>==<span class="number">1</span>)&#123;</span><br><span class="line">            ans = (ans+a)%p</span><br><span class="line">        &#125;</span><br><span class="line">        a=a*<span class="number">2</span>%p;<span class="comment">//这里是核心思想，也就是下一轮的时侯相当于将a乘2，b右移</span></span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;<span class="comment">//注意位数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>思路2 ，乘法会溢出，但是减法不会呀，即使乘的高位没了，我只要低位就好了。</p>
+</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LL <span class="title">mul</span><span class="params">(LL a,LL b,LL p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    a %= p, b %= p;</span><br><span class="line">    LL c = (<span class="keyword">long</span> <span class="keyword">double</span>) a*b/p; <span class="comment">//这里用一下最高的位数，那为啥不用%呢，因为浮点数怎么取余啊</span></span><br><span class="line">    LL ans = a*b -c*p; <span class="comment">//下面操作防一手。</span></span><br><span class="line">    <span class="keyword">if</span>(ans&lt;<span class="number">0</span>) ans +=p;<span class="comment">//我觉得不太可能，但是这里的long double有可能是上取，</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(ans&gt;=p) ans %=p;</span><br><span class="line">    <span class="keyword">return</span> p; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="二进制状态压缩"><a href="#二进制状态压缩" class="headerlink" title="二进制状态压缩"></a>二进制状态压缩</h4><blockquote>
+<p>简单来说就是讲一个长度为m的bool数组用m位的二进制数表示并存储的方法。这边常用于状态压缩dp和二进制相关的计算。</p>
+</blockquote>
+<p>题1 </p>
+<blockquote>
+<p> 最短hamilton路径（这个明显是一个NP问题），此时n&lt;20，这启发我们用一个n位（指二进制位）的数字来代表是否经过了某个地点，1代表经过了。</p>
+</blockquote>
+<p>直接上代码，所有所需的东西都在代码里一目了然。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> f[<span class="number">1</span>&lt;&lt;<span class="number">20</span>][<span class="number">20</span>];<span class="comment">//这代表F[i,j]在i状态下，目前处于j点的最短路径</span></span><br><span class="line">f[<span class="number">1</span>][<span class="number">0</span>]=<span class="number">0</span>;<span class="comment">//到达1的距离为0，其他皆为Inf</span></span><br><span class="line"><span class="built_in">memset</span>(f,<span class="number">0x3fff</span>,<span class="keyword">sizeof</span>(f));</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;(<span class="number">1</span>&lt;&lt;n);i++)&#123;<span class="comment">//遍历所有的状态</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;i&lt;n;j++)&#123;<span class="comment">//遍历所有点</span></span><br><span class="line">        <span class="keyword">if</span>(i&gt;&gt;j&amp;<span class="number">1</span>)&#123;<span class="comment">//在这状态下经过了j点</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;n;k++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i^(<span class="number">1</span>&lt;&lt;j)&gt;&gt;k&amp;<span class="number">1</span>) <span class="comment">//没有经过j点但是经过k点的状态</span></span><br><span class="line">                    f[i][j] = <span class="built_in">min</span>(f[i][j],f[i^(<span class="number">1</span>&lt;&lt;j)][k]+w[k][j])</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> f[(<span class="number">1</span>&lt;&lt;n)<span class="number">-1</span>][n<span class="number">-1</span>] <span class="comment">//经过了所有点，且从0到n点。</span></span><br></pre></td></tr></table></figure>
+<p>题2 起床困难综合症</p>
+<blockquote>
+<p>这道题建议直接百度，由于它经过的操作就是位运算，这里利用了位运算的主要特点，二进制表示下不进位，所以每位可以单独填。</p>
+<p>从高位向低位天，考虑每位填0和1.</p>
+<p>填1后首先要使得攻击力不溢出，同时使得n次运算后为1，否则的话0会更好。</p>
+</blockquote>
+<p>核心代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">int</span> val =<span class="number">0</span>,ans=<span class="number">0</span>;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> <span class="built_in">bit</span> =<span class="number">29</span>;<span class="built_in">bit</span>&gt;=<span class="number">0</span>;<span class="built_in">bit</span>--)&#123;</span><br><span class="line">     <span class="keyword">int</span> res0 = calc(<span class="built_in">bit</span>,<span class="number">0</span>); <span class="comment">//第bit位填0</span></span><br><span class="line">     <span class="keyword">int</span> res1 = calc(<span class="built_in">bit</span>,<span class="number">1</span>);</span><br><span class="line">     <span class="keyword">if</span>(val+(<span class="number">1</span>&lt;&lt;<span class="built_in">bit</span>)&lt;=m &amp;&amp; res0&lt;res1)</span><br><span class="line">         val+=<span class="number">1</span>&lt;&lt;<span class="built_in">bit</span>,ans+=res1&lt;&lt;<span class="built_in">bit</span>;</span><br><span class="line">     <span class="keyword">else</span></span><br><span class="line">         ans + =res0&lt;&lt;<span class="built_in">bit</span>;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">return</span> ans;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -537,7 +589,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -548,7 +600,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -609,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSP-位运算"><span class="nav-text">CSP-位运算</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSP-位运算"><span class="nav-text">CSP-位运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#习题"><span class="nav-text">习题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#幂次方"><span class="nav-text">幂次方</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#64位乘法"><span class="nav-text">64位乘法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二进制状态压缩"><span class="nav-text">二进制状态压缩</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -643,7 +695,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">36.4k</span>
+    <span title="Site words total count">41.7k</span>
   
 </div>
 
