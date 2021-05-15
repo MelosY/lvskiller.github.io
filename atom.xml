@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-02-08T12:15:27.934Z</updated>
+  <updated>2021-05-02T12:18:26.224Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Shell-1</title>
+    <link href="http://yoursite.com/2021/04/29/Shell-1/"/>
+    <id>http://yoursite.com/2021/04/29/Shell-1/</id>
+    <published>2021-04-29T00:00:04.000Z</published>
+    <updated>2021-05-02T12:18:26.224Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Shell-1&quot;&gt;&lt;a href=&quot;#Shell-1&quot; class=&quot;headerlink&quot; title=&quot;Shell-1&quot;&gt;&lt;/a&gt;Shell-1&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;学习linux的shell操作&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CSP-前缀和</title>
+    <link href="http://yoursite.com/2021/02/12/CSP-%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    <id>http://yoursite.com/2021/02/12/CSP-%E5%89%8D%E7%BC%80%E5%92%8C/</id>
+    <published>2021-02-12T08:33:38.000Z</published>
+    <updated>2021-02-12T08:33:38.748Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;基本语句&quot;&gt;&lt;a href=&quot;#基本语句&quot; class=&quot;headerlink&quot; title=&quot;基本语句&quot;&gt;&lt;/a&gt;基本语句&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;学习论文：Semantic Image Synthesis with Spatially-Adaptive Normalization&lt;/p&gt;
+&lt;p&gt;论文目的：It propose a new normalization layer to solve the problem of original normalization.&lt;/p&gt;
+&lt;p&gt;关键词： &lt;strong&gt;Spatially-Adaptive Normalization&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ALAE</title>
+    <link href="http://yoursite.com/2021/02/09/ALAE/"/>
+    <id>http://yoursite.com/2021/02/09/ALAE/</id>
+    <published>2021-02-09T11:27:07.000Z</published>
+    <updated>2021-02-09T11:27:07.338Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;基本语句&quot;&gt;&lt;a href=&quot;#基本语句&quot; class=&quot;headerlink&quot; title=&quot;基本语句&quot;&gt;&lt;/a&gt;基本语句&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;学习论文：Semantic Image Synthesis with Spatially-Adaptive Normalization&lt;/p&gt;
+&lt;p&gt;论文目的：It propose a new normalization layer to solve the problem of original normalization.&lt;/p&gt;
+&lt;p&gt;关键词： &lt;strong&gt;Spatially-Adaptive Normalization&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>StarGAN V2</title>
@@ -42,7 +103,7 @@
     <link href="http://yoursite.com/2021/02/08/CSP-%E9%80%92%E6%8E%A8%E5%92%8C%E9%80%92%E5%BD%92/"/>
     <id>http://yoursite.com/2021/02/08/CSP-%E9%80%92%E6%8E%A8%E5%92%8C%E9%80%92%E5%BD%92/</id>
     <published>2021-02-08T03:01:00.000Z</published>
-    <updated>2021-02-08T04:34:46.367Z</updated>
+    <updated>2021-02-12T08:32:36.923Z</updated>
     
     <summary type="html">
     
@@ -82,11 +143,11 @@
     <link href="http://yoursite.com/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/"/>
     <id>http://yoursite.com/2021/01/26/FaseShifer%E8%AE%BA%E6%96%87%E7%B2%BE%E8%AF%BB/</id>
     <published>2021-01-26T09:35:45.000Z</published>
-    <updated>2021-01-30T08:03:54.562Z</updated>
+    <updated>2021-02-10T11:59:10.957Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;FaseShifer论文精读&quot;&gt;&lt;a href=&quot;#FaseShifer论文精读&quot; class=&quot;headerlink&quot; title=&quot;FaseShifer论文精读&quot;&gt;&lt;/a&gt;FaseShifer论文精读&lt;/h1&gt;&lt;blockquote&gt;
+      &lt;h1 id=&quot;FaseShifter论文精读&quot;&gt;&lt;a href=&quot;#FaseShifter论文精读&quot; class=&quot;headerlink&quot; title=&quot;FaseShifter论文精读&quot;&gt;&lt;/a&gt;FaseShifter论文精读&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;学习论文：FaceShifter: Towards High Fidelity And Occlusion Aware Face Swapping&lt;/p&gt;
 &lt;p&gt;论文目的：This paper proposes a two-staged method callded FaceShifer to get high quality Face Swap.AEI-net make full use of the information from the targert image.And Hear-net can explozit the Fidelity and occlusion.&lt;/p&gt;
 &lt;p&gt;关键词：&lt;strong&gt;Face Swap&lt;/strong&gt;   &lt;/p&gt;
@@ -358,63 +419,6 @@
     <id>http://yoursite.com/2020/03/30/%E9%87%91%E8%9E%8D/</id>
     <published>2020-03-30T12:45:06.000Z</published>
     <updated>2020-04-04T12:43:51.500Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;基本语句&quot;&gt;&lt;a href=&quot;#基本语句&quot; class=&quot;headerlink&quot; title=&quot;基本语句&quot;&gt;&lt;/a&gt;基本语句&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;该篇介绍了python的基本语句&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>AlexNet</title>
-    <link href="http://yoursite.com/2020/03/12/AlexNet/"/>
-    <id>http://yoursite.com/2020/03/12/AlexNet/</id>
-    <published>2020-03-12T00:33:22.000Z</published>
-    <updated>2020-03-12T01:10:18.529Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;AlexNet&quot;&gt;&lt;a href=&quot;#AlexNet&quot; class=&quot;headerlink&quot; title=&quot;AlexNet&quot;&gt;&lt;/a&gt;AlexNet&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;该篇介绍了python的基本语句&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>csp准备</title>
-    <link href="http://yoursite.com/2020/03/02/csp%E5%87%86%E5%A4%87/"/>
-    <id>http://yoursite.com/2020/03/02/csp%E5%87%86%E5%A4%87/</id>
-    <published>2020-03-02T05:38:08.000Z</published>
-    <updated>2020-03-11T10:24:18.300Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;csp准备&quot;&gt;&lt;a href=&quot;#csp准备&quot; class=&quot;headerlink&quot; title=&quot;csp准备&quot;&gt;&lt;/a&gt;csp准备&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;重拾C语言，准备csp的考试&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>xs</title>
-    <link href="http://yoursite.com/2020/02/24/xs/"/>
-    <id>http://yoursite.com/2020/02/24/xs/</id>
-    <published>2020-02-24T11:41:44.000Z</published>
-    <updated>2021-01-22T14:34:55.005Z</updated>
     
     <summary type="html">
     

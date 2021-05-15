@@ -81,14 +81,14 @@
 
 
 
-<meta name="description" content="机器学习导论 ML &#x3D; Matrix （信息）+ Optimation（优化） + Algorithm（使优化更有效） +Statistics（建模）">
+<meta name="description" content="Shell-1 学习linux的shell操作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习导论">
-<meta property="og:url" content="http://yoursite.com/2020/02/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/index.html">
+<meta property="og:title" content="Shell-1">
+<meta property="og:url" content="http://yoursite.com/2021/04/29/Shell-1/index.html">
 <meta property="og:site_name" content="lvskiller&#39;s Blog">
-<meta property="og:description" content="机器学习导论 ML &#x3D; Matrix （信息）+ Optimation（优化） + Algorithm（使优化更有效） +Statistics（建模）">
-<meta property="article:published_time" content="2020-02-17T13:33:39.000Z">
-<meta property="article:modified_time" content="2020-02-19T12:36:25.127Z">
+<meta property="og:description" content="Shell-1 学习linux的shell操作">
+<meta property="article:published_time" content="2021-04-29T00:00:04.000Z">
+<meta property="article:modified_time" content="2021-05-02T12:18:26.224Z">
 <meta property="article:author" content="lvskiller">
 <meta name="twitter:card" content="summary">
 
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/17/机器学习导论/"/>
+  <link rel="canonical" href="http://yoursite.com/2021/04/29/Shell-1/"/>
 
 
 
@@ -143,7 +143,7 @@
 
 
 
-  <title>机器学习导论 | lvskiller's Blog</title>
+  <title>Shell-1 | lvskiller's Blog</title>
   
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/29/Shell-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lvskiller">
@@ -331,7 +331,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习导论</h1>
+          <h1 class="post-title" itemprop="name headline">Shell-1</h1>
         
 
         <div class="post-meta">
@@ -343,8 +343,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-17T21:33:39+08:00">
-                2020-02-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-29T08:00:04+08:00">
+                2021-04-29
               </time>
             
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  168
+                  2.3k
                 </span>
               
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  9
                 </span>
               
             </div>
@@ -417,23 +417,111 @@
       
 
       
-        <h1 id="机器学习导论"><a href="#机器学习导论" class="headerlink" title="机器学习导论"></a>机器学习导论</h1><blockquote>
-<p><strong><em>ML = Matrix （信息）+ Optimation（优化） + Algorithm（使优化更有效） +Statistics（建模）</em></strong></p>
+        <h1 id="Shell-1"><a href="#Shell-1" class="headerlink" title="Shell-1"></a>Shell-1</h1><blockquote>
+<p>学习linux的shell操作</p>
 </blockquote>
 <a id="more"></a>
-<p>one-hot表示方法，单纯表示方法</p>
-<p>监督学习问题：分类问题和回归问题</p>
-<p>分类属于特殊的回归问题</p>
-<p>最小二乘估计‘</p>
-<p>矩阵求导相关？？</p>
-<p>岭回归（最小二乘估计加上惩罚）</p>
-<p>数据分为三组：Training data， Validation data，Test data</p>
-<p>极大似然估计（MLE</p>
-<p>无监督问题：聚类</p>
-<p>半监督学习</p>
-<p>迁移学习：将测试数据也放进去</p>
-<p>参数（模型参数固定，不需要训练，超参数）和非参数（需要训练，提前未给定）</p>
-<p>判别模型和生成模型</p>
+<h3 id="linux特性"><a href="#linux特性" class="headerlink" title="linux特性"></a>linux特性</h3><ul>
+<li><p>这里有见恐怖的事情，数字0，1是不能作为if的判断条件的，linux是以指令是否执行成功来判断的，如果0，说明指令执行成功，所以if为true。所以你必须以指令来判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-eq 等于</span><br><span class="line">-ne 不等于</span><br><span class="line">-lt 小于</span><br><span class="line">-rt 大于</span><br><span class="line">-le -re</span><br><span class="line">最后还有一些&amp;&amp;等等</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>/dev/null 和/dev/zero ,是特殊设备，前者所以的输入都会丢弃，如果不想看到满屏的刷新，你可以选择 &gt;/dev/null (这等价了1&gt;/dev/null，即标准输出重定位，那么2的话就是标准错误)。后面一个设备则是会一个无限生成0的文件。用来覆盖文件或者一个指定大小的空文件。</p>
+</li>
+<li></li>
+</ul>
+<h3 id="操作大全"><a href="#操作大全" class="headerlink" title="操作大全"></a>操作大全</h3><ul>
+<li><p>重定向文件 </p>
+<blockquote>
+<p>最简单的就是输入和输出流，所以我们更改这两个流即可，利用&lt; 和 &gt; 来修改</p>
+<p>最简单的重定向是 <code>&lt; file</code> 和 <code>&gt; file</code>。这两个命令可以将程序的输入输出流分别重定向到文件</p>
+<p>这里的&gt;&gt;是在末尾添加，而&gt;是覆盖</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo echo 3 &gt; /sys/brightness</span><br></pre></td></tr></table></figure>
+<p>这个指令会执行失败,因为这里的sudo是针对echo的，而重定向是则是shell完成的，你的shell不是超级用户，所以可以 echo 3 | sudo tee /sys/brightness来操作。</p>
+<p>| 管道，将前一个的输出当作第二个文件的输入</p>
+</blockquote>
+</li>
+<li><p>编写bash文件</p>
+<blockquote>
+<p>开始#！/bin/sh指定对应的文件执行</p>
+<p>“” 和‘’这两种字符串有着巨大差距，一个转义，一个不转义。</p>
+<p>至于参数问题，这里参考内容就是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$0 - 脚本名</span><br><span class="line">$1 到 $9 - 脚本的参数。 $1 是第一个参数，依此类推。</span><br><span class="line">$@ - 所有参数</span><br><span class="line">$# - 参数个数</span><br><span class="line">$? - 前一个命令的返回值</span><br><span class="line">$$ - 当前脚本的进程识别码</span><br><span class="line">!! - 完整的上一条命令，包括参数。常见应用：当你因为权限不足执行命令失败时，可以使用 sudo !!再尝试一次。</span><br><span class="line">$_ - 上一条命令的最后一个参数。如果你正在使用的是交互式shell，你可以通过按下 Esc 之后键入 . 来获取这个值</span><br></pre></td></tr></table></figure>
+<p>除了这种获得的方法，还可以利用 $(CMD)来获得对应的指令获得的内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for file in $(ls)</span><br></pre></td></tr></table></figure>
+<p>&lt; (CMD)会将命令内容临时输入到一个临时文件来做重定向，如</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff &lt;(ls foo) &lt;(ls bar)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>这里有见恐怖的事情，数字0，1是不能作为if的判断条件的，linux是以指令是否执行成功来判断的，如果0，说明指令执行成功，所以if为true。所以你必须以指令来判断</p>
+</li>
+</ul>
+<h3 id="命令大全"><a href="#命令大全" class="headerlink" title="命令大全"></a>命令大全</h3><blockquote>
+<p>执行程序的时侯可以利用 -h或者—help获取帮助，也可以利用man和info来修改。</p>
+</blockquote>
+<ul>
+<li><p>date ：显示日期</p>
+</li>
+<li><p>echo:<code>echo</code> 程序将该参数打印出来。 shell 基于空格分割命令并进行解析，然后执行第一个单词代表的程序，并将后续的单词作为程序可以访问的参数.如果要带空格，要么加双引号或者转义字符。</p>
+</li>
+<li><p>pwd：显示路径，路径以/分割，且/代表绝对路径</p>
+</li>
+<li><p>mv：重命名或者移动</p>
+</li>
+<li><p>cp：拷贝</p>
+</li>
+<li><p>mkdir：创建文件夹</p>
+</li>
+<li><p>grep ：正则匹配的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">grep [-acinv] [--color&#x3D;auto] &#39;搜寻字符串&#39; filename</span><br><span class="line">选项与参数：</span><br><span class="line">-a ：将 binary 文件以 text 文件的方式搜寻数据</span><br><span class="line">-c ：计算找到 &#39;搜寻字符串&#39; 的次数</span><br><span class="line">-i ：忽略大小写的不同，所以大小写视为相同</span><br><span class="line">-n ：顺便输出行号</span><br><span class="line">-v ：反向选择，亦即显示出没有 &#39;搜寻字符串&#39; 内容的那一行！</span><br><span class="line">--color&#x3D;auto ：可以将找到的关键词部分加上颜色的显示喔！</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="语法大全"><a href="#语法大全" class="headerlink" title="语法大全"></a>语法大全</h3><h4 id="语法赋值"><a href="#语法赋值" class="headerlink" title="语法赋值"></a>语法赋值</h4><ol>
+<li>首先是赋值操作，shell相当于一个可解释性的bash，</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">变量名=值     # 注意 赋值语句两边不能有空格</span><br><span class="line"><span class="meta">#</span><span class="bash"> 等号右边若有空格的话，需要加上引号（单引号或双引号都是可以的</span></span><br><span class="line"><span class="meta">#</span><span class="bash">用$加变量名获得值，记住用双引号</span></span><br><span class="line">my=asdas</span><br><span class="line">mt="asd ads"</span><br><span class="line">echo "$my"</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"><span class="string">"、"</span> ` <span class="string">"（反引号）、"</span>\" 有特殊含义，其余的没有特殊含义。至于反引号 <span class="string">" ` "</span>，反引号中可以用来引用系统命令，其中的内容将会被优先执行，其功能与 $(...) 一样</span></span><br><span class="line"></span><br><span class="line">还有一个很关键的export指令，可以引入环境变量</span><br></pre></td></tr></table></figure>
+<h3 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h3><ol>
+<li><p>由于linux将一切都视作是字符串，所以你在做运算的时侯应该有标识符expr，第一种是<code>expr $a + $b</code>,，第二种是$ (expr $a + $b).两种等价。</p>
+</li>
+<li><p>expr 可支持多种运算，比如$ | =(这个等价==)，等等，一般c语言支持的一般都是支持的，但是一定要加\的转义字符，然后表达式各字符一定要分开,这里的关系运算符结果是正常理解。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">  </span><br><span class="line">  a=5;b=6;c=0</span><br><span class="line">  echo $(expr $a \| $c)       # 输出 5</span><br><span class="line">  echo $(expr $b \&amp; $c)       # 输出 0</span><br><span class="line">  echo $(expr $a \&amp; $b)       # 输出 5</span><br><span class="line">  echo $(expr $a \&lt;= $b)      # 输出 1</span><br><span class="line">  echo $(expr $a \* $b)       # 输出 30</span><br><span class="line">  echo $(expr $a = 2)         # 输出 1   </span><br><span class="line">  exit 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>expr 虽然功能强大，但是上面已经提到，在进行一些运算的时候，需要使用 \ 符来进行转义，这对于阅读代码的人来说并不友好。另一方面，expr 命令执行起来其实很慢，因为它需要调用一个新的 shell 来处理 expr 命令，所以可以使用$(())两个空格来控制，<strong>所有支持 $(( … )) 的shell，都可以让用户在提供变量名称时，无须前置 ​$ 符,</strong>一个好处就是不用转义字符，还有可以不用$来标识</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"> </span><br><span class="line"> a=5;b=6</span><br><span class="line"> </span><br><span class="line"> echo $(($a + $b))　　　　　　# 输出 11 。在变量名前加上 $，这在shell中一般是取变量值的意思</span><br><span class="line"> echo $((a + b))            # 输出 11 。可见，变量前不加 $ 也是可以的，为了简便，后面的代码就不加 $ 了 </span><br><span class="line"> echo $((a | b))            # 输出 7 。这里的 | 是按位或操作符</span><br><span class="line"> echo $((a || b))           # 输出 1 。这里的 || 是逻辑或操作符</span><br><span class="line"> echo $((a &amp; b))            # 输出 4 。这里的 &amp; 是按位与操作符</span><br><span class="line"> echo $((a &amp;&amp; b))           # 输出 1 。这里的 &amp;&amp; 是逻辑与操作符</span><br><span class="line"> echo $((a * b))            # 输出 30</span><br><span class="line"> echo $((a == b))           # 输出 0 exit 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>bc命令可以来进行文字运算。在文件里可以value=$(echo “options;expression” | bc)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">！/bin/bash</span></span><br><span class="line"></span><br><span class="line">val1=$(echo "scale=4;5/4" | bc)</span><br><span class="line">echo the value of val1 is $val1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在进行条件的时侯，可以用[] 和test来包装，类似</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">str1="tongye"</span><br><span class="line">str2="ttyezi"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 用 <span class="built_in">test</span> 命令，<span class="built_in">test</span> 语句的结果将作为 <span class="keyword">if</span> 的判断条件，结果为真即条件为真，则执行 <span class="keyword">if</span> 下面的语句</span></span><br><span class="line">if test "$str1" = "$str2" ; then</span><br><span class="line">    ....</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 用 [ 命令的话，可以这样，注意 [ 与表达式之间要有空格</span></span><br><span class="line">if [ "$str1" != "$str2" ] ; then</span><br><span class="line">    ....</span><br><span class="line">fi    </span><br><span class="line">if [ -n "$str1" ] ; then    </span><br><span class="line">....</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+</li>
+<li><blockquote>
+<p>-eq 等于<br>-ne 不等于<br>-lt 小于<br>-rt 大于<br>-le -re<br>最后还有一些&amp;&amp;等等</p>
+<p>这是算术比较，上面的=之类的是字符串比较</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">这是一个很好的例子，所以双引号很重要</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">  </span><br><span class="line">  val1="1"</span><br><span class="line">  val2="001"</span><br><span class="line">  val3="1 "                     # 字符串 val3 在 1 的后面还有一个空格 　　                                                                         </span><br><span class="line">  </span><br><span class="line">  [ "$val1" = "$val2" ]</span><br><span class="line">  echo $?　　　　　　　　　　　　　　# 使用字符串比较，退出码为 1，说明两个字符串不相等</span><br><span class="line">  </span><br><span class="line">  [ "$val1" -eq "$val2" ]</span><br><span class="line">  echo $?　　　　　　　　　　　　　　# 使用数值比较，退出码为 0，说明两个数值相等</span><br><span class="line">  </span><br><span class="line">  [ "$val1" = "$val3" ]</span><br><span class="line">  echo $?　　　　　　　　　　　　　　# 退出码为 1</span><br><span class="line">  </span><br><span class="line">  [ "$val1" -eq "$val3" ]</span><br><span class="line">  echo $?　　　　　　　　　　　　　　# 退出码为 0  exit 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件测试</p>
+<p>| -d file | 如果文件是一个目录，则结果为真                               |<br>| ———- | —————————————————————————————— |<br>| -e file | 如果文件存在，则结果为真。注意，历史上 -e 选项不可移植，所以通常使用的是 -f 选项 |<br>| -f file | 如果文件存在且为普通文件，则结果为真                         |<br>| -r file | 如果文件可读，则结果为真                                     |<br>| -s file | 如果文件大小不为 0 ，则结果为真                              |<br>| -u file | 如果文件的 set-user-id 为被设置，则结果为真                  |<br>| -w file | 如果文件可写，则结果为真                                     |<br>| -x file | 如果文件可执行，则结果为真                                   |<br>|         |                                                              |</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#一定要记住条件要间隔开来，并且要加上;才能结束掉命令。</span><br><span class="line"></span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">if [ -f &#x2F;bin&#x2F;bash ] ; then</span><br><span class="line">    echo &quot;file &#x2F;bin&#x2F;bash exists&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ -d &#x2F;bin&#x2F;bash ] ; then</span><br><span class="line">　　echo &quot;&#x2F;bin&#x2F;bash is a directory&quot;</span><br><span class="line">else</span><br><span class="line">　　echo &quot;&#x2F;bin&#x2F;bash is not a directory&quot;</span><br><span class="line">fiexit 0</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h3><ol>
+<li>if 结构</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if condition1</span><br><span class="line">then</span><br><span class="line">    statements1</span><br><span class="line">elif condition2</span><br><span class="line">then</span><br><span class="line">    statements2</span><br><span class="line">else</span><br><span class="line">    statements3</span><br><span class="line">fi</span><br><span class="line"><span class="meta">#</span><span class="bash">类似一般python语句</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>Case 结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 记住最后的是;;如果有多条语句中间用;间隔，多个模式可以用|来区别，可以用正则式来处理。</span><br><span class="line">case variable in</span><br><span class="line">    pattern [ | pattern ] ... ) statements;;</span><br><span class="line">    pattern [ | pattern ] ... ) statements;;</span><br><span class="line">    ...</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+<p>例子 :</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">read -p "please keyin a word:" -t 5 word</span><br><span class="line"></span><br><span class="line">case $word in</span><br><span class="line">    [a-z] | [A-Z] ) echo "You have keyin a letter";;</span><br><span class="line">    [1-9] ) echo "You have keyin a number";;                                                </span><br><span class="line">    * ) echo "Unknow input"</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>for语句</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 类似其他语言</span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">for name in tongye wuhen xiaodong wufei laowang</span><br><span class="line">do</span><br><span class="line">    echo $name</span><br><span class="line">done</span><br><span class="line">                                                                                            </span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>while语句 ,条件里为真才执行，until是条件为真它跳出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"> </span><br><span class="line"> i&#x3D;1</span><br><span class="line"> </span><br><span class="line"> while [ &quot;$i&quot; -le 10 ]                                                                       </span><br><span class="line"> do</span><br><span class="line">     read -p &quot;please keyin a number:&quot; i</span><br><span class="line"> done</span><br><span class="line">  9 </span><br><span class="line"> 10 echo &quot;$i&quot;</span><br><span class="line"> 11 </span><br><span class="line"> 12 exit 0</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -458,8 +546,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/17/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="next" title="大数据机器学习">
-                <i class="fa fa-chevron-left"></i> 大数据机器学习
+              <a href="/2021/02/12/CSP-%E5%89%8D%E7%BC%80%E5%92%8C/" rel="next" title="CSP-前缀和">
+                <i class="fa fa-chevron-left"></i> CSP-前缀和
               </a>
             
           </div>
@@ -467,10 +555,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/21/markdown%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" rel="prev" title="markdown数学公式">
-                markdown数学公式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -623,7 +707,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习导论"><span class="nav-text">机器学习导论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shell-1"><span class="nav-text">Shell-1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linux特性"><span class="nav-text">linux特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作大全"><span class="nav-text">操作大全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令大全"><span class="nav-text">命令大全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法大全"><span class="nav-text">语法大全</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法赋值"><span class="nav-text">语法赋值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算术运算"><span class="nav-text">算术运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制结构"><span class="nav-text">控制结构</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
