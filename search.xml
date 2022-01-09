@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>非sudo权限将cuda降版本</title>
+    <url>/2022/01/09/cuda10-to-cuda8/</url>
+    <content><![CDATA[<h2 id="非sudo权限将cuda降版本"><a href="#非sudo权限将cuda降版本" class="headerlink" title="非sudo权限将cuda降版本"></a>非sudo权限将cuda降版本</h2><h1 id="全连接神经网络"><a href="#全连接神经网络" class="headerlink" title="全连接神经网络"></a>全连接神经网络</h1><blockquote>
+<p>背景： 主要就是MAttNet它需要的torch版本是0.2+，这个版本的cuda是8.0，显然现在大部分都是11了，所以需要非sudo权限降低版本</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="准备pytorch"><a href="#准备pytorch" class="headerlink" title="准备pytorch"></a>准备pytorch</h3><p>首先准备降低版本的pytorch，这里的话直接下下来whl，然后用pip install包来完成的。</p>
+<p>下载网站：<a href="https://download.pytorch.org/whl/cu80/torch_stable.html" target="_blank" rel="noopener">https://download.pytorch.org/whl/cu80/torch_stable.html</a></p>
+<p>选择torch-0.4.1-cp27-cp27mu-linux_x86_64.whl下载下来</p>
+<h3 id="准备cuda包"><a href="#准备cuda包" class="headerlink" title="准备cuda包"></a>准备cuda包</h3><blockquote>
+<p>参考地址：<a href="https://blog.csdn.net/daydaydreamer/article/details/107172364" target="_blank" rel="noopener">https://blog.csdn.net/daydaydreamer/article/details/107172364</a></p>
+<p>​                    <a href="https://blog.csdn.net/weixin_42262721/article/details/108278214" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42262721/article/details/108278214</a></p>
+<p>解释一下：非sudo的问题，首先是cuda的版本是管理员设置的，如果你是管理员，就不需要这么麻烦，你直接make完了make install 到/usr/local里去就好了，但是非管理员就没有权限写这个文件夹，所以你就需要给在/home/yourname中建立文件夹，然后在.bashrc的配置文件中去设置路径。</p>
+</blockquote>
+<p>然后就是去官网下载<a href="https://developer.nvidia.com/cuda-80-ga2-download-archive，（ps,需要注册账号）" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-80-ga2-download-archive，（ps,需要注册账号）</a></p>
+<p>选择对应配置，选择runfile版本即可。</p>
+<p><img src="/2022/01/09/cuda10-to-cuda8/1.png" alt></p>
+<h3 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h3><p>Run <code>sudo sh cuda_8.0.61_375.26_linux.run</code></p>
+<p>然后按照这个选择配置,搬运的图，（毕竟我安完了，笑）</p>
+<p><img src="/2022/01/09/cuda10-to-cuda8/2.png" alt></p>
+<p>注意最后输入一个地址，不然就会出大问题</p>
+<p>其实这里需要你的gcc在5.4 高版本会出问题，（要不你再降个gcc，笑，其实可以不用，提示信息有个overwrite的信息），所以直接<code>sudo sh cuda_8.0.61_375.26_linux.run --overwrite</code>（注意看提示信息，可能不是overwrite），要是还不行，估计得降低gcc.</p>
+<h3 id="安装cuDNN"><a href="#安装cuDNN" class="headerlink" title="安装cuDNN"></a>安装cuDNN</h3><p>官方网址：<a href="https://developer.nvidia.com/rdp/cudnn-archive，下载cuDNN" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-archive，下载cuDNN</a> v6.0 (April 27, 2017), for CUDA 8.0</p>
+<p>接下来就是解压这个文件，然后将它里面需要的文件拷贝到你的CUDA中，就是刚刚让你输入的地址</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp cuda&#x2F;include&#x2F;cudnn.h &#x2F;the_path_to_install_cuda&#x2F;cuda8&#x2F;include&#x2F;</span><br><span class="line">cp cuda&#x2F;lib64&#x2F;libcudnn* &#x2F;the_path_to_install_cuda&#x2F;cuda10.1&#x2F;lib64&#x2F;</span><br><span class="line">chmod a+r &#x2F;the_path_to_install_cuda&#x2F;cuda8&#x2F;include&#x2F;cudnn.h</span><br><span class="line">chmod a+r &#x2F;the_path_to_install_cuda&#x2F;cuda8&#x2F;lib64&#x2F;libcudnn*</span><br></pre></td></tr></table></figure>
+<p>然后cuDNN的解压包就没用了，删了吧</p>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><p>因为你的东西没在/usr/local这个众所周知的地址，你需要告诉它你下在那了。</p>
+<p>在你自己目录下的.bashrc中文件末尾加入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export PATH&#x3D;&quot;&#x2F;the_path_to_install_cuda&#x2F;cuda8&#x2F;bin:$PATH&quot;</span><br><span class="line">export LD_LIBRARY_PATH&#x3D;&quot;$LD_LIBRARY_PATH:&#x2F;the_path_to_install_cuda&#x2F;lib64&#x2F;&quot;</span><br></pre></td></tr></table></figure>
+<p>建议不要用软连接的方法来做，没这个方法方便回到原来版本。</p>
+<p>然后<code>source .bashrc</code>激活，就完成了切换。</p>
+<p>输入<code>nvcc -V</code>查看版本，得到</p>
+<p><img src="/2022/01/09/cuda10-to-cuda8/3.png" alt></p>
+<p>bingo</p>
+<p>如果想回去以前版本，把刚刚写的export注释掉，重复操作就回到了原来版本。</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>complie theory</title>
     <url>/2021/05/26/complie-theory/</url>
     <content><![CDATA[<h1 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h1><blockquote>

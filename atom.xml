@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-05-26T07:45:06.419Z</updated>
+  <updated>2022-01-09T08:20:12.380Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>非sudo权限将cuda降版本</title>
+    <link href="http://yoursite.com/2022/01/09/cuda10-to-cuda8/"/>
+    <id>http://yoursite.com/2022/01/09/cuda10-to-cuda8/</id>
+    <published>2022-01-09T06:57:51.000Z</published>
+    <updated>2022-01-09T08:20:12.380Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;非sudo权限将cuda降版本&quot;&gt;&lt;a href=&quot;#非sudo权限将cuda降版本&quot; class=&quot;headerlink&quot; title=&quot;非sudo权限将cuda降版本&quot;&gt;&lt;/a&gt;非sudo权限将cuda降版本&lt;/h2&gt;&lt;h1 id=&quot;全连接神经网络&quot;&gt;&lt;a href=&quot;#全连接神经网络&quot; class=&quot;headerlink&quot; title=&quot;全连接神经网络&quot;&gt;&lt;/a&gt;全连接神经网络&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;背景： 主要就是MAttNet它需要的torch版本是0.2+，这个版本的cuda是8.0，显然现在大部分都是11了，所以需要非sudo权限降低版本&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>complie theory</title>
@@ -414,25 +435,6 @@
     
     
       <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安装ubuntu</title>
-    <link href="http://yoursite.com/2020/05/13/%E5%AE%89%E8%A3%85ubuntu/"/>
-    <id>http://yoursite.com/2020/05/13/%E5%AE%89%E8%A3%85ubuntu/</id>
-    <published>2020-05-13T03:18:30.000Z</published>
-    <updated>2020-05-13T03:47:36.091Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;安装ubuntu&quot;&gt;&lt;a href=&quot;#安装ubuntu&quot; class=&quot;headerlink&quot; title=&quot;安装ubuntu&quot;&gt;&lt;/a&gt;安装ubuntu&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;该篇介绍了python的基本语句&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
     
   </entry>
   
