@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2022-01-09T08:20:12.380Z</updated>
+  <updated>2022-01-09T15:46:43.757Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux安装openCV4.5.x</title>
+    <link href="http://yoursite.com/2022/01/09/linux%E5%AE%89%E8%A3%85openCV4-5-x/"/>
+    <id>http://yoursite.com/2022/01/09/linux%E5%AE%89%E8%A3%85openCV4-5-x/</id>
+    <published>2022-01-09T09:15:07.000Z</published>
+    <updated>2022-01-09T15:46:43.757Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;linux安装openCV4-5-x&quot;&gt;&lt;a href=&quot;#linux安装openCV4-5-x&quot; class=&quot;headerlink&quot; title=&quot;linux安装openCV4.5.x&quot;&gt;&lt;/a&gt;linux安装openCV4.5.x&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;这次总算是sudo了，所以直接一套操作猛如虎了。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>非root降低gcc版本到5.4</title>
+    <link href="http://yoursite.com/2022/01/09/%E9%99%8D%E4%BD%8Egcc%E7%89%88%E6%9C%AC%E5%88%B05-4/"/>
+    <id>http://yoursite.com/2022/01/09/%E9%99%8D%E4%BD%8Egcc%E7%89%88%E6%9C%AC%E5%88%B05-4/</id>
+    <published>2022-01-09T08:26:47.000Z</published>
+    <updated>2022-01-09T09:11:40.104Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;降低gcc版本到5-4&quot;&gt;&lt;a href=&quot;#降低gcc版本到5-4&quot; class=&quot;headerlink&quot; title=&quot;降低gcc版本到5.4&quot;&gt;&lt;/a&gt;降低gcc版本到5.4&lt;/h1&gt;&lt;h2 id=&quot;非root降低gcc版本到5-4&quot;&gt;&lt;a href=&quot;#非root降低gcc版本到5-4&quot; class=&quot;headerlink&quot; title=&quot;非root降低gcc版本到5.4&quot;&gt;&lt;/a&gt;非root降低gcc版本到5.4&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;还是那个MAttNet惹的祸，它里面的东西的make需要gcc 5.4.0，人给他整麻了&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>非sudo权限将cuda降版本</title>
@@ -389,52 +429,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>吴恩达机器学习</title>
-    <link href="http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://yoursite.com/2021/01/06/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</id>
-    <published>2021-01-06T05:02:57.000Z</published>
-    <updated>2021-01-16T14:38:30.601Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;吴恩达机器学习笔记&quot;&gt;&lt;a href=&quot;#吴恩达机器学习笔记&quot; class=&quot;headerlink&quot; title=&quot;吴恩达机器学习笔记&quot;&gt;&lt;/a&gt;吴恩达机器学习笔记&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;学习地址：&lt;a href=&quot;https://www.bilibili.com/video/BV164411b7dx&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;B站&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;学习时间：2020.12.20 ~2021.1.5（15天）&lt;/p&gt;
-&lt;p&gt;学习内容：基本的机器学习和一些技巧&lt;/p&gt;
-&lt;p&gt;注解：由于本文和cs231n有些重合，所以相关内容可能大幅省略，详见cs231n&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;关键词：&lt;strong&gt;传统机器学习（ML）&lt;/strong&gt;  &lt;strong&gt;深度机器学习（DNN）&lt;/strong&gt;  &lt;strong&gt;小技巧&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>crnn</title>
-    <link href="http://yoursite.com/2020/05/15/crnn/"/>
-    <id>http://yoursite.com/2020/05/15/crnn/</id>
-    <published>2020-05-15T05:50:23.000Z</published>
-    <updated>2020-05-15T07:21:59.281Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;CRNN&quot;&gt;&lt;a href=&quot;#CRNN&quot; class=&quot;headerlink&quot; title=&quot;CRNN&quot;&gt;&lt;/a&gt;CRNN&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;该篇介绍了CRNN+tensforflow的模块&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="文字识别" scheme="http://yoursite.com/categories/%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/"/>
-    
-    
-      <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

@@ -1,6 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>linux安装openCV4.5.x</title>
+    <url>/2022/01/09/linux%E5%AE%89%E8%A3%85openCV4-5-x/</url>
+    <content><![CDATA[<h1 id="linux安装openCV4-5-x"><a href="#linux安装openCV4-5-x" class="headerlink" title="linux安装openCV4.5.x"></a>linux安装openCV4.5.x</h1><blockquote>
+<p>这次总算是sudo了，所以直接一套操作猛如虎了。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="安装依赖项"><a href="#安装依赖项" class="headerlink" title="安装依赖项"></a>安装依赖项</h2><p>运行下列代码</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev</span><br><span class="line"></span><br><span class="line">sudo apt-get install libcanberra-gtk-module</span><br><span class="line"></span><br><span class="line">sudo apt-get install pkg-config (不安装就g++编译很麻烦，只能用cmake)</span><br><span class="line"></span><br><span class="line">sudo apt-get install libopencv-dev (不安装报错找不到include的头文件)</span><br></pre></td></tr></table></figure>
+<p>由于莫名原因，libopencv-dev总是安装报错，所以只好apt-get还原，这里的是18.04的换源。</p>
+<p>进入/etc/apt 中去修改sources.list</p>
+<p>保险起见，备份一下sudo cp sources.list sources.list.backup</p>
+<p>然后把下列代码复制到sources.list即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse</span><br><span class="line">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<p>保存后，直接关掉编辑窗口，回到终端执行命令<code>sudo apt-get update</code>，更新获取 阿里软件源 提供的软件列表。再执行命令<code>sudo apt-get upgrade</code>，更新<code>apt-get</code>工具</p>
+<p>接下来再安装依赖就可以了。</p>
+<h2 id="安装openCV"><a href="#安装openCV" class="headerlink" title="安装openCV"></a>安装openCV</h2><p>我是直接去github搞得</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;opencv&#x2F;opencv.git</span><br></pre></td></tr></table></figure>
+<p>然后就是make了,OpenCV4以上默认不使用pkg-config，该编译选项开启生成opencv4.pc文件，支持pkg-config功能,这个很重要，前文已经说了,yejiu</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">sudo cmake -D CMAKE_BUILD_TYPE&#x3D;Release -D OPENCV_GENERATE_PKGCONFIG&#x3D;YES ..</span><br></pre></td></tr></table></figure>
+<p>然后就是</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo make -j4 #这样会快一点</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>配置pkg-config</p>
+<p>首先将上面生成的openCV4.pc复制到对应文件夹里</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo cp &#x2F;usr&#x2F;local&#x2F;lib&#x2F;pkgconfig&#x2F;opencv4.pc  &#x2F;usr&#x2F;lib&#x2F;pkgconfig&#x2F;</span><br></pre></td></tr></table></figure>
+<p>配置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、sudo vi &#x2F;etc&#x2F;ld.so.conf.d&#x2F;opencv.conf</span><br><span class="line">     # 打开后可能是空文件，在文件内容最后添加</span><br><span class="line">     &#x2F;usr&#x2F;local&#x2F;lib</span><br><span class="line">2、更新系统库</span><br><span class="line">     sudo ldconfig</span><br><span class="line">3、配置bash</span><br><span class="line">     sudo vi &#x2F;etc&#x2F;bash.bashrc  </span><br><span class="line">     &#x2F;&#x2F;在末尾添加</span><br><span class="line">     PKG_CONFIG_PATH&#x3D;$PKG_CONFIG_PATH:&#x2F;usr&#x2F;local&#x2F;lib&#x2F;pkgconfig</span><br><span class="line">4、更新bash文件</span><br><span class="line">     source ~&#x2F;.bashrc</span><br><span class="line">     sudo updatedb</span><br></pre></td></tr></table></figure>
+<h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><p>由于openCV 提供了丰富的测试</p>
+<p>所以 cd 到/opencv/samples/cpp/example_cmake目录下，依次执行以下命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cmake .</span><br><span class="line">make</span><br><span class="line">./opencv_example</span><br></pre></td></tr></table></figure>
+<p>这里最后体现一下pkg config的作用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">g++ -std&#x3D;c++11 test_crnn.cpp  &#96;pkg-config --cflags --libs opencv4&#96;  -o crnn</span><br></pre></td></tr></table></figure>
+<p>只需要加上后缀，就不用去连接动态库了，美滋滋。</p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>希望你没把build给删了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd opencv_build</span><br><span class="line">sudo make uninstall </span><br><span class="line">cd .. </span><br><span class="line">sudo rm -r build </span><br><span class="line">sudo rm -r &#x2F;usr&#x2F;local&#x2F;include&#x2F;opencv2 &#x2F;usr&#x2F;local&#x2F;include&#x2F;opencv &#x2F;usr&#x2F;include&#x2F;opencv &#x2F;usr&#x2F;include&#x2F;opencv2 &#x2F;usr&#x2F;local&#x2F;share&#x2F;opencv &#x2F;usr&#x2F;local&#x2F;share&#x2F;OpenCV &#x2F;usr&#x2F;share&#x2F;opencv &#x2F;usr&#x2F;share&#x2F;OpenCV &#x2F;usr&#x2F;local&#x2F;bin&#x2F;opencv* &#x2F;usr&#x2F;local&#x2F;lib&#x2F;libopencv*</span><br></pre></td></tr></table></figure>
+<p>之后删除源码就ok了</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>非root降低gcc版本到5.4</title>
+    <url>/2022/01/09/%E9%99%8D%E4%BD%8Egcc%E7%89%88%E6%9C%AC%E5%88%B05-4/</url>
+    <content><![CDATA[<h1 id="降低gcc版本到5-4"><a href="#降低gcc版本到5-4" class="headerlink" title="降低gcc版本到5.4"></a>降低gcc版本到5.4</h1><h2 id="非root降低gcc版本到5-4"><a href="#非root降低gcc版本到5-4" class="headerlink" title="非root降低gcc版本到5.4"></a>非root降低gcc版本到5.4</h2><blockquote>
+<p>还是那个MAttNet惹的祸，它里面的东西的make需要gcc 5.4.0，人给他整麻了</p>
+</blockquote>
+<a id="more"></a>
+<p>首先是正常流程，下载包，然后安装。</p>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p>首先去网站下载，（吹一波清华镜像，好多有用的东西）<a href="https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/下载gcc5.4.0，然后运行下列指令" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/下载gcc5.4.0，然后运行下列指令</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd gcc-5.4.0  //解压</span><br><span class="line">./contrib/download_prerequisites  //下载依赖项,</span><br><span class="line">cd ..</span><br><span class="line">mkdir gcc-5.4</span><br><span class="line">cd gcc-5.4</span><br><span class="line"> ../gcc-5.4.0/configure --prefix=/usr/local --enable-checking=release --enable-languages=c,c++ --disable-multilib</span><br><span class="line">make  //这一步需要等很长时间，正常来说不需要任何操作只需要等待就行了，我遇到的问题基本都在这一步</span><br><span class="line">//make -j4会更快一点，取决你有几核了</span><br></pre></td></tr></table></figure>
+<p>然后就是配置gcc环境变量的过程，同样类似前面cuda操作</p>
+<p>在.bashrc写入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export PATH&#x3D;&#x2F;path-to-gcc&#x2F;gcc-5.4&#x2F;bin:$PATH</span><br><span class="line">export LD_LIBRARY_PATH&#x3D;&#x2F;path-to-gcc&#x2F;gcc-5.4.0&#x2F;lib&#x2F;:&#x2F;path-to-gcc&#x2F;gcc-5.4&#x2F;lib64:$LD_LIBRARY_PATH</span><br></pre></td></tr></table></figure>
+<p>然后source .bashrc 用gcc -V 查看版本即可</p>
+<h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><p>参考 <a href="https://blog.csdn.net/tuibianhuaisheng/article/details/115399019" target="_blank" rel="noopener">https://blog.csdn.net/tuibianhuaisheng/article/details/115399019</a></p>
+<p>（流程是不是很简单，那为啥我要做博客呢，各种怀疑人生的报错）</p>
+<p>尽管你的gcc降低版本了，你的make以及cmake没降低啊，虽然会向下兼容，但是有些实在还是需要调整一下，所以就会报错，感觉gcc代码写错了一样。</p>
+<p>下面可能不会细讲，建议遇到了不同报错，直接google或者百度，</p>
+<p>对了，就是你报错了之后虽然知道怎么修改，但是不知道文件在哪里，建议用locate等命令去找，其实蛮难找的</p>
+<ol>
+<li><pre><code>./md-unwind-support.h:65:48:  error:  dereferencing pointer to incomplete type &#39;struct ucontext&#39;
+
+   sc = (struct sigcontext *)(void *) &amp;uc_-&gt;uc_mcontext);
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">修正方法（主要是命名的改变）：</span><br></pre></td></tr></table></figure>
+把该文件的struct ucontext * uc_ = context-&gt;cfa改成如下
+ struct ucontext_t * uc_ = context-&gt;cfa
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">2.</span><br></pre></td></tr></table></figure>
+libtool: link: ar rc .libs/libcilkrts.a  cilk-abi-vla.o os-unix-sysdep.o bug.o cilk-abi.o cilk-abi-cilk-for.o cilk-abi-vla-internal.o cilk_api.o cilk_fiber.o cilk_fiber-unix.o cilk_malloc.o c_reducers.o except-gcc.o frame_malloc.o full_frame.o global_state.o jmpbuf.o local_state.o metacall_impl.o os_mutex-unix.o os-unix.o pedigrees.o record-replay.o reducer_impl.o scheduler.o signal_node.o spin_mutex.o stats.o symbol_test.o sysdep-unix.o worker_mutex.o
+libtool: link: ranlib .libs/libcilkrts.a
+libtool: link: ( cd &quot;.libs&quot; &amp;&amp; rm -f &quot;libcilkrts.la&quot; &amp;&amp; ln -s &quot;../libcilkrts.la&quot; &quot;libcilkrts.la&quot; )
+make[2]: Leaving directory &#39;/home/byang/code/gcc-5.4.0/build/x86_64-unknown-linux-gnu/libcilkrts&#39;
+make[1]: Leaving directory &#39;/home/byang/code/gcc-5.4.0/build&#39;
+Makefile:910: recipe for target &#39;all&#39; failed
+make: *** [all] Error 2
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这是很骚的解决方案，再重新make一次，原因就是现在make都是一遍扫描，所以说有些文件创建好了，但是第一遍没扫到，所以要二遍make。</span><br><span class="line">   </span><br><span class="line">3.</span><br></pre></td></tr></table></figure>
+ ../../.././libsanitizer/sanitizer_common/sanitizer_stoptheworld_linux_libcdep.cc:237:22: error: aggregate &#39;sigaltstack handler_stack&#39; has incomplete type and cannot be defined
+struct sigaltstack handler_stack;
+                   ^
+Makefile:449: recipe for target &#39;sanitizer_stoptheworld_linux_libcdep.lo&#39; failed
+make[4]: *** [sanitizer_stoptheworld_linux_libcdep.lo] Error 1
+make: *** [all] Error 2
+</code></pre><p>这里可能需要大范围修改了，在论坛有了解决方案<br>地址:<a href="https://reviews.llvm.org/D35246" target="_blank" rel="noopener">https://reviews.llvm.org/D35246</a></p>
+</li>
+</ol>
+<p>其实还有一些bug,这里就不一一展示了，主要我没存，所以不要慌张，查一下就好.</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>非sudo权限将cuda降版本</title>
     <url>/2022/01/09/cuda10-to-cuda8/</url>
     <content><![CDATA[<h2 id="非sudo权限将cuda降版本"><a href="#非sudo权限将cuda降版本" class="headerlink" title="非sudo权限将cuda降版本"></a>非sudo权限将cuda降版本</h2><h1 id="全连接神经网络"><a href="#全连接神经网络" class="headerlink" title="全连接神经网络"></a>全连接神经网络</h1><blockquote>
